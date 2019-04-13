@@ -53,11 +53,6 @@ module.exports = {
       ]
     }],
     "handle-callback-err": "off",
-
-    // SPECIAL SPRINT TO CHANGE ALL THE PROPS
-    "vue/require-prop-types": "off",
-    "vue/require-default-prop": "off",
-    "vue/no-side-effects-in-computed-properties": "off"
   },
 
   globals: {

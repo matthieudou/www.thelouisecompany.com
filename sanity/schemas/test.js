@@ -12,6 +12,11 @@ export default {
       name: 'otherTest',
       title: 'TEST Text',
       type: 'localeText'
+    },
+    {
+      name: 'altImage',
+      title: 'image avec description',
+      type: 'altImage'
     }
   ]
 }

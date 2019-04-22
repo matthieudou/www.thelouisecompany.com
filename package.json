@@ -13,10 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@sanity/client": "^0.140.11",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "dotenv": "^7.0.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-friendly-formatter": "^3.0.0",

@@ -1,4 +1,11 @@
-module.exports = {
+import { generatedRoutes } from './utilities/sanity'
+require('dotenv').config()
+
+export default {
+  env: {
+    sanityProjectId: process.env.SANITY_PROJECT_ID
+  },
+
   /*
   ** Headers of the page
   */
@@ -13,10 +20,19 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
   /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+
+  /*
+  ** Plugins
+  */
+  plugins: [
+    { src: '~/plugins/sanity' }
+  ],
+
   /*
   ** Build configuration
   */
@@ -33,6 +49,17 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.node = {
+        fs: 'empty'
+      }
     }
+  },
+
+  generate: {
+    routes () {
+      return generatedRoutes
+    },
+    fallback: '404.html'
   }
 }

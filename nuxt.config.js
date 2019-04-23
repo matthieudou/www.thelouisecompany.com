@@ -34,6 +34,21 @@ export default {
   ],
 
   /*
+  ** Modules
+  */
+  modules: [
+    ['nuxt-i18n',
+      {
+        locales: ['fr', 'en'],
+        defaultLocale: 'fr',
+        vueI18n: {
+          fallbackLocale: 'fr'
+        }
+      }
+    ]
+  ],
+
+  /*
   ** Build configuration
   */
   build: {

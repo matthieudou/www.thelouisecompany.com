@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "@sanity/client": "^0.140.11",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^5.8.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

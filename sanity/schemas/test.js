@@ -17,6 +17,14 @@ export default {
       name: 'altImage',
       title: 'image avec description',
       type: 'altImage'
+    },
+    {
+      name: 'textFromSlug',
+      title: 'textFromSlug',
+      type: 'localeSlug',
+      options: {
+        source: 'superTest'
+      }
     }
   ]
 }

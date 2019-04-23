@@ -44,3 +44,24 @@ export const localeText = {
     }
   ))
 }
+
+export const localeSlug = {
+  name: 'localeSlug',
+  type: 'object',
+  fieldsets: [
+    {
+      title: 'Traductions',
+      name: 'translations',
+      options: { collapsible: true }
+    }
+  ],
+  fields: supportedLanguages.map(lang => (
+    {
+      title: ' ',
+      description: lang.title,
+      name: lang.id,
+      type: 'slug',
+      fieldset: lang.isDefault ? null : 'translations'
+    }
+  ))
+}

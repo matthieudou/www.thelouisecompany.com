@@ -15,7 +15,7 @@
       }`)
         .then(res => {
           return {
-            hello: localize(res, ['fr', 'en'])
+            hello: localize(res, [app.i18n.locale, 'en'])
           }
         })
     }

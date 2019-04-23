@@ -37,15 +37,24 @@ export default {
   ** Modules
   */
   modules: [
-    ['nuxt-i18n',
-      {
-        locales: ['fr', 'en'],
-        defaultLocale: 'fr',
-        vueI18n: {
-          fallbackLocale: 'fr'
+    ['nuxt-i18n', {
+      locales: [
+        {
+          code: 'en',
+          iso: 'en-US'
+        },
+        {
+          code: 'fr',
+          iso: 'fr-BE'
         }
+      ],
+      defaultLocale: 'fr',
+      baseUrl: 'https://www.thelouisecompany.com',
+      strategy: 'prefix_and_default',
+      vueI18n: {
+        fallbackLocale: 'fr'
       }
-    ]
+    }]
   ],
 
   /*

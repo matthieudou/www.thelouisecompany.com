@@ -9,6 +9,8 @@ import altImage from './altImage'
 import { localeString, localeText, localeSlug } from './localizedContent'
 
 import test from './test'
+import websiteConfig from './config/websiteConfig'
+import homepageContent from './homepage/index'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,14 +19,16 @@ export default createSchema({
   // Then proceed to concatenate our our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    // The following are document types which will appear
-    // in the studio.
+    // PRIMARY TYPES
     blockContent,
     localeString,
     localeText,
     localeSlug,
     altImage,
 
-    test
+    // LAYOUT TYPES
+    test,
+    websiteConfig,
+    homepageContent
   ])
 })

@@ -1,8 +1,8 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 import ConfigIcon from 'react-icons/lib/md/settings-applications'
-import Config from 'react-icons/lib/md/settings'
-import Footer from 'react-icons/lib/md/vertical-align-bottom'
+import FooterIcon from 'react-icons/lib/md/vertical-align-bottom'
+import ContactIcon from 'react-icons/lib/md/contact-mail'
 
 export default S.listItem()
   .title('Configuration')
@@ -13,7 +13,7 @@ export default S.listItem()
       .items([
         S.listItem()
           .title('Configuration globale')
-          .icon(Config)
+          .icon(ConfigIcon)
           .child(
             S.editor()
               .id('websiteConfig')
@@ -22,12 +22,21 @@ export default S.listItem()
           ),
         S.listItem()
           .title('Pied de page')
-          .icon(Footer)
+          .icon(FooterIcon)
           .child(
             S.editor()
-              .id('websiteFooter')
-              .schemaType('websiteConfig')
-              .documentId('websiteConfig')
+              .id('footer')
+              .schemaType('footer')
+              .documentId('footer')
+          ),
+        S.listItem()
+          .title('Contact')
+          .icon(ContactIcon)
+          .child(
+            S.editor()
+              .id('contact')
+              .schemaType('contact')
+              .documentId('contact')
           )
       ])
   )

@@ -6,11 +6,26 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import blockContent from './blockContent'
 import altImage from './altImage'
-import { localeString, localeText, localeSlug } from './localizedContent'
+import { localeString, localeText, localeSlug, localeBlock } from './localizedContent'
 
 import test from './test'
+
 import websiteConfig from './config/websiteConfig'
-import homepageContent from './homepage/index'
+import footer from './config/footer'
+import contact from './config/contact'
+
+import homepagePage from './homepage/page'
+
+import productionPage from './production/page'
+import productionItem from './production/item'
+
+import influencerPage from './influencer/page'
+import influencerItem from './influencer/item'
+
+import eventPage from './events/page'
+import eventItem from './events/item'
+
+import charityPage from './charity/page'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,14 +36,30 @@ export default createSchema({
   types: schemaTypes.concat([
     // PRIMARY TYPES
     blockContent,
+    altImage,
     localeString,
     localeText,
     localeSlug,
-    altImage,
+    localeBlock,
 
     // LAYOUT TYPES
     test,
+
     websiteConfig,
-    homepageContent
+    footer,
+    contact,
+
+    homepagePage,
+
+    productionPage,
+    productionItem,
+
+    influencerPage,
+    influencerItem,
+
+    eventPage,
+    eventItem,
+
+    charityPage
   ])
 })

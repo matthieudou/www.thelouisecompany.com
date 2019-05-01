@@ -5,11 +5,7 @@ export default {
   fields: [
     {
       name: 'img',
-      type: 'image'
-    },
-    {
-      name: 'alt',
-      type: 'localeString'
+      type: 'altImage'
     }
   ]
 }

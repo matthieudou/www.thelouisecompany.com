@@ -1,6 +1,6 @@
 export default {
-  title: 'Event item',
-  name: 'eventItem',
+  title: 'Influencer item',
+  name: 'influencerItem',
   type: 'document',
   fields: [
     {

@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 
 import config from './config'
 import homepage from './homepage'
-import advertainment from './advertainment'
+import production from './production'
 import influencers from './influencers'
 import events from './events'
 import charity from './charity'
@@ -13,7 +13,7 @@ export default () =>
     .items([
       config,
       homepage,
-      advertainment,
+      production,
       influencers,
       events,
       charity

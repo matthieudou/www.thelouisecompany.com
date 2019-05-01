@@ -1,10 +1,10 @@
 export default {
-  title: 'Event item',
-  name: 'eventItem',
-  type: 'document',
+  title: 'Charity page',
+  name: 'charityPage',
+  type: 'object',
   fields: [
     {
-      title: 'Titre',
+      title: 'Title',
       name: 'title',
       type: 'localeString'
     },

@@ -6,20 +6,12 @@ const supportedLanguages = [
 export const localeString = {
   name: 'localeString',
   type: 'object',
-  fieldsets: [
-    {
-      title: 'Traductions',
-      name: 'translations',
-      options: { collapsible: true }
-    }
-  ],
   fields: supportedLanguages.map(lang => (
     {
       title: ' ',
       description: lang.title,
       name: lang.id,
-      type: 'string',
-      fieldset: lang.isDefault ? null : 'translations'
+      type: 'string'
     }
   ))
 }
@@ -27,20 +19,12 @@ export const localeString = {
 export const localeText = {
   name: 'localeText',
   type: 'object',
-  fieldsets: [
-    {
-      title: 'Traductions',
-      name: 'translations',
-      options: { collapsible: true }
-    }
-  ],
   fields: supportedLanguages.map(lang => (
     {
       title: ' ',
       description: lang.title,
       name: lang.id,
-      type: 'text',
-      fieldset: lang.isDefault ? null : 'translations'
+      type: 'text'
     }
   ))
 }
@@ -48,20 +32,28 @@ export const localeText = {
 export const localeSlug = {
   name: 'localeSlug',
   type: 'object',
-  fieldsets: [
-    {
-      title: 'Traductions',
-      name: 'translations',
-      options: { collapsible: true }
-    }
-  ],
   fields: supportedLanguages.map(lang => (
     {
       title: ' ',
       description: lang.title,
       name: lang.id,
       type: 'slug',
-      fieldset: lang.isDefault ? null : 'translations'
+      options: {
+        source: doc => doc.title ? doc.title[lang.id] : null
+      }
+    }
+  ))
+}
+
+export const localeBlock = {
+  name: 'localeBlock',
+  type: 'object',
+  fields: supportedLanguages.map(lang => (
+    {
+      title: ' ',
+      description: lang.title,
+      name: lang.id,
+      type: 'blockContent'
     }
   ))
 }

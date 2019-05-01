@@ -1,23 +1,23 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 export default S.listItem()
-  .title('Influencers')
+  .title('Production')
   .child(
     S.list()
-      .title('Influencers')
+      .title('Production')
       .items([
         S.listItem()
           .title('Page')
           .child(
             S.editor()
               .id('listEditor')
-              .schemaType('influencerPage')
-              .documentId('influencerPage')
+              .schemaType('productionPage')
+              .documentId('productionPage')
           ),
         S.listItem()
           .title('Items')
           .child(
-            S.documentTypeList('influencerItem')
+            S.documentTypeList('productionItem')
           )
       ])
   )

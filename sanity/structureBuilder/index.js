@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 import config from './config'
-import homepage from './homepage'
+import home from './home'
 import production from './production'
 import influencers from './influencers'
 import events from './events'
@@ -12,7 +12,7 @@ export default () =>
     .title('Content')
     .items([
       config,
-      homepage,
+      home,
       production,
       influencers,
       events,

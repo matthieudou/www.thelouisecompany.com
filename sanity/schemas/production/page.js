@@ -1,5 +1,5 @@
 export default {
-  title: 'Production index',
+  title: 'Production page',
   name: 'productionPage',
   type: 'document',
   fields: [
@@ -28,5 +28,14 @@ export default {
         editModal: 'fullscreen'
       }
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Production page'
+      }
+    }
+  }
 }

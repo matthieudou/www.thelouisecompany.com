@@ -8,5 +8,14 @@ export default {
       name: 'email',
       type: 'email'
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Footer'
+      }
+    }
+  }
 }

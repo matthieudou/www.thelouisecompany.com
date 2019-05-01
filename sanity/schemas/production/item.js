@@ -1,5 +1,5 @@
 export default {
-  title: 'Production item',
+  title: 'Production items',
   name: 'productionItem',
   type: 'document',
   fields: [
@@ -13,5 +13,18 @@ export default {
       name: 'slug',
       type: 'localeSlug'
     }
-  ]
+  ],
+
+  preview: {
+    select: {
+      title: 'title',
+      slug: 'slug'
+    },
+    prepare ({ title, slug }) {
+      return {
+        title: title && title.en ? title.en || title.fr : '',
+        subtitle: `/en/production/${slug && slug.en ? slug.en.current : '...'}`
+      }
+    }
+  }
 }

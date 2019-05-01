@@ -1,5 +1,4 @@
 export default {
-  title: 'Contact',
   name: 'contact',
   type: 'object',
   fields: [
@@ -8,5 +7,14 @@ export default {
       name: 'email',
       type: 'email'
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Contact page'
+      }
+    }
+  }
 }

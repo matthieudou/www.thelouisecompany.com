@@ -1,6 +1,6 @@
 export default {
   title: 'Contenu de la homepage',
-  name: 'homepagePage',
+  name: 'homePage',
   type: 'object',
   fields: [
     {
@@ -13,5 +13,14 @@ export default {
       type: 'localeText',
       name: 'text'
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Home page'
+      }
+    }
+  }
 }

@@ -14,7 +14,7 @@ import websiteConfig from './config/websiteConfig'
 import footer from './config/footer'
 import contact from './config/contact'
 
-import homepagePage from './homepage/page'
+import homePage from './home/page'
 
 import productionPage from './production/page'
 import productionItem from './production/item'
@@ -49,7 +49,7 @@ export default createSchema({
     footer,
     contact,
 
-    homepagePage,
+    homePage,
 
     productionPage,
     productionItem,

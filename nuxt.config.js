@@ -23,6 +23,10 @@ export default {
     ]
   },
 
+  css: [
+    '~/assets/styles/main.css'
+  ],
+
   /*
   ** Customize the progress bar color
   */
@@ -84,6 +88,15 @@ export default {
       config.node = {
         fs: 'empty'
       }
+    },
+
+    postcss: {
+      plugins: [
+        // ...
+        require('tailwindcss'),
+        require('autoprefixer')
+        // ...
+      ]
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>INDEX</h1>
+    <h1 class="text-blue-500">INDEX</h1>
     <pre>{{ hello }}</pre>
   </div>
 </template>

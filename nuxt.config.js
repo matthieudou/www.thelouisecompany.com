@@ -4,7 +4,8 @@ require('dotenv').config()
 export default {
   env: {
     sanityProjectId: process.env.SANITY_PROJECT_ID,
-    sentryDsn: process.env.SENTRY_DSN
+    sentryDsn: process.env.SENTRY_DSN,
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
   },
 
   /*
@@ -56,6 +57,10 @@ export default {
       vueI18n: {
         fallbackLocale: 'fr'
       }
+    }],
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GOOGLE_ANALYTICS_ID || process.env.googleAnalyticsId,
+      dev: false
     }]
   ],
 

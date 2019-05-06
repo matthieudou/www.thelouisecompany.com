@@ -3,7 +3,8 @@ require('dotenv').config()
 
 export default {
   env: {
-    sanityProjectId: process.env.SANITY_PROJECT_ID
+    sanityProjectId: process.env.SANITY_PROJECT_ID,
+    sentryDsn: process.env.SENTRY_DSN
   },
 
   /*
@@ -30,7 +31,8 @@ export default {
   ** Plugins
   */
   plugins: [
-    { src: '~/plugins/sanity' }
+    { src: '~/plugins/sanity' },
+    { src: '~/plugins/sentry' }
   ],
 
   /*

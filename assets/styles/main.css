@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.transition {
+  transition: .2s ease-in-out;
+}

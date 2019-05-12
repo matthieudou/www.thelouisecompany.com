@@ -12,18 +12,41 @@ export default {
       title: 'Slug',
       name: 'slug',
       type: 'localeSlug'
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'localeText'
+    },
+    {
+      title: 'Vidéo',
+      name: 'video',
+      type: 'url'
+    },
+    {
+      title: 'Images',
+      name: 'images',
+      type: 'array',
+      options: {
+        layout: 'grid'
+      },
+      of: [
+        { type: 'image' }
+      ]
     }
   ],
 
   preview: {
     select: {
       title: 'title',
-      slug: 'slug'
+      slug: 'slug',
+      thumbnails: 'images'
     },
-    prepare ({ title, slug }) {
+    prepare ({ title, slug, thumbnails }) {
       return {
         title: title && title.en ? title.en || title.fr : '',
-        subtitle: `/en/production/${slug && slug.en ? slug.en.current : '...'}`
+        subtitle: `/en/production/${slug && slug.en ? slug.en.current : '...'}`,
+        media: thumbnails[0]
       }
     }
   }

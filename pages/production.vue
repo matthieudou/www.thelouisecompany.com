@@ -2,18 +2,23 @@
   <div>
     {{ $route.name }}
     <br>
-    {{ $route.path }}
+    {{ items }}
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
-    nuxtI18n: () => ({
-      paths: {
-        en: '/hello',
-        fr: '/super-test'
-      }
-    })
+    async fetch ({ store }) {
+      await store.dispatch('production/fetch')
+    },
+
+    computed: {
+      ...mapState('production', {
+        items: 'items'
+      })
+    }
   }
 </script>
 

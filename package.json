@@ -14,9 +14,8 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.2.0",
+    "@nuxtjs/sentry": "^2.3.2",
     "@sanity/client": "^0.140.11",
-    "@sentry/browser": "^5.1.2",
-    "@sentry/integrations": "^5.1.2",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^5.8.5"
   },

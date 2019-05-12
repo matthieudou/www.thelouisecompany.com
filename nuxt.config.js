@@ -1,4 +1,5 @@
 import { generatedRoutes } from './utilities/sanity'
+import translatedRoutes from './utilities/translatedRoutes'
 require('dotenv').config()
 
 export default {
@@ -36,36 +37,50 @@ export default {
   ** Plugins
   */
   plugins: [
-    { src: '~/plugins/sanity' },
-    { src: '~/plugins/sentry' }
+    { src: '~/plugins/sanity' }
   ],
 
   /*
   ** Modules
   */
   modules: [
-    ['nuxt-i18n', {
-      locales: [
-        {
-          code: 'en',
-          iso: 'en-US'
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'en',
+            iso: 'en-US'
+          },
+          {
+            code: 'fr',
+            iso: 'fr-BE'
+          }
+        ],
+        defaultLocale: 'fr',
+        baseUrl: 'https://www.thelouisecompany.com',
+        strategy: 'prefix_and_default',
+        vueI18n: {
+          fallbackLocale: 'fr'
         },
-        {
-          code: 'fr',
-          iso: 'fr-BE'
-        }
-      ],
-      defaultLocale: 'fr',
-      baseUrl: 'https://www.thelouisecompany.com',
-      strategy: 'prefix_and_default',
-      vueI18n: {
-        fallbackLocale: 'fr'
+        parsePages: false,
+        pages: translatedRoutes
       }
-    }],
-    ['@nuxtjs/google-analytics', {
-      id: process.env.GOOGLE_ANALYTICS_ID || process.env.googleAnalyticsId,
-      dev: false
-    }]
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.googleAnalyticsId,
+        dev: false
+      }
+    ],
+    [
+      '@nuxtjs/sentry',
+      {
+        dsn: process.env.sentryDsn,
+        config: {}
+      }
+    ]
   ],
 
   /*

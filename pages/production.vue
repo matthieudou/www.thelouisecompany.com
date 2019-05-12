@@ -3,14 +3,17 @@
     {{ $route.name }}
     <br>
     {{ $route.path }}
-
-    <nuxt-link :to="localePath('production')">to the production page</nuxt-link>
   </div>
 </template>
 
 <script>
   export default {
-
+    nuxtI18n: () => ({
+      paths: {
+        en: '/hello',
+        fr: '/super-test'
+      }
+    })
   }
 </script>
 

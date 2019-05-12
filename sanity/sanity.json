@@ -21,7 +21,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/google-maps-input",
-    "@sanity/vision"
+    "@sanity/vision",
+    "@sanity/dashboard"
   ],
   "parts": [
     {

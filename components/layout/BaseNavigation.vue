@@ -1,26 +1,26 @@
 <template>
-  <header class="flex justify-between">
+  <header class="fixed w-full top-0 flex justify-between">
     <div>LOGO</div>
 
     <transition name="menu">
       <div
-        class="absolute w-64 bg-gray-300 right-0 inset-y-0 p-8 pt-24 text-right"
-        v-if="isOpen"
+        class="fixed w-64 bg-gray-300 right-0 inset-y-0 p-8 pt-24 text-right"
+        v-show="isOpen"
       >
-        <template v-for="i in 5">
-          <transition
-            name="fadeInRight"
-            appear
-            :key="i"
-          >
-            <div
-              class="mt-4 text-lg uppercase"
-              :style="`transition-delay: ${i*150}ms;`"
-            >
-              Hello
-            </div>
-          </transition>
-        </template>
+        <nuxt-link
+          class="block mt-4 text-lg uppercase"
+          :to="localePath('index')"
+          @click.native="isOpen = false"
+        >
+          Home
+        </nuxt-link>
+        <nuxt-link
+          class="block mt-4 text-lg uppercase"
+          :to="localePath('production')"
+          @click.native="isOpen = false"
+        >
+          Production
+        </nuxt-link>
       </div>
     </transition>
 

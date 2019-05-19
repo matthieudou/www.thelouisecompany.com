@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     EVENTS
-  </div>
+  </main>
 </template>
 
 <script>

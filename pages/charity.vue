@@ -1,7 +1,7 @@
 <template>
-  <div>
-    Charity
-  </div>
+  <main>
+    CHARITY
+  </main>
 </template>
 
 <script>

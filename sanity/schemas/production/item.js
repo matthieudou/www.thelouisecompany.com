@@ -9,9 +9,9 @@ export default {
       type: 'localeString'
     },
     {
-      title: 'Slug',
-      name: 'slug',
-      type: 'localeSlug'
+      title: 'Name of the client',
+      name: 'clientName',
+      type: 'string'
     },
     {
       title: 'Description',

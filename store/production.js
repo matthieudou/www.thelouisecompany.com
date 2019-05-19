@@ -1,5 +1,6 @@
 const initialState = () => ({
   title: '',
+  image: {},
   items: []
 })
 
@@ -10,24 +11,28 @@ export const getters = {
 }
 
 export const mutations = {
-  setItems (state, { title, productionItems }) {
+  setItems (state, { title, image, productionItems }) {
+    state.title = title
+    state.image = image
     state.items = productionItems
   }
 }
 
 export const actions = {
-  fetch ({ commit }) {
-    console.log(this.app.i18n.locale)
+  fetch ({ state, commit }) {
+    if (state.items.length > 0) return
+
     return this.app.$sanity.fetch(fetchQuery)
       .then(res => {
         commit('setItems', res)
-        console.log(res)
       })
   }
 }
 
 const fetchQuery = `
-*[_type == 'productionPage'] {
-  productionItems[]->
-}[0]
+  *[_type == 'productionPage'] {
+    title,
+    image,
+    productionItems[]->
+  }[0]
 `

@@ -9,6 +9,11 @@ export default {
       type: 'localeString'
     },
     {
+      title: 'Image',
+      name: 'image',
+      type: 'altImage'
+    },
+    {
       title: 'Production items',
       name: 'productionItems',
       type: 'array',

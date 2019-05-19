@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     INFLUENCEURS
-  </div>
+  </main>
 </template>
 
 <script>

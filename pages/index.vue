@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main>
     {{ $route.name }}
     <br>
     {{ $route.path }}
 
     <nuxt-link :to="localePath('production')">to the production page</nuxt-link>
-  </div>
+  </main>
 </template>
 
 <script>

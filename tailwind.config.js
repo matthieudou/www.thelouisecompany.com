@@ -298,7 +298,8 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
+      '3/4-screen': '75vh'
     }),
     minWidth: {
       '0': '0',

@@ -17,6 +17,7 @@ export const mutations = {
 
 export const actions = {
   fetch ({ commit }) {
+    console.log(this.app.i18n.locale)
     return this.app.$sanity.fetch(fetchQuery)
       .then(res => {
         commit('setItems', res)

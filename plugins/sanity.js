@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { client } from '~/utilities/sanity'
+import { client } from '~/utils/sanity'
 
 const installSanity = {
   install (vue) {

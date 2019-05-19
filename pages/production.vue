@@ -2,7 +2,7 @@
   <div>
     {{ $route.name }}
     <br>
-    {{ items }}
+    <pre>{{ items }}</pre>
   </div>
 </template>
 

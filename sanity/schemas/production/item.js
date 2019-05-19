@@ -39,13 +39,13 @@ export default {
   preview: {
     select: {
       title: 'title',
-      slug: 'slug',
+      clientName: 'clientName',
       thumbnails: 'images'
     },
-    prepare ({ title, slug, thumbnails }) {
+    prepare ({ title, clientName, thumbnails }) {
       return {
         title: title && title.en ? title.en || title.fr : '',
-        subtitle: `/en/production/${slug && slug.en ? slug.en.current : '...'}`,
+        subtitle: clientName.toUpperCase(),
         media: thumbnails[0]
       }
     }

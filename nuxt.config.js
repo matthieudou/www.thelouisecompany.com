@@ -4,9 +4,11 @@ require('dotenv').config()
 
 export default {
   env: {
-    sanityProjectId: process.env.SANITY_PROJECT_ID,
-    sentryDsn: process.env.SENTRY_DSN,
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID
+    SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
+    SENTRY_DSN: process.env.SENTRY_DSN,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    FUNCTIONS_URL: process.env.FUNCTIONS_URL
   },
 
   /*
@@ -70,18 +72,31 @@ export default {
     [
       '@nuxtjs/google-analytics',
       {
-        id: process.env.googleAnalyticsId,
+        id: process.env.GOOGLE_ANALYTICS_ID,
         dev: false
       }
     ],
     [
       '@nuxtjs/sentry',
       {
-        dsn: process.env.sentryDsn,
+        dsn: process.env.SENTRY_DSN,
         config: {}
+      }
+    ],
+    [
+      '@nuxtjs/axios',
+      {
+        proxy: true
       }
     ]
   ],
+
+  proxy: {
+    '/.netlify': {
+      target: 'http://localhost:9000',
+      pathRewrite: { '^/.netlify/functions': '' }
+    }
+  },
 
   /*
   ** Build configuration

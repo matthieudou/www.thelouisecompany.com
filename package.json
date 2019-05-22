@@ -5,24 +5,34 @@
   "author": "matthieudou <matthieu.doultremont@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "ttab yarn nuxt:dev && ttab yarn functions:dev && ttab yarn sanity:dev",
+    "nuxt:dev": "nuxt",
+    "sanity:dev": "cd sanity && sanity start",
+    "functions:dev": "yarn functions:serve",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "functions:serve": "netlify-lambda serve functions",
+    "functions:build": "netlify-lambda build functions",
+    "production:build": "yarn generate && yarn functions:build"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.4.2",
     "@nuxtjs/google-analytics": "^2.2.0",
+    "@nuxtjs/proxy": "^1.3.3",
     "@nuxtjs/sentry": "^2.3.2",
     "@sanity/client": "^0.140.11",
     "@sanity/image-url": "^0.140.12",
+    "@sendgrid/mail": "^6.4.0",
+    "dotenv": "^8.0.0",
+    "netlify-lambda": "^1.4.11",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^5.8.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "dotenv": "^7.0.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-friendly-formatter": "^3.0.0",
@@ -35,6 +45,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "tailwindcss": "^1.0.0-beta.8"
+    "tailwindcss": "^1.0.0-beta.8",
+    "ttab": "^0.6.1"
   }
 }

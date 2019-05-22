@@ -7,8 +7,9 @@ npm-debug.log
 # Nuxt build
 .nuxt
 
-# Nuxt generate
+# BUILD FILES
 dist
+.netlify/*
 
 # env files
-.env
+.env*

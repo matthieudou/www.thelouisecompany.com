@@ -1,4 +1,3 @@
-import { generatedRoutes } from './utils/sanity'
 import translatedRoutes from './utils/translatedRoutes'
 require('dotenv').config()
 
@@ -126,12 +125,5 @@ export default {
         require('autoprefixer')
       ]
     }
-  },
-
-  generate: {
-    routes () {
-      return generatedRoutes
-    },
-    fallback: '404.html'
   }
 }

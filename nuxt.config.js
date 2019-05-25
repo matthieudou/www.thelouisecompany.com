@@ -79,7 +79,9 @@ export default {
       '@nuxtjs/sentry',
       {
         dsn: process.env.SENTRY_DSN,
-        config: {}
+        config: {
+          disabled: process.env.NODE_ENV !== 'production'
+        }
       }
     ],
     [

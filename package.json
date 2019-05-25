@@ -5,7 +5,7 @@
   "author": "matthieudou <matthieu.doultremont@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "ttab yarn nuxt:dev && ttab yarn functions:dev && ttab yarn sanity:dev",
+    "dev": "yarn nuxt:dev",
     "nuxt:dev": "nuxt",
     "sanity:dev": "cd sanity && sanity start",
     "functions:dev": "yarn functions:serve",
@@ -46,7 +46,6 @@
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "tailwindcss": "^1.0.0-beta.8",
-    "ttab": "^0.6.1"
+    "tailwindcss": "^1.0.0-beta.8"
   }
 }

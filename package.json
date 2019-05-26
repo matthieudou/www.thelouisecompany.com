@@ -27,6 +27,7 @@
     "@sanity/image-url": "^0.140.12",
     "@sendgrid/mail": "^6.4.0",
     "dotenv": "^8.0.0",
+    "intersection-observer": "^0.7.0",
     "netlify-lambda": "^1.4.11",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^5.8.5",

@@ -39,7 +39,8 @@ export default {
   ** Plugins
   */
   plugins: [
-    { src: '~/plugins/sanity' }
+    '~/plugins/sanity',
+    '~/plugins/intersection-observer.client.js'
   ],
 
   /*

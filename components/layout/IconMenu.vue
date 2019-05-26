@@ -1,7 +1,7 @@
 <template>
   <button
     v-on="$listeners"
-    class="focus:outline-none hamburger hamburger--slider p-4"
+    class="focus:outline-none hamburger hamburger--slider"
     :class="{'is-active': isOpen}"
     type="button"
   >

@@ -1,23 +1,26 @@
 <template>
-  <div class="bg-white h-full relative">
+  <div class="bg-white h-full">
     <base-navigation/>
     <nuxt/>
+    <base-footer/>
   </div>
 </template>
 
 <script>
   import BaseNavigation from '~/components/layout/BaseNavigation'
+  import BaseFooter from '~/components/layout/BaseFooter'
 
   export default {
     components: {
-      BaseNavigation
+      BaseNavigation,
+      BaseFooter
     }
   }
 </script>
 
 <style>
 .page-enter-active, .page-leave-active {
-  transition: 1s;
+  transition: .4s;
 }
 
 .page-enter, .page-leave-to {

@@ -1,12 +1,10 @@
 export default {
-  title: 'Footer',
-  name: 'footer',
+  name: 'generalInformations',
   type: 'object',
   fields: [
     {
-      title: 'Email de la boite',
-      name: 'email',
-      type: 'email'
+      name: 'img',
+      type: 'altImage'
     }
   ],
 
@@ -14,7 +12,7 @@ export default {
     select: {},
     prepare () {
       return {
-        title: 'Footer'
+        title: 'Global config'
       }
     }
   }

@@ -10,8 +10,8 @@ import { localeString, localeText, localeSlug, localeBlock } from './localizedCo
 
 import test from './test'
 
-import websiteConfig from './config/websiteConfig'
-import footer from './config/footer'
+import generalInformations from './config/generalInformations'
+import sharing from './config/sharing'
 import contact from './config/contact'
 
 import homePage from './home/page'
@@ -45,8 +45,8 @@ export default createSchema({
     // LAYOUT TYPES
     test,
 
-    websiteConfig,
-    footer,
+    generalInformations,
+    sharing,
     contact,
 
     homePage,

@@ -43,7 +43,11 @@
           >
             <option
               value="price-offer"
-              disabled>Vous nous contactez pour ?</option>
+              disabled
+              selected
+            >
+              Vous nous contactez pour ?
+            </option>
             <option value="price-offer">Demande de prix</option>
           </select>
 

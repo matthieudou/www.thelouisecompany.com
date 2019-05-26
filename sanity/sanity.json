@@ -5,7 +5,7 @@
   },
   "api": {
     "projectId": "frs718jp",
-    "dataset": "production"
+    "dataset": "development"
   },
   "env": {
     "development": {

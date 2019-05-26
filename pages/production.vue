@@ -1,40 +1,42 @@
 <template>
-  <main class="container mx-auto p-8">
-    <div
-      class="bg-cover h-3/4-screen"
-      :style="`background-image: url(${urlFor(image.asset || '')});`"
-    >
-      <h1 class="text-4xl font-bold">{{ localize(title) }}</h1>
-    </div>
+  <main>
+    <header-section
+      :title="title"
+      :thumbnail="image"
+    />
 
-    <article
-      v-for="(item, i) in items"
-      :key="item._id"
-      class="mt-12 flex"
-      :class="{
-        'flex-row-reverse': i % 2 === 1
-      }"
-    >
-      <div class="w-1/2 p-4">
-        <h3 class="uppercase text-xs tracking-wider">{{ item.clientName }}</h3>
-        <h2 class="text-2xl mt-4">{{ localize(item.title) }}</h2>
+    <section class="container mx-auto">
+      <article
+        v-for="(item, i) in items"
+        :key="item._id"
+        class="mt-12 flex"
+        :class="{
+          'flex-row-reverse': i % 2 === 1
+        }"
+      >
+        <div class="w-1/2 p-4">
+          <h3 class="uppercase text-xs tracking-wider">{{ item.clientName }}</h3>
+          <h2 class="text-2xl mt-4">{{ localize(item.title) }}</h2>
 
-        <div class="mt-12 leading-relaxed">
-          {{ localize(item.description) }}
+          <div class="mt-12 leading-relaxed">
+            {{ localize(item.description) }}
+          </div>
         </div>
-      </div>
 
-      <div class="w-1/2 h-64 flex-shrink-0 p-4">
-        <img
-          class="w-full h-full object-cover"
-          :src="urlFor(item.images[0]).url()"
-        >
-      </div>
-    </article>
+        <div class="w-1/2 h-64 flex-shrink-0 p-4">
+          <img
+            class="w-full h-full object-cover"
+            :src="urlFor(item.images[0]).url()"
+          >
+        </div>
+      </article>
+    </section>
   </main>
 </template>
 
 <script>
+  import HeaderSection from '~/components/shared/HeaderSection'
+
   import { mapState } from 'vuex'
 
   export default {
@@ -48,6 +50,10 @@
         title: 'title',
         items: 'items'
       })
+    },
+
+    components: {
+      HeaderSection
     }
   }
 </script>

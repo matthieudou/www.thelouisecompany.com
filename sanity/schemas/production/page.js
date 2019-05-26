@@ -22,16 +22,9 @@ export default {
           type: 'reference',
           to: [
             { type: 'productionItem' }
-          ],
-          options: {
-            layout: 'grid'
-          }
+          ]
         }
-      ],
-      options: {
-        layout: 'grid',
-        editModal: 'fullscreen'
-      }
+      ]
     }
   ],
 

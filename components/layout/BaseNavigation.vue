@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed w-full top-0 flex justify-between p-8 transition"
+    class="fixed w-full top-0 flex justify-between p-8 transition z-10"
     :class="{'bg-red-100': navbarIsScrolled}"
   >
     <nuxt-link

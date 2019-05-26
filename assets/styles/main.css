@@ -7,3 +7,13 @@
 .transition {
   transition: .2s ease-in-out;
 }
+
+/* LAZY IMAGE STYLES */
+.v-lazy-image {
+  filter: blur(4px);
+  transition: filter .2s;
+}
+
+.v-lazy-image-loaded {
+  filter: blur(0);
+}

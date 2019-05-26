@@ -24,10 +24,15 @@
         </div>
 
         <div class="w-full md:w-1/2 h-64 flex-shrink-0 p-4">
-          <img
+          <v-lazy-image
             class="w-full h-full object-cover"
             :src="urlFor(item.images[0]).url()"
-          >
+            :src-placeholder="urlFor(item.images[0]).width(20).url()"
+          />
+          <!-- <img
+            class="w-full h-full object-cover"
+            :src="urlFor(item.images[0]).url()"
+          > -->
         </div>
       </article>
     </section>
@@ -36,6 +41,7 @@
 
 <script>
   import HeaderSection from '~/components/shared/HeaderSection'
+  import VLazyImage from 'v-lazy-image'
 
   import { mapState } from 'vuex'
 
@@ -78,7 +84,8 @@
     },
 
     components: {
-      HeaderSection
+      HeaderSection,
+      VLazyImage
     }
   }
 </script>

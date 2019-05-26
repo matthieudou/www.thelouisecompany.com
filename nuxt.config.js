@@ -1,4 +1,5 @@
 import translatedRoutes from './utils/translatedRoutes'
+
 require('dotenv').config()
 
 export default {
@@ -7,18 +8,18 @@ export default {
     SENTRY_DSN: process.env.SENTRY_DSN,
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
-    FUNCTIONS_URL: process.env.FUNCTIONS_URL
+    FUNCTIONS_URL: process.env.FUNCTIONS_URL,
+    URL: process.env.URL
   },
 
   /*
   ** Headers of the page
   */
   head: {
-    title: 'thelouisecompany.com',
+    titleTemplate: '%s - The Louise Company',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Website for The Louise Company' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

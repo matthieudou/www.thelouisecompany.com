@@ -1,7 +1,8 @@
 const initialState = () => ({
   title: '',
   image: {},
-  items: []
+  items: [],
+  meta: {}
 })
 
 export const state = initialState
@@ -11,9 +12,10 @@ export const getters = {
 }
 
 export const mutations = {
-  setItems (state, { title, image, productionItems }) {
+  setItems (state, { title, image, productionItems, meta }) {
     state.title = title
     state.image = image
+    state.meta = meta
     state.items = productionItems
   }
 }
@@ -33,6 +35,7 @@ const fetchQuery = `
   *[_type == 'productionPage'] {
     title,
     image,
+    meta,
     productionItems[]->
   }[0]
 `

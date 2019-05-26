@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Titre',
+      title: 'Title',
       name: 'title',
       type: 'localeString'
     },
@@ -19,7 +19,7 @@ export default {
       type: 'localeText'
     },
     {
-      title: 'Vidéo',
+      title: 'Video link',
       name: 'video',
       type: 'url'
     },
@@ -40,13 +40,13 @@ export default {
     select: {
       title: 'title',
       clientName: 'clientName',
-      thumbnails: 'images'
+      images: 'images'
     },
-    prepare ({ title, clientName, thumbnails }) {
+    prepare ({ title, clientName, images }) {
       return {
         title: title && title.en ? title.en || title.fr : '',
         subtitle: clientName.toUpperCase(),
-        media: thumbnails[0]
+        media: images[0]
       }
     }
   }

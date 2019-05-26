@@ -8,23 +8,23 @@ export const client = sanityClient({
   useCdn: process.env.NODE_ENV === 'production'
 })
 
-const generateRoutesFromSlug = (string, slugObjects) => {
-  return slugObjects.map(item => `${string}${item.slug}`)
-}
+// const generateRoutesFromSlug = (string, slugObjects) => {
+//   return slugObjects.map(item => `${string}${item.slug}`)
+// }
 
-const xQuery = `
-*[_type == 'movie' && releaseYear >= 1979]
-`
+// const xQuery = `
+// *[_type == 'movie' && releaseYear >= 1979]
+// `
 
-export const generatedRoutes = () => {
-  const promises = [
-    client.fetch(xQuery)
-  ]
+// export const generatedRoutes = () => {
+//   const promises = [
+//     client.fetch(xQuery)
+//   ]
 
-  return Promise.all(promises)
-    .then(([xResponse]) => {
-      return [
-        ...generateRoutesFromSlug('/x/', xResponse)
-      ]
-    })
-}
+//   return Promise.all(promises)
+//     .then(([xResponse]) => {
+//       return [
+//         ...generateRoutesFromSlug('/x/', xResponse)
+//       ]
+//     })
+// }

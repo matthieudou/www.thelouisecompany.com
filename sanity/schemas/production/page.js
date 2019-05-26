@@ -4,12 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Titre',
+      title: 'Title',
       name: 'title',
       type: 'localeString'
     },
     {
-      title: 'Image',
+      title: 'Background image',
       name: 'image',
       type: 'altImage'
     },
@@ -25,6 +25,11 @@ export default {
           ]
         }
       ]
+    },
+    {
+      title: 'Meta',
+      name: 'meta',
+      type: 'meta'
     }
   ],
 

@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import blockContent from './blockContent'
 import altImage from './altImage'
+import meta from './objects/meta'
 import { localeString, localeText, localeSlug, localeBlock } from './localizedContent'
 
 import test from './test'
@@ -41,6 +42,7 @@ export default createSchema({
     localeText,
     localeSlug,
     localeBlock,
+    meta,
 
     // LAYOUT TYPES
     test,

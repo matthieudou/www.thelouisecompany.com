@@ -3,7 +3,7 @@ require('dotenv').config()
 
 export const client = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.NODE_ENV,
+  dataset: 'development' || process.env.NODE_ENV,
   token: '',
   useCdn: process.env.NODE_ENV === 'production'
 })

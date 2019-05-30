@@ -114,7 +114,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .menu-enter-active, .menu-leave-active {
   transition: all .5s ease-in-out;
 }

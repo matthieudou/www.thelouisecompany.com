@@ -22,7 +22,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {

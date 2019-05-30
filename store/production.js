@@ -12,11 +12,13 @@ export const getters = {
 }
 
 export const mutations = {
-  setItems (state, { title, image, productionItems, meta }) {
-    state.title = title
-    state.image = image
-    state.meta = meta
-    state.items = productionItems
+  setItems (state, value) {
+    Object.assign(state, {
+      title: value.title,
+      image: value.image,
+      meta: value.meta,
+      items: value.productionItems
+    })
   }
 }
 
@@ -36,6 +38,6 @@ const fetchQuery = `
     title,
     image,
     meta,
-    productionItems[]->
+    productionItems
   }[0]
 `

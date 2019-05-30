@@ -40,7 +40,8 @@ export default {
   */
   plugins: [
     '~/plugins/sanity',
-    '~/plugins/intersection-observer.client.js'
+    '~/plugins/intersection-observer.client.js',
+    '~/plugins/touch-events.client.js'
   ],
 
   /*

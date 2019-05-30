@@ -18,12 +18,7 @@ export default {
       name: 'productionItems',
       type: 'array',
       of: [
-        {
-          type: 'reference',
-          to: [
-            { type: 'productionItem' }
-          ]
-        }
+        { type: 'productionItem' }
       ]
     },
     {

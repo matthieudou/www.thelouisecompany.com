@@ -14,19 +14,5 @@ export default {
         isHighlighted: true
       }
     }
-  ],
-
-  preview: {
-    select: {
-      image: 'altImage',
-      title: 'alt'
-    },
-
-    prepare (selection) {
-      return {
-        title: selection.title,
-        media: selection.image
-      }
-    }
-  }
+  ]
 }

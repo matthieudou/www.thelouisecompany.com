@@ -19,19 +19,15 @@ export default {
       type: 'localeText'
     },
     {
-      title: 'Video link',
-      name: 'video',
-      type: 'url'
-    },
-    {
-      title: 'Images',
-      name: 'images',
+      title: 'Media',
+      name: 'media',
       type: 'array',
       options: {
         layout: 'grid'
       },
       of: [
-        { type: 'image' }
+        { type: 'altImage' },
+        { type: 'video' }
       ]
     }
   ],
@@ -40,13 +36,13 @@ export default {
     select: {
       title: 'title',
       clientName: 'clientName',
-      images: 'images'
+      media: 'media'
     },
-    prepare ({ title, clientName, images }) {
+    prepare ({ title, clientName, media }) {
       return {
         title: title && title.en ? title.en || title.fr : '',
         subtitle: clientName.toUpperCase(),
-        media: images[0]
+        media: media[0]
       }
     }
   }

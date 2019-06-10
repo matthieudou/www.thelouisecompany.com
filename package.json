@@ -16,7 +16,8 @@
     "precommit": "npm run lint",
     "functions:serve": "netlify-lambda serve functions",
     "functions:build": "netlify-lambda build functions",
-    "production:build": "yarn generate && yarn functions:build"
+    "production:build": "yarn generate && yarn functions:build",
+    "svg": "vsvg -s ./assets/images/icons/svg -t ./icons --es6"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.4.2",
@@ -47,6 +48,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.0.0",
-    "tailwindcss": "^1.0.0-beta.8"
+    "tailwindcss": "^1.0.0-beta.8",
+    "vue-svgicon": "^3.2.6"
   }
 }

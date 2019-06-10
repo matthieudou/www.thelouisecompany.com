@@ -1,3 +1,56 @@
+/* IMPORT FONTS */
+@font-face {
+  font-family: 'HankenGrotesk';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local('Hanken Grotesk'),
+    local('HankenGrotesk-ExtraLight'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-ExtraLight.woff2) format('woff2'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-ExtraLight.woff) format('woff'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-ExtraLight.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'HankenGrotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Hanken Grotesk'),
+    local('HankenGrotesk-Medium'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Medium.woff2) format('woff2'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Medium.woff) format('woff'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Medium.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'HankenGrotesk';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Hanken Grotesk'),
+    local('HankenGrotesk-Black'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Black.woff2) format('woff2'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Black.woff) format('woff'),
+    url(/fonts/HankenGrotesk/HankenGrotesk-Black.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'ogg';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url(/fonts/Ogg/Ogg-Roman.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'ogg';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url(/fonts/Ogg/Ogg-Italic.otf) format('opentype');
+}
+
 @tailwind base;
 
 @tailwind components;
@@ -16,4 +69,14 @@
 
 .v-lazy-image-loaded {
   filter: blur(0);
+}
+
+@variants hover, group-hover {
+  .translate-r-2 {
+    transform: translateX(0.5rem);
+  }
+
+  .translate-l-2 {
+    transform: translateX(-0.5rem);
+  }
 }

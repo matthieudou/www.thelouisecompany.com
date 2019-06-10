@@ -149,6 +149,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'HankenGrotesk',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
@@ -163,19 +164,12 @@ module.exports = {
         '"Noto Color Emoji"'
       ],
       serif: [
+        'ogg',
         'Georgia',
         'Cambria',
         '"Times New Roman"',
         'Times',
         'serif'
-      ],
-      mono: [
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace'
       ]
     },
     fontSize: {

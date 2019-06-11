@@ -1,9 +1,12 @@
 <template>
   <header
     class="fixed w-full top-0 flex justify-between p-8 transition z-10"
-    :class="navbarTextColor"
+    :class="isOpen ? 'text-white' : navbarTextColor"
   >
-    <nuxt-link :to="localePath({name: 'index'})">
+    <nuxt-link
+      :to="localePath({name: 'index'})"
+      class="z-20"
+    >
       <img
         class="h-12"
         src="~/assets/images/logo-tlc.png"
@@ -12,7 +15,7 @@
     </nuxt-link>
 
     <nuxt-link
-      class="text-center"
+      class="text-center z-20"
       :to="localePath({name: 'index'})"
     >
       <div>The Louise</div>
@@ -20,6 +23,7 @@
     </nuxt-link>
 
     <icon-menu
+      class="z-20"
       @click="isOpen = !isOpen"
       :is-open="isOpen"
     />
@@ -56,6 +60,19 @@
         immediate: true,
         handler () {
           if (process.client) this.colorSections = document.querySelectorAll('[data-section-color]')
+        }
+      },
+
+      isOpen: {
+        immediate: true,
+        handler (val) {
+          if (!process.client) return
+
+          if (val) {
+            document.querySelector('body').classList.add('overflow-hidden')
+          } else {
+            document.querySelector('body').classList.remove('overflow-hidden')
+          }
         }
       }
     },

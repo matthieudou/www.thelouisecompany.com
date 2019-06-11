@@ -209,7 +209,8 @@ module.exports = {
       normal: '0',
       wide: '0.025em',
       wider: '0.05em',
-      widest: '0.1em'
+      widest: '0.1em',
+      menu: '.2em'
     },
     textColor: theme => theme('colors'),
     backgroundColor: theme => theme('colors'),
@@ -286,7 +287,8 @@ module.exports = {
       '10/12': '83.33333%',
       '11/12': '91.66667%',
       full: '100%',
-      screen: '100vw'
+      screen: '100vw',
+      menu: '20rem'
     }),
     height: theme => ({
       auto: 'auto',

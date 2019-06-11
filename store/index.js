@@ -1,6 +1,7 @@
 const initialState = () => ({
   informations: {
-    sharing: {}
+    sharing: {},
+    socials: {}
   }
 })
 
@@ -11,6 +12,9 @@ export const getters = {}
 export const mutations = {
   setSharingInformations (state, value) {
     state.informations.sharing = value
+  },
+  setItems (state, { item, value }) {
+    Object.assign(state.informations[item], value)
   }
 }
 
@@ -20,6 +24,10 @@ export const actions = {
       this.app.$sanity.fetch(sharingQuery)
         .then(res => {
           commit('setSharingInformations', res.sharing)
+        }),
+      this.app.$sanity.fetch(socialsQuery)
+        .then(res => {
+          commit('setItems', { item: 'socials', value: res })
         })
     ])
   }
@@ -27,4 +35,10 @@ export const actions = {
 
 const sharingQuery = `
   *[_type == 'sharing'][0]
+`
+const socialsQuery = `
+  *[_type == 'socials'][0] {
+    catchPhrase,
+    items
+  }
 `

@@ -30,6 +30,15 @@ export default S.listItem()
               .documentId('config-sharing')
           ),
         S.listItem()
+          .title('Socials')
+          .icon(FooterIcon)
+          .child(
+            S.editor()
+              .id('socials')
+              .schemaType('socials')
+              .documentId('config-socials')
+          ),
+        S.listItem()
           .title('Contact')
           .icon(ContactIcon)
           .child(

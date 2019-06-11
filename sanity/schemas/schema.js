@@ -15,6 +15,7 @@ import test from './test'
 import generalInformations from './config/generalInformations'
 import sharing from './config/sharing'
 import contact from './config/contact'
+import socials from './config/socials'
 
 import homePage from './home/page'
 
@@ -52,6 +53,7 @@ export default createSchema({
     generalInformations,
     sharing,
     contact,
+    socials,
 
     homePage,
 

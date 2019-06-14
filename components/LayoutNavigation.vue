@@ -8,7 +8,7 @@
       class="z-20"
     >
       <img
-        class="h-12"
+        class="h-16"
         src="~/assets/images/logo-tlc.png"
         alt="Logo of the louise company"
       >

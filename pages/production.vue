@@ -33,8 +33,8 @@
 </template>
 
 <script>
-  import HeaderSection from '~/components/shared/HeaderSection'
-  import CarouselCard from '~/components/shared/CarouselCard'
+  import HeaderSection from '~/components/HeaderSection'
+  import CarouselCard from '~/components/CarouselCard'
 
   import { mapState } from 'vuex'
 

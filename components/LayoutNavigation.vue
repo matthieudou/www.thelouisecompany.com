@@ -22,19 +22,19 @@
       <div>Company</div>
     </nuxt-link>
 
-    <icon-menu
+    <layout-menu-icon
       class="z-20"
       @click="isOpen = !isOpen"
       :is-open="isOpen"
     />
 
-    <base-menu v-show="isOpen"/>
+    <layout-menu v-show="isOpen"/>
   </header>
 </template>
 
 <script>
-  import IconMenu from '~/components/layout/IconMenu'
-  import BaseMenu from '~/components/layout/BaseMenu'
+  import LayoutMenuIcon from '~/components/LayoutMenuIcon'
+  import LayoutMenu from '~/components/LayoutMenu'
 
   export default {
     data () {
@@ -89,8 +89,8 @@
     },
 
     components: {
-      IconMenu,
-      BaseMenu
+      LayoutMenuIcon,
+      LayoutMenu
     }
   }
 </script>

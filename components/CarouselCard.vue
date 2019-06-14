@@ -74,7 +74,7 @@
 
 <script>
   import VLazyImage from 'v-lazy-image'
-  import BaseModal from '~/components/shared/BaseModal'
+  import BaseModal from '~/components/BaseModal'
 
   export default {
     props: {

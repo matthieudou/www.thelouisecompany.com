@@ -1,14 +1,14 @@
 <template>
   <div class="bg-white h-full font-sans">
-    <base-navigation/>
+    <layout-navigation/>
     <nuxt/>
-    <base-footer/>
+    <layout-footer/>
   </div>
 </template>
 
 <script>
-  import BaseNavigation from '~/components/layout/BaseNavigation'
-  import BaseFooter from '~/components/layout/BaseFooter'
+  import LayoutNavigation from '~/components/LayoutNavigation'
+  import LayoutFooter from '~/components/LayoutFooter'
 
   import { mapState } from 'vuex'
 
@@ -43,8 +43,8 @@
     },
 
     components: {
-      BaseNavigation,
-      BaseFooter
+      LayoutNavigation,
+      LayoutFooter
     }
   }
 </script>

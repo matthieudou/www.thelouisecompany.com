@@ -98,7 +98,7 @@
 </template>
 
 <script>
-  import BaseSocials from '~/components/shared/BaseSocials'
+  import BaseSocials from '~/components/BaseSocials'
 
   export default {
     components: {

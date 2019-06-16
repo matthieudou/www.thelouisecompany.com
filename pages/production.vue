@@ -37,8 +37,11 @@
   import CarouselCard from '~/components/CarouselCard'
 
   import { mapState } from 'vuex'
+  import { sectionColor } from '~/utils/mixins'
 
   export default {
+    mixins: [sectionColor],
+
     head () {
       return {
         title: this.localize(this.title),

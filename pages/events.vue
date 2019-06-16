@@ -5,7 +5,10 @@
 </template>
 
 <script>
+  import { sectionColor } from '~/utils/mixins'
+
   export default {
+    mixins: [sectionColor]
 
   }
 </script>

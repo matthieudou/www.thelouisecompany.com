@@ -36,13 +36,20 @@
   import LayoutMenuIcon from '~/components/LayoutMenuIcon'
   import LayoutMenu from '~/components/LayoutMenu'
 
+  import { mapState } from 'vuex'
+
   export default {
     data () {
       return {
         isOpen: false,
-        colorSections: [],
         navbarTextColor: 'text-white'
       }
+    },
+
+    computed: {
+      ...mapState([
+        'colorSections'
+      ])
     },
 
     methods: {
@@ -56,13 +63,6 @@
     },
 
     watch: {
-      $route: {
-        immediate: true,
-        handler () {
-          if (process.client) this.colorSections = document.querySelectorAll('[data-section-color]')
-        }
-      },
-
       isOpen: {
         immediate: true,
         handler (val) {
@@ -79,7 +79,6 @@
 
     created () {
       if (process.client) {
-        this.navigationScroll()
         document.addEventListener('scroll', this.navigationScroll)
       }
     },

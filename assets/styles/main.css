@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: local('Hanken Grotesk'),
+  src: local('Hanken Grotesk Extra Light'),
     local('HankenGrotesk-ExtraLight'),
     url(/fonts/HankenGrotesk/HankenGrotesk-ExtraLight.woff2) format('woff2'),
     url(/fonts/HankenGrotesk/HankenGrotesk-ExtraLight.woff) format('woff'),
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local('Hanken Grotesk'),
+  src: local('Hanken Grotesk Medium'),
     local('HankenGrotesk-Medium'),
     url(/fonts/HankenGrotesk/HankenGrotesk-Medium.woff2) format('woff2'),
     url(/fonts/HankenGrotesk/HankenGrotesk-Medium.woff) format('woff'),
@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local('Hanken Grotesk'),
+  src: local('Hanken Grotesk Black'),
     local('HankenGrotesk-Black'),
     url(/fonts/HankenGrotesk/HankenGrotesk-Black.woff2) format('woff2'),
     url(/fonts/HankenGrotesk/HankenGrotesk-Black.woff) format('woff'),

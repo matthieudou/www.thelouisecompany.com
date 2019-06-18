@@ -19,6 +19,15 @@ export default S.listItem()
               .documentId('homeHero')
           ),
         S.listItem()
+          .title('Services')
+          .icon(HomepageIcon)
+          .child(
+            S.editor()
+              .id('homeServices')
+              .schemaType('homeServices')
+              .documentId('homeServices')
+          ),
+        S.listItem()
           .title('Other')
           .icon(HomepageIcon)
           .child(

@@ -1,7 +1,9 @@
 const initialState = () => ({
   dataIsFetched: false,
   hero: {},
-  services: {}
+  services: {},
+  citation: {},
+  clients: {}
 })
 
 export const state = initialState
@@ -25,23 +27,39 @@ export const actions = {
     if (state.dataIsFetched) return
 
     await Promise.all([
-      this.app.$sanity.fetch(fetchQuery)
+      this.app.$sanity.fetch(heroQuery)
         .then(res => {
           commit('setItem', { item: 'hero', value: res })
         }),
-      this.app.$sanity.fetch(fetchServices)
+      this.app.$sanity.fetch(citationQuery)
+        .then(res => {
+          commit('setItem', { item: 'citation', value: res })
+        }),
+      this.app.$sanity.fetch(servicesQuery)
         .then(res => {
           commit('setItem', { item: 'services', value: res })
+        }),
+      this.app.$sanity.fetch(clientsQuery)
+        .then(res => {
+          commit('setItem', { item: 'clients', value: res })
         })
     ])
     commit('setFetched')
   }
 }
 
-const fetchQuery = `
+const heroQuery = `
 *[_type == 'homeHero'][0]
 `
 
-const fetchServices = `
+const citationQuery = `
+*[_type == 'homeCitation'][0]
+`
+
+const servicesQuery = `
 *[_type == 'homeServices'][0]
+`
+
+const clientsQuery = `
+*[_type == 'homeClients'][0]
 `

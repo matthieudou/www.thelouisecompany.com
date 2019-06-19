@@ -101,6 +101,10 @@ export default {
     ]
   ],
 
+  devModules: [
+    '@nuxtjs/tailwindcss'
+  ],
+
   proxy: {
     '/.netlify': {
       target: 'http://localhost:9000',
@@ -128,13 +132,6 @@ export default {
       config.node = {
         fs: 'empty'
       }
-    },
-
-    postcss: {
-      plugins: [
-        require('tailwindcss')('./tailwind.config.js'),
-        require('autoprefixer')
-      ]
     }
   },
 

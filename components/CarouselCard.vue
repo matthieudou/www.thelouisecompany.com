@@ -73,7 +73,6 @@
 </template>
 
 <script>
-  import VLazyImage from 'v-lazy-image'
   import BaseModal from '~/components/BaseModal'
 
   export default {
@@ -125,7 +124,6 @@
     },
 
     components: {
-      VLazyImage,
       BaseModal
     }
   }

@@ -43,17 +43,12 @@
 
 <script>
   import { mapState } from 'vuex'
-  import VLazyImage from 'v-lazy-image'
 
   export default {
     computed: {
       ...mapState('home', {
         services: 'services'
       })
-    },
-
-    components: {
-      VLazyImage
     }
   }
 </script>

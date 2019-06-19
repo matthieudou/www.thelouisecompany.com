@@ -42,7 +42,8 @@ export default {
     '~/plugins/sanity',
     '~/plugins/intersection-observer.client.js',
     '~/plugins/touch-events.client.js',
-    '~/plugins/svg-icon.js'
+    '~/plugins/svg-icon.js',
+    '~/plugins/global-components.js'
   ],
 
   /*

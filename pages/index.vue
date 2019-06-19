@@ -1,13 +1,17 @@
 <template>
   <main>
     <home-hero/>
-    <home-services/>
+    <home-citation/>
+    <!-- <home-services/> -->
+    <home-clients/>
   </main>
 </template>
 
 <script>
   import HomeHero from '~/components/HomeHero'
   import HomeServices from '~/components/HomeServices'
+  import HomeCitation from '~/components/HomeCitation'
+  import HomeClients from '~/components/HomeClients'
 
   import { sectionColor } from '~/utils/mixins'
 
@@ -20,7 +24,9 @@
 
     components: {
       HomeHero,
-      HomeServices
+      HomeServices,
+      HomeCitation,
+      HomeClients
     }
   }
 </script>

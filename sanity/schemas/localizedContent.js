@@ -24,7 +24,8 @@ export const localeText = {
       title: ' ',
       description: lang.title,
       name: lang.id,
-      type: 'text'
+      type: 'text',
+      rows: 3
     }
   ))
 }

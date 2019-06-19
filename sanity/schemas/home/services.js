@@ -1,5 +1,3 @@
-import hashtagIcon from 'react-icons/lib/fa/hashtag'
-
 export default {
   title: 'Services',
   name: 'homeServices',

@@ -58,6 +58,7 @@ export default {
     }
   ],
   preview: {
+    select: {},
     prepare () {
       return {
         title: 'Hero'

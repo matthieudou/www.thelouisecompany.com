@@ -20,6 +20,8 @@ import socials from './config/socials'
 import homePage from './home/page'
 import homeHero from './home/hero'
 import homeServices from './home/services'
+import homeCitation from './home/citation'
+import homeClients from './home/clients'
 
 import productionPage from './production/page'
 import productionItem from './production/item'
@@ -60,6 +62,8 @@ export default createSchema({
     homePage,
     homeHero,
     homeServices,
+    homeCitation,
+    homeClients,
 
     productionPage,
     productionItem,

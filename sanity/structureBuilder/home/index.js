@@ -28,6 +28,24 @@ export default S.listItem()
               .documentId('homeServices')
           ),
         S.listItem()
+          .title('Citation')
+          .icon(HomepageIcon)
+          .child(
+            S.editor()
+              .id('homeCitation')
+              .schemaType('homeCitation')
+              .documentId('homeCitation')
+          ),
+        S.listItem()
+          .title('Clients')
+          .icon(HomepageIcon)
+          .child(
+            S.editor()
+              .id('homeClients')
+              .schemaType('homeClients')
+              .documentId('homeClients')
+          ),
+        S.listItem()
           .title('Other')
           .icon(HomepageIcon)
           .child(

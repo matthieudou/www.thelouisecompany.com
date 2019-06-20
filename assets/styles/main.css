@@ -79,6 +79,14 @@
   .translate-l-2 {
     transform: translateX(-0.5rem);
   }
+
+  .translate-t-2 {
+    transform: translateY(-0.5rem);
+  }
+
+  .translate-b-2 {
+    transform: translateY(0.5rem);
+  }
 }
 
 .svg-icon {

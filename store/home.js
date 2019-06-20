@@ -3,7 +3,8 @@ const initialState = () => ({
   hero: {},
   services: {},
   citation: {},
-  clients: {}
+  clients: {},
+  whoWeAre: {}
 })
 
 export const state = initialState
@@ -39,6 +40,10 @@ export const actions = {
         .then(res => {
           commit('setItem', { item: 'services', value: res })
         }),
+      this.app.$sanity.fetch(whoWeAreQuery)
+        .then(res => {
+          commit('setItem', { item: 'whoWeAre', value: res })
+        }),
       this.app.$sanity.fetch(clientsQuery)
         .then(res => {
           commit('setItem', { item: 'clients', value: res })
@@ -62,4 +67,8 @@ const servicesQuery = `
 
 const clientsQuery = `
 *[_type == 'homeClients'][0]
+`
+
+const whoWeAreQuery = `
+*[_type == 'homeWhoWeAre'][0]
 `

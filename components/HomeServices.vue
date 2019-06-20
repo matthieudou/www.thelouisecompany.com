@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto flex translate-t-32">
+    <div class="container mx-auto flex translate-t-32 max-w-5xl">
       <div
         class="px-1 w-1/4"
         v-for="service in services.services"

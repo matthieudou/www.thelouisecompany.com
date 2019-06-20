@@ -19,7 +19,7 @@
       </svg>
 
       <blockquote
-        class="mt-6 tracking-widest font-serif italic text-3xl"
+        class="mt-6 tracking-widest font-serif italic text-3xl text-center"
         v-html="localize(citation.citation)"
       />
 

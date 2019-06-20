@@ -1,5 +1,5 @@
 export default {
-  title: 'Citation section',
+  title: 'Citation',
   name: 'homeCitation',
   type: 'object',
   fields: [

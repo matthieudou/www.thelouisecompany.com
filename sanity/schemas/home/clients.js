@@ -1,5 +1,5 @@
 export default {
-  title: 'Clients section',
+  title: 'Clients',
   name: 'homeClients',
   type: 'object',
   fields: [

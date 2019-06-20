@@ -105,6 +105,10 @@ export default {
     '@nuxtjs/tailwindcss'
   ],
 
+  tailwindcss: {
+    cssPath: '~/assets/styles/main.css'
+  },
+
   proxy: {
     '/.netlify': {
       target: 'http://localhost:9000',

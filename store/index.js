@@ -1,4 +1,5 @@
 const initialState = () => ({
+  colorSections: [],
   informations: {
     sharing: {},
     socials: {}
@@ -13,8 +14,13 @@ export const mutations = {
   setSharingInformations (state, value) {
     state.informations.sharing = value
   },
+
   setItems (state, { item, value }) {
     Object.assign(state.informations[item], value)
+  },
+
+  setColorSections (state, value) {
+    state.colorSections = value
   }
 }
 

@@ -28,6 +28,15 @@ export default S.listItem()
               .documentId('homeWhoWeAre')
           ),
         S.listItem()
+          .title('Actuality')
+          .icon(HomepageIcon)
+          .child(
+            S.editor()
+              .id('homeActuality')
+              .schemaType('homeActuality')
+              .documentId('homeActuality')
+          ),
+        S.listItem()
           .title('Services')
           .icon(HomepageIcon)
           .child(

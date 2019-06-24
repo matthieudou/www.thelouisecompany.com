@@ -23,6 +23,7 @@ import homeServices from './home/services'
 import homeCitation from './home/citation'
 import homeClients from './home/clients'
 import homeWhoWeAre from './home/whoWeAre'
+import homeActuality from './home/actuality'
 
 import productionPage from './production/page'
 import productionItem from './production/item'
@@ -66,6 +67,7 @@ export default createSchema({
     homeCitation,
     homeClients,
     homeWhoWeAre,
+    homeActuality,
 
     productionPage,
     productionItem,

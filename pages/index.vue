@@ -2,6 +2,7 @@
   <main>
     <home-hero/>
     <home-who-we-are/>
+    <home-actuality/>
     <home-services/>
     <home-citation/>
     <home-clients/>
@@ -13,6 +14,7 @@
   import HomeCitation from '~/components/HomeCitation'
   import HomeClients from '~/components/HomeClients'
   import HomeWhoWeAre from '~/components/HomeWhoWeAre'
+  import HomeActuality from '~/components/HomeActuality'
   import HomeServices from '~/components/HomeServices'
 
   import { sectionColor } from '~/utils/mixins'
@@ -29,7 +31,8 @@
       HomeCitation,
       HomeClients,
       HomeWhoWeAre,
-      HomeServices
+      HomeServices,
+      HomeActuality
     }
   }
 </script>

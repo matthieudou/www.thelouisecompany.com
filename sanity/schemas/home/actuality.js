@@ -51,8 +51,30 @@ export default {
               options: {
                 hotspot: true
               }
+            },
+            {
+              name: 'logo',
+              title: 'Logo',
+              type: 'altImage',
+              options: {
+                hotspot: true
+              }
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'type',
+              thumbnail: 'thumbnail'
+            },
+            prepare ({ title, subtitle, thumbnail }) {
+              return {
+                title: title && title.en ? title.en || title.fr : '',
+                subtitle: subtitle && subtitle.en ? subtitle.en || subtitle.fr : '',
+                media: thumbnail
+              }
+            }
+          }
         }
       ]
     }

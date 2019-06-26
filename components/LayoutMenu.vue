@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="font-serif text-right tracking-menu text-3xl w-full sm:w-menu">
+        <div class="font-serif text-right tracking-menu text-3xl w-full sm:w-menu whitespace-no-wrap">
           <!-- HOME -->
           <div class="border-b border-white pb-4">
             <nuxt-link
@@ -41,26 +41,30 @@
             <nuxt-link
               class="link"
               :to="localePath('production')"
+              v-if="activePages.production"
             >
-              Production
+              Louise production
             </nuxt-link>
             <nuxt-link
               class="link"
               :to="localePath('events')"
+              v-if="activePages.events"
             >
-              Events
+              Louise Events
             </nuxt-link>
             <nuxt-link
               class="link"
-              :to="localePath('influencers')"
+              :to="localePath('management')"
+              v-if="activePages.management"
             >
-              Influencers
+              Louise Management
             </nuxt-link>
             <nuxt-link
               class="link"
               :to="localePath('charity')"
+              v-if="activePages.charity"
             >
-              Charity
+              Louise Charity
             </nuxt-link>
           </div>
 
@@ -100,7 +104,15 @@
 <script>
   import BaseSocials from '~/components/BaseSocials'
 
+  import { mapState } from 'vuex'
+
   export default {
+    computed: {
+      ...mapState({
+        activePages: state => state.informations.activePages
+      })
+    },
+
     components: {
       BaseSocials
     }

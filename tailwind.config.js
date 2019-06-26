@@ -141,7 +141,9 @@ module.exports = {
       '40': '10rem',
       '48': '12rem',
       '56': '14rem',
-      '64': '16rem'
+      '64': '16rem',
+      '72': '18rem',
+      '80': '20rem'
     },
     screens: {
       sm: '640px',
@@ -290,7 +292,7 @@ module.exports = {
       '11/12': '91.66667%',
       full: '100%',
       screen: '100vw',
-      menu: '20rem'
+      menu: '28rem'
     }),
     height: theme => ({
       auto: 'auto',
@@ -455,7 +457,7 @@ module.exports = {
     negativeMargin: ['responsive'],
     objectFit: ['responsive'],
     objectPosition: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'group-hover'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],

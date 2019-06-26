@@ -12,13 +12,22 @@ export default S.listItem()
       .title('Configuration')
       .items([
         S.listItem()
-          .title('Informations générales')
+          .title('General informations')
           .icon(ConfigIcon)
           .child(
             S.editor()
               .id('generalInformations')
               .schemaType('generalInformations')
               .documentId('config-generalInformations')
+          ),
+        S.listItem()
+          .title('Active pages')
+          .icon(ConfigIcon)
+          .child(
+            S.editor()
+              .id('configActivePages')
+              .schemaType('configActivePages')
+              .documentId('configActivePages')
           ),
         S.listItem()
           .title('Sharing')

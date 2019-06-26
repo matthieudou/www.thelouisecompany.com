@@ -16,6 +16,7 @@ import generalInformations from './config/generalInformations'
 import sharing from './config/sharing'
 import contact from './config/contact'
 import socials from './config/socials'
+import activePages from './config/activePages'
 
 import homePage from './home/page'
 import homeHero from './home/hero'
@@ -60,6 +61,7 @@ export default createSchema({
     sharing,
     contact,
     socials,
+    activePages,
 
     homePage,
     homeHero,

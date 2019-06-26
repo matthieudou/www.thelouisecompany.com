@@ -2,7 +2,8 @@ const initialState = () => ({
   colorSections: [],
   informations: {
     sharing: {},
-    socials: {}
+    socials: {},
+    activePages: {}
   }
 })
 
@@ -16,7 +17,7 @@ export const mutations = {
   },
 
   setItems (state, { item, value }) {
-    Object.assign(state.informations[item], value)
+    state.informations[item] = value
   },
 
   setColorSections (state, value) {
@@ -31,6 +32,10 @@ export const actions = {
         .then(res => {
           commit('setSharingInformations', res.sharing)
         }),
+      this.app.$sanity.fetch(activePagesQuery)
+        .then(res => {
+          commit('setItems', { item: 'activePages', value: res })
+        }),
       this.app.$sanity.fetch(socialsQuery)
         .then(res => {
           commit('setItems', { item: 'socials', value: res })
@@ -42,9 +47,14 @@ export const actions = {
 const sharingQuery = `
   *[_type == 'sharing'][0]
 `
+
 const socialsQuery = `
   *[_type == 'socials'][0] {
     catchPhrase,
     items
   }
+`
+
+const activePagesQuery = `
+*[_id == 'configActivePages'][0]
 `

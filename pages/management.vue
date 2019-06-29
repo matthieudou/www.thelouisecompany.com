@@ -1,6 +1,6 @@
 <template>
   <main>
-    INFLUENCEURS
+    MANAGEMENT
   </main>
 </template>
 

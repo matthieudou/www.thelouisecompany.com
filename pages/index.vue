@@ -1,11 +1,11 @@
 <template>
   <main>
     <home-hero/>
-    <home-who-we-are/>
     <home-actuality/>
-    <home-services/>
+    <home-who-we-are/>
     <home-citation/>
     <home-clients/>
+    <!-- <home-services/> -->
   </main>
 </template>
 

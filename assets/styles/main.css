@@ -89,6 +89,15 @@
   }
 }
 
+.no-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
 .svg-icon {
   display: inline-block;
   width: 16px;

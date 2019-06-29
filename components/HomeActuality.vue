@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto p-8">
+  <section class="container mx-auto p-12">
     <h2 class="font-serif text-4xl tracking-menu">
       {{ localize(actuality.title) }}
     </h2>

@@ -1,34 +1,37 @@
 <template>
   <header
-    class="fixed w-full top-0 flex justify-between p-8 transition z-10"
+    class="fixed inset-x-0 top-0 transition z-10"
     :class="isOpen ? 'text-white' : navbarTextColor"
   >
-    <nuxt-link
-      :to="localePath({name: 'index'})"
-      class="z-20"
-    >
-      <img
-        class="h-16"
-        src="~/assets/images/logo-tlc.png"
-        alt="Logo of the louise company"
+    <div class="container mx-auto flex justify-between p-12">
+
+      <nuxt-link
+        :to="localePath({name: 'index'})"
+        class="z-20"
       >
-    </nuxt-link>
+        <img
+          class="h-16"
+          src="~/assets/images/logo-tlc.png"
+          alt="Logo of the louise company"
+        >
+      </nuxt-link>
 
-    <nuxt-link
-      class="text-center z-20"
-      :to="localePath({name: 'index'})"
-    >
-      <div>The Louise</div>
-      <div>Company</div>
-    </nuxt-link>
+      <nuxt-link
+        class="text-center z-20"
+        :to="localePath({name: 'index'})"
+      >
+        <div>The Louise</div>
+        <div>Company</div>
+      </nuxt-link>
 
-    <layout-menu-icon
-      class="z-20"
-      @click="isOpen = !isOpen"
-      :is-open="isOpen"
-    />
+      <layout-menu-icon
+        class="z-20"
+        @click="isOpen = !isOpen"
+        :is-open="isOpen"
+      />
 
-    <layout-menu v-show="isOpen"/>
+      <layout-menu v-show="isOpen"/>
+    </div>
   </header>
 </template>
 

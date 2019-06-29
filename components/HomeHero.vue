@@ -6,7 +6,7 @@
   >
     <div/>
 
-    <div class="container mx-auto flex items-center justify-between">
+    <div class="container mx-auto p-12 flex items-center justify-between">
       <div>
         <div class="uppercase text-xs mb-4">Lorem ipsum</div>
         <h1 class="text-5xl max-w-md font-serif font-normal">We are a <span class="italic">digital</span> production agency</h1>
@@ -16,54 +16,87 @@
         </button>
 
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="text-white stroke-current fill-current"
-        width="64"
-        height="64"
-        viewBox="0 0 64 64"
-      >
-        <g
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+      <button class="focus:outline-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="text-white stroke-current fill-current"
+          width="64"
+          height="64"
+          viewBox="0 0 64 64"
         >
-          <circle
-            fill="none"
-            stroke-miterlimit="10"
-            cx="32"
-            cy="32"
-            r="30"
-          />
-          <polygon
-            data-color="color-2"
-            fill="none"
-            stroke-miterlimit="10"
-            points=" 24,46 24,18 44,32 "
-          />
-        </g>
-      </svg>
+          <g
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          >
+            <circle
+              fill="none"
+              stroke-miterlimit="10"
+              cx="32"
+              cy="32"
+              r="30"
+            />
+            <polygon
+              data-color="color-2"
+              fill="none"
+              stroke-miterlimit="10"
+              points=" 24,46 24,18 44,32 "
+            />
+          </g>
+        </svg>
+      </button>
       <div class="self-start">
         <base-socials/>
       </div>
     </div>
 
-    <div class="container mx-auto flex justify-between items-center py-8">
+    <div class="container mx-auto flex justify-between items-center p-8">
       <div>
         fr/en
       </div>
 
       <div class="font-serif text-lg">
-        <transition name="first-hash-transition">
+        <!-- <transition-group
+          name="first-hash-transition"
+          mode="out-in">
+          <span
+            class="inline-block mx-1"
+            v-for="(letter, i) in currentHashtag.hashtag1"
+            :key="'hash1' + currentHashtag._key + letter + i"
+            :style="'transition-delay: ' + i*100 + 'ms'"
+          >
+            {{ letter }}
+          </span>
+        </transition-group> -->
+        <transition
+          name="hashTransition"
+        >
           <span :key="'hash1' + currentHashtag._key">
-            #{{ currentHashtag.hashtag1 }}
+            <transition-group
+              name="hashLetterTransition"
+              appear>
+              <span
+                class="inline-block"
+                v-for="(letter, i) in currentHashtag.hashtag1"
+                :key="'hash1' + currentHashtag._key + i"
+                :style="'transition-delay: ' + i * 100 + 'ms'"
+              >
+                {{ letter }}
+              </span>
+            </transition-group>
           </span>
         </transition>
-        <transition name="second-hash-transition">
-          <span :key="'hash2' + currentHashtag._key">
-            #{{ currentHashtag.hashtag2 }}
+
+        <!-- <transition name="first-hash-transition">
+          <span
+            class="inline-block mx-1"
+            v-for="(letter, i) in currentHashtag.hashtag2"
+            :key="'hash2' + currentHashtag._key + letter + i"
+            :style="'transition-delay: ' + i*100 + 'ms'"
+          >
+            {{ letter }}
           </span>
-        </transition>
+        </transition> -->
       </div>
 
       <div>
@@ -95,7 +128,11 @@
     mounted () {
       this.currentHashtag = sample(this.hashtags)
       this.__hashInterval__ = setInterval(() => {
+        // this.currentHashtag = { _key: 'sample', hash1: '', hash2: '' }
+
         this.currentHashtag = sample(this.hashtags)
+        // setTimeout(() => {
+        // }, 2000)
       }, 5000)
     },
 
@@ -110,23 +147,39 @@
 </script>
 
 <style scoped>
-.first-hash-transition-enter-active, .first-hash-transition-leave-active {
-  transition: opacity 1s;
+/* .first-hash-transition-enter-active, .first-hash-transition-leave-active {
+  transition: 1s;
 }
 .first-hash-transition-enter, .first-hash-transition-leave-to {
   opacity: 0;
-  /* transform: rotateX(40deg); */
-  position: absolute;
-}
+  transform: translateY(-20px);
+} */
 
-.second-hash-transition-enter-active, .second-hash-transition-leave-active {
+/* .second-hash-transition-enter-active, .second-hash-transition-leave-active {
   transition: opacity 1s;
   transition-delay: 1s;
 }
 .second-hash-transition-enter, .second-hash-transition-leave-to {
   opacity: 0;
-  /* transform: rotateX(40deg); */
   position: absolute;
+} */
+
+.hashTransition-transition-enter-active, .hashTransition-transition-leave-active {
+  transition: 1s;
+  /* transition-delay: 1s; */
+}
+
+.hashTransition-transition-enter, .hashTransition-transition-leave-to {
+  opacity: 0;
+}
+
+.hashLetterTransition-transition-enter-active, .hashLetterTransition-transition-leave-active {
+  transition: 1s;
+}
+
+.hashLetterTransition-transition-enter, .hashLetterTransition-transition-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 </style>

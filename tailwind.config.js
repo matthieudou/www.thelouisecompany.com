@@ -20,7 +20,8 @@ module.exports = {
         800: '#2d3748',
         900: '#1a202c',
         'light': '#efefef',
-        'dark': '#383838'
+        'dark': '#383838',
+        'darker': '#231f20'
       },
       red: {
         100: '#fff5f5',
@@ -327,7 +328,10 @@ module.exports = {
       full: '100%',
       screen: '100vh'
     },
-    padding: theme => theme('spacing'),
+    padding: theme => ({
+      ...theme('spacing'),
+      'full': '100%'
+    }),
     margin: (theme, { negative }) => ({
       auto: 'auto',
       ...theme('spacing'),

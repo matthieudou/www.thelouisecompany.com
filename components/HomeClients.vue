@@ -1,16 +1,16 @@
 <template>
-  <section class="pt-24 bg-gray-dark text-white">
-    <div class="container mx-auto flex">
-      <div class="w-2/5">
-        <h2 class="font-serif text-5xl tracking-widest">{{ localize(clients.title) }}</h2>
+  <section class="md:pt-40 bg-gray-dark text-white">
+    <div class="container mx-auto p-12 flex flex-wrap">
+      <div class="w-full md:w-2/5">
+        <h2 class="font-serif text-5xl md:text-4xl lg:text-5xl tracking-widest">{{ localize(clients.title) }}</h2>
         <p class="w-64 mt-12">
           {{ localize(clients.content) }}
         </p>
       </div>
 
-      <div class="w-3/5 mt-16 flex flex-wrap items-center">
+      <div class="w-full md:w-3/5 mt-16 flex flex-wrap items-center">
         <div
-          class="w-1/3 p-8"
+          class="w-full sm:w-1/3 p-8"
           v-for="client in clients.clients"
           :key="client._client"
           :title="client.name"

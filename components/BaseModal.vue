@@ -1,5 +1,8 @@
 <template>
-  <transition name="modal">
+  <transition
+    name="modal"
+    appear
+  >
 
     <!-- BACKGROUND BLACK TRANSPARENT -->
     <div
@@ -7,10 +10,43 @@
       :class="backgroundClass"
       @click.self="close"
     >
+      <button
+        class="absolute top-0 right-0 p-8 md:p-12 focus:outline-none"
+        @click="$emit('close')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24.749"
+          height="24.749"
+          viewBox="0 0 24.749 24.749">
+          <line
+            id="Ligne_50"
+            data-name="Ligne 50"
+            y1="23.335"
+            x2="23.335"
+            transform="translate(0.707 0.707)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="1"/>
+          <line
+            id="Ligne_51"
+            data-name="Ligne 51"
+            x2="23.335"
+            y2="23.335"
+            transform="translate(0.707 0.707)"
+            fill="none"
+            stroke="#fff"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="1"/>
+        </svg>
+      </button>
 
       <!-- MODAL CONTAINER -->
       <div
-        class="modal__container w-full m-auto rounded shadow transition bg-white"
+        class="modal__container w-full m-auto transition"
         :class="computeClasses"
       >
         <slot/>
@@ -74,7 +110,4 @@
     transform: translateY(50px);
   }
 
-  .bg-transparent-black {
-    background-color: rgba(0, 0, 0, 0.3)
-  }
 </style>

@@ -163,10 +163,4 @@
   top: 50%;
   left: 50%;
 }
-
-.embed-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  width: 100%;
-}
 </style>

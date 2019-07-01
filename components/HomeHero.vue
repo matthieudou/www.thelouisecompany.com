@@ -1,108 +1,194 @@
 <template>
   <section
     id="hero"
-    class="h-screen bg-gray-900 relative flex flex-col justify-between text-white"
+    class="min-h-screen relative text-white"
     data-section-color="text-white"
   >
-    <div/>
-
-    <div class="container mx-auto p-12 flex items-center justify-between">
-      <div>
-        <div class="uppercase text-xs mb-4">Lorem ipsum</div>
-        <h1 class="text-5xl max-w-md font-serif font-normal">We are a <span class="italic">digital</span> production agency</h1>
-        <button class="w-32 flex items-center mt-4 focus:outline-none group">
-          <div class="flex-1 h-px bg-white mr-6"/>
-          <div class="group-hover:translate-r-2 transition">Discover</div>
-        </button>
-
-      </div>
-      <button class="focus:outline-none">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="text-white stroke-current fill-current"
-          width="64"
-          height="64"
-          viewBox="0 0 64 64"
+    <!-- BG VIDEO -->
+    <div class="absolute inset-0 overflow-hidden">
+      <video
+        class="w-full h-full object-cover "
+        autoplay
+        loop
+        muted
+        poster="https://ichef.bbci.co.uk/news/660/cpsprodpb/16CDE/production/_106260439_438.jpg"
+      >
+        <source
+          v-if="showVideo"
+          src="~/assets/videos/backgroundVideo.webm"
+          type="video/webm"
         >
-          <g
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          >
-            <circle
-              fill="none"
-              stroke-miterlimit="10"
-              cx="32"
-              cy="32"
-              r="30"
-            />
-            <polygon
-              data-color="color-2"
-              fill="none"
-              stroke-miterlimit="10"
-              points=" 24,46 24,18 44,32 "
-            />
-          </g>
-        </svg>
-      </button>
-      <div class="self-start">
-        <base-socials/>
-      </div>
+        <source
+          v-if="showVideo"
+          src="~/assets/videos/backgroundVideo.mp4"
+          type="video/mp4"
+        >
+      </video>
     </div>
 
-    <div class="container mx-auto flex justify-between items-center p-8">
-      <div>
-        fr/en
-      </div>
+    <!-- BLACK TRANSPARENT LAYER -->
+    <div class="absolute inset-0 bg-black opacity-75"/>
 
-      <div class="font-serif text-lg">
-        <!-- <transition-group
-          name="first-hash-transition"
-          mode="out-in">
-          <span
-            class="inline-block mx-1"
-            v-for="(letter, i) in currentHashtag.hashtag1"
-            :key="'hash1' + currentHashtag._key + letter + i"
-            :style="'transition-delay: ' + i*100 + 'ms'"
+    <div class="absolute inset-0 flex flex-col justify-between">
+
+      <div class="h-12 p-12"/>
+
+      <div class="container mx-auto p-8 md:p-12 flex items-center justify-between">
+
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="w-full lg:w-7/12 flex-shrink-0 pr-8 lg:pr-0">
+            <div class="uppercase text-xs mb-4">Lorem ipsum</div>
+            <h1 class="text-3xl md:text-5xl font-serif font-normal tracking-widest leading-tight">{{ localize(hero.title) }}</h1>
+            <button class="w-32 flex items-center mt-4 focus:outline-none group">
+              <div class="flex-1 h-px bg-white mr-6"/>
+              <div class="group-hover:translate-r-2 transition">Discover</div>
+            </button>
+
+          </div>
+
+          <button
+            class="w-full lg:w-5/12 flex items-center lg:justify-center focus:outline-none mt-12 lg:mt-0"
+            @click="videoOpen = true"
           >
-            {{ letter }}
-          </span>
-        </transition-group> -->
-        <transition
-          name="hashTransition"
-        >
-          <span :key="'hash1' + currentHashtag._key">
-            <transition-group
-              name="hashLetterTransition"
-              appear>
-              <span
-                class="inline-block"
-                v-for="(letter, i) in currentHashtag.hashtag1"
-                :key="'hash1' + currentHashtag._key + i"
-                :style="'transition-delay: ' + i * 100 + 'ms'"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="text-white stroke-current fill-current"
+              width="64"
+              height="64"
+              viewBox="0 0 64 64"
+            >
+              <g
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
               >
-                {{ letter }}
-              </span>
-            </transition-group>
-          </span>
-        </transition>
+                <circle
+                  fill="none"
+                  stroke-miterlimit="10"
+                  cx="32"
+                  cy="32"
+                  r="30"
+                />
+                <polygon
+                  data-color="color-2"
+                  fill="none"
+                  stroke-miterlimit="10"
+                  points=" 24,46 24,18 44,32 "
+                />
+              </g>
+            </svg>
+            <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
+              Lire la vidéo
+            </div>
+          </button>
+        </div>
 
-        <!-- <transition name="first-hash-transition">
-          <span
-            class="inline-block mx-1"
-            v-for="(letter, i) in currentHashtag.hashtag2"
-            :key="'hash2' + currentHashtag._key + letter + i"
-            :style="'transition-delay: ' + i*100 + 'ms'"
-          >
-            {{ letter }}
-          </span>
-        </transition> -->
+        <div class="self-start">
+          <base-socials/>
+        </div>
       </div>
 
-      <div>
-        down
+      <div class="container mx-auto flex justify-between items-center p-12">
+
+        <div class="text-sm">
+          <nuxt-link
+            :to="switchLocalePath('fr')"
+            class="opacity-50 transition"
+            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}"
+          >
+            Fr
+          </nuxt-link>
+          <span class="opacity-75">/</span>
+          <nuxt-link
+            :to="switchLocalePath('en')"
+            class="opacity-50 transition"
+            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}"
+          >
+            En
+          </nuxt-link>
+        </div>
+
+        <div class="font-serif text-lg flex flex-1">
+          <transition name="hashTransition">
+            <div
+              class="inline-block w-1/2 text-right"
+              :key="'hash1' + currentHashtag._key">
+              {{ currentHashtag.hashtag1 }}
+            </div>
+          </transition>
+
+          <transition name="hashTransition">
+            <div
+              class="inline-block w-1/2"
+              style="transition-delay: .5s"
+              :key="'hash2' + currentHashtag._key"
+            >
+              {{ currentHashtag.hashtag2 }}
+            </div>
+          </transition>
+        </div>
+
+        <button
+          class="p-2 focus:outline-none"
+          @click="$scrollTo('#actuality')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="7.657"
+            height="21"
+            viewBox="0 0 7.657 21">
+            <g
+              id="Groupe_292"
+              data-name="Groupe 292"
+              transform="translate(-3055.638 -1390.037)">
+              <g
+                id="Groupe_291"
+                data-name="Groupe 291">
+                <line
+                  id="Ligne_64"
+                  data-name="Ligne 64"
+                  y2="19"
+                  transform="translate(3059.467 1391.037)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"/>
+                <path
+                  id="Tracé_384"
+                  data-name="Tracé 384"
+                  d="M3062.3,1407.209l-2.828,2.828-2.828-2.828"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"/>
+              </g>
+            </g>
+          </svg>
+
+        </button>
       </div>
     </div>
+
+    <base-modal
+      v-if="videoOpen"
+      @close="videoOpen = false"
+      size="3xl"
+      background-class="bg-transparent-black"
+    >
+      <div class="embed-responsive">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          :src="iframeEmbedUrl"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+          autoplay=1
+        />
+      </div>
+    </base-modal>
   </section>
 </template>
 
@@ -115,22 +201,33 @@
   export default {
     data () {
       return {
+        videoOpen: false,
         currentHashtag: {}
       }
     },
 
     computed: {
       ...mapState('home', {
-        hashtags: state => state.hero.hashtags
-      })
+        hero: 'hero'
+      }),
+
+      showVideo () {
+        if (process.client) return !['sm', 'md'].includes(this.$mq)
+        return false
+      },
+
+      iframeEmbedUrl () {
+        const link = new URL(this.hero.videoLink)
+        return 'https://player.vimeo.com/video/' + link.pathname.replace('/', '') + '?autoplay=1'
+      }
     },
 
     mounted () {
-      this.currentHashtag = sample(this.hashtags)
+      this.currentHashtag = sample(this.hero.hashtags)
       this.__hashInterval__ = setInterval(() => {
         // this.currentHashtag = { _key: 'sample', hash1: '', hash2: '' }
 
-        this.currentHashtag = sample(this.hashtags)
+        this.currentHashtag = sample(this.hero.hashtags)
         // setTimeout(() => {
         // }, 2000)
       }, 5000)
@@ -141,45 +238,20 @@
     },
 
     components: {
-      BaseSocials
+      BaseSocials,
+      BaseModal: () => import('~/components/BaseModal')
     }
   }
 </script>
 
 <style scoped>
-/* .first-hash-transition-enter-active, .first-hash-transition-leave-active {
-  transition: 1s;
-}
-.first-hash-transition-enter, .first-hash-transition-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-} */
-
-/* .second-hash-transition-enter-active, .second-hash-transition-leave-active {
-  transition: opacity 1s;
-  transition-delay: 1s;
-}
-.second-hash-transition-enter, .second-hash-transition-leave-to {
-  opacity: 0;
-  position: absolute;
-} */
-
 .hashTransition-transition-enter-active, .hashTransition-transition-leave-active {
   transition: 1s;
-  /* transition-delay: 1s; */
 }
 
 .hashTransition-transition-enter, .hashTransition-transition-leave-to {
   opacity: 0;
+  transform: translateX(20px);
+  position: absolute;
 }
-
-.hashLetterTransition-transition-enter-active, .hashLetterTransition-transition-leave-active {
-  transition: 1s;
-}
-
-.hashLetterTransition-transition-enter, .hashLetterTransition-transition-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
 </style>

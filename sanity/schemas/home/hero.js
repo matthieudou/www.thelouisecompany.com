@@ -21,6 +21,12 @@ export default {
       type: 'localeString'
     },
     {
+      name: 'videoLink',
+      title: 'Video link',
+      description: 'Vimeo link of the opened background video',
+      type: 'url'
+    },
+    {
       name: 'hashtags',
       title: 'Hashtags',
       type: 'array',

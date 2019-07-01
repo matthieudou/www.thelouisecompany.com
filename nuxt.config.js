@@ -44,7 +44,8 @@ export default {
     '~/plugins/intersection-observer.client.js',
     '~/plugins/touch-events.client.js',
     '~/plugins/svg-icon.js',
-    '~/plugins/global-components.js'
+    '~/plugins/global-components.js',
+    '~/plugins/vue-mq.client.js'
   ],
 
   /*

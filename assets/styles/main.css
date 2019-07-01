@@ -112,3 +112,9 @@
   fill: currentColor;
   stroke: none;
 }
+
+.embed-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  width: 100%;
+}

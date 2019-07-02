@@ -26,7 +26,10 @@
         <menu-closed/>
       </button>
 
-      <layout-menu v-show="isOpen"/>
+      <layout-menu
+        @close="isOpen = false"
+        v-show="isOpen"
+      />
     </div>
   </header>
 </template>

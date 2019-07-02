@@ -111,6 +111,10 @@ export default {
     cssPath: '~/assets/styles/main.css'
   },
 
+  purgeCSS: {
+    whitelist: ['body', 'html', 'nuxt-progress', 'v-lazy-image-loaded']
+  },
+
   proxy: {
     '/.netlify': {
       target: 'http://localhost:9000',
@@ -138,6 +142,15 @@ export default {
       config.node = {
         fs: 'empty'
       }
+
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'vue-svg-loader'
+      })
     }
   },
 

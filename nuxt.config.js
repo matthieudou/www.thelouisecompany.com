@@ -112,7 +112,11 @@ export default {
   },
 
   purgeCSS: {
-    whitelist: ['body', 'html', 'nuxt-progress', 'v-lazy-image-loaded']
+    whitelist: ['body', 'html', 'nuxt-progress'],
+    whitelistPatterns: [
+      /^svg-.*/,
+      /^v-lazy.*/
+    ]
   },
 
   proxy: {

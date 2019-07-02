@@ -2,13 +2,11 @@
   <div class="bg-white h-full font-sans">
     <layout-navigation/>
     <nuxt/>
-    <layout-footer/>
   </div>
 </template>
 
 <script>
   import LayoutNavigation from '~/components/LayoutNavigation'
-  import LayoutFooter from '~/components/LayoutFooter'
 
   import { mapState } from 'vuex'
 
@@ -43,8 +41,7 @@
     },
 
     components: {
-      LayoutNavigation,
-      LayoutFooter
+      LayoutNavigation
     }
   }
 </script>

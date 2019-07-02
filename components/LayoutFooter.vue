@@ -1,27 +1,41 @@
 <template>
-  <footer class="bg-gray-800">
-    <div class="flex justify-between flex-wrap text-white p-8 md:p-12 container mx-auto">
+  <footer>
+    <div class=" flex justify-between flex-wrap border-t border-white">
+      <div class="w-full lg:w-auto flex justify-center">
+        <full-logo class="mt-4"/>
+      </div>
       <!-- ADDRESS -->
-      <div>
-        <h3 class="uppercase">Notre adresse</h3>
-        <address>
-          <div>Rue xxx</div>
-          <div>1040 Etterbeek</div>
-          <div>Belgique</div>
+      <div class="mt-8 sm:w-1/2 md:w-auto">
+        <h3 class="mb-2 uppercase text-xs font-black tracking-widest">Notre adresse</h3>
+        <address class="not-italic">
+          <div class="mt-1">{{ localize(contact.streetName) }} {{ contact.streetNumber }}</div>
+          <div class="mt-1">{{ contact.postalCode }} {{ localize(contact.city) }}</div>
+          <div class="mt-1">{{ localize(contact.country) }}</div>
         </address>
       </div>
 
       <!-- CONTACT -->
-      <div>
-        <h3 class="uppercase">Tel</h3>
-        <div>0471 30 46 75</div>
-        <h3 class="uppercase">Email</h3>
-        <div>matthieu.doultremont@gmail.com</div>
+      <div class="mt-8 sm:w-1/2 md:w-auto">
+        <h3 class="mb-2 uppercase text-xs font-black tracking-widest">Tel</h3>
+        <a
+          class="block"
+          :href="`tel:${contact.phone}`"
+        >
+          {{ contact.phone }}
+        </a>
+
+        <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">Email</h3>
+        <a
+          class="block"
+          :href="`mailto:${contact.email}`"
+        >
+          {{ contact.email }}
+        </a>
       </div>
 
       <!-- INFORMATIONS -->
-      <div>
-        <h3 class="uppercase">Informations</h3>
+      <div class="mt-8 sm:w-1/2 md:w-auto">
+        <h3 class="uppercase text-xs font-black tracking-widest mb-2">Informations</h3>
         <div>Conditions générales</div>
         <div>Mentions légales</div>
       </div>
@@ -30,7 +44,19 @@
 </template>
 
 <script>
-  export default {
+  import FullLogo from '~/assets/images/ressources/logo.svg'
 
+  import { mapState } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapState({
+        contact: state => state.informations.contact
+      })
+    },
+
+    components: {
+      FullLogo
+    }
   }
 </script>

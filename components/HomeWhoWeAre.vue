@@ -1,8 +1,8 @@
 <template>
   <section class="mt-16">
-    <div class="container mx-auto p-12 flex flex-col md:flex-row">
+    <div class="container mx-auto p-12 flex flex-col md:flex-row md:items-center">
       <v-lazy-image
-        class="w-full md:w-2/5 h-64 object-cover"
+        class="w-full h-full md:w-2/5 object-contain"
         :src="urlFor(whoWeAre.thumbnail).url()"
         :src-placeholder="urlFor(whoWeAre.thumbnail).width(20).url()"
       />
@@ -34,7 +34,7 @@
       <div class="hidden lg:block w-2/5"/>
       <v-lazy-image
         class="h-full"
-        :src="require('~/assets/images/tlcScript.svg')"
+        src="~/assets/images/tlcScript.svg"
       />
     </div>
   </section>

@@ -3,7 +3,8 @@ const initialState = () => ({
   informations: {
     sharing: {},
     socials: {},
-    activePages: {}
+    activePages: {},
+    contact: {}
   }
 })
 
@@ -39,6 +40,10 @@ export const actions = {
       this.app.$sanity.fetch(socialsQuery)
         .then(res => {
           commit('setItems', { item: 'socials', value: res })
+        }),
+      this.app.$sanity.fetch(contact)
+        .then(res => {
+          commit('setItems', { item: 'contact', value: res })
         })
     ])
   }
@@ -49,12 +54,13 @@ const sharingQuery = `
 `
 
 const socialsQuery = `
-  *[_type == 'socials'][0] {
-    catchPhrase,
-    items
-  }
+  *[_type == 'socials'][0]
 `
 
 const activePagesQuery = `
-*[_id == 'configActivePages'][0]
+  *[_id == 'configActivePages'][0]
+`
+
+const contact = `
+  *[_id == 'config-contact'][0]
 `

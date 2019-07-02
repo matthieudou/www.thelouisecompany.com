@@ -9,160 +9,21 @@
         :to="localePath({name: 'index'})"
         class="z-20"
       >
-        <img
-          class="h-16"
-          src="~/assets/images/logo-tlc.png"
-          alt="Logo of the louise company"
-        >
+        <logo-round class="h-16"/>
       </nuxt-link>
 
       <nuxt-link
         class="hidden md:block z-20"
         :to="localePath({name: 'index'})"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="154.228"
-          height="39.746"
-          viewBox="0 0 154.228 39.746">
-          <g
-            id="Groupe_262"
-            data-name="Groupe 262"
-            transform="translate(-2382.819 -754.208)">
-            <g
-              id="Groupe_261"
-              data-name="Groupe 261">
-              <path
-                id="Tracé_350"
-                data-name="Tracé 350"
-                d="M2388.879,758.246H2386.7v8.529H2385v-8.529h-2.183v-1.695h6.06Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_351"
-                data-name="Tracé 351"
-                d="M2403.453,756.656v10.035h-1.694v-4.2h-3.578v4.2h-1.695V756.656h1.695v4.139h3.578v-4.139Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_352"
-                data-name="Tracé 352"
-                d="M2412.757,758.443v2.535h3.444v1.694h-3.444v2.408h4.2v1.7h-5.9V756.749h5.9v1.694Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_353"
-                data-name="Tracé 353"
-                d="M2446.517,764.725v2.056h-6.585V754.5h2.057v10.225Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_354"
-                data-name="Tracé 354"
-                d="M2468.791,760.263v.457a6.055,6.055,0,1,1-12.109,0v-.457a6.055,6.055,0,1,1,12.109,0Zm-2.055,0a4,4,0,1,0-8,0v.457a4,4,0,1,0,8,0Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_355"
-                data-name="Tracé 355"
-                d="M2487.924,754.465v7.521a6.023,6.023,0,0,1-.525,2.309,4.386,4.386,0,0,1-7.9,0,6.023,6.023,0,0,1-.525-2.309v-7.521h2.057v7.521a4.041,4.041,0,0,0,.358,1.5,2.336,2.336,0,0,0,4.143-.045,4.115,4.115,0,0,0,.337-1.453v-7.521Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_356"
-                data-name="Tracé 356"
-                d="M2498.442,766.673V754.5h2.057v12.177Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_357"
-                data-name="Tracé 357"
-                d="M2519.313,763.682l-.008.034a4.077,4.077,0,0,1-4.267,3.059,4.179,4.179,0,0,1-2.87-1.1,3.879,3.879,0,0,1-1.117-1.894c.624-.25,1.257-.486,1.884-.729.018.05.039.1.061.152a.21.21,0,0,0,.034.093l.01.02c.007.021.013.043.019.064a.642.642,0,0,0,.087.172,2.061,2.061,0,0,0,1.892,1.155c1.53,0,2.123-.857,2.237-1.376.054-.377.155-1.311-1.734-1.74l-1.493-.355c-1.97-.42-3.011-1.542-3.011-3.244,0-2.157,2.069-3.49,3.986-3.49a3.731,3.731,0,0,1,3.88,2.77q-.939.43-1.871.875a1.78,1.78,0,0,0-.179-.567.616.616,0,0,0-.089-.161,1.918,1.918,0,0,0-1.741-.853c-.916,0-1.9.573-1.9,1.426,0,.326,0,.93,1.367,1.244l1.508.339C2518.427,760.133,2519.634,761.629,2519.313,763.682Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_358"
-                data-name="Tracé 358"
-                d="M2531.947,756.665v3.077h4.18V761.8h-4.18v2.921h5.1v2.057h-7.156V754.608h7.156v2.057Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_359"
-                data-name="Tracé 359"
-                d="M2394.366,790.7a6.054,6.054,0,0,1-11.413-2.816v-.457a6.054,6.054,0,0,1,11.383-2.873l-1.781,1.028a4,4,0,0,0-7.545,1.845v.457a4,4,0,0,0,7.574,1.788Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_360"
-                data-name="Tracé 360"
-                d="M2420.225,787.423v.457a6.055,6.055,0,1,1-12.109,0v-.457a6.055,6.055,0,0,1,12.109,0Zm-2.057,0a4,4,0,1,0-8,0v.457a4,4,0,1,0,8,0Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_361"
-                data-name="Tracé 361"
-                d="M2444.846,781.4v12.427h-2.055v-7.061l-2.47,2.75v0l-.1.112-.137.151h0l-.753.815-.73-.814h0l-2.545-2.832v6.877h-2.055V781.584l2.055,2.288,3.289,3.662,3.453-3.845Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_362"
-                data-name="Tracé 362"
-                d="M2464.758,789.133a5.429,5.429,0,0,1-2.978.733c-.259,0-.508-.01-.748-.023v4.111h-2.057V781.662h2.057v.032a10.183,10.183,0,0,1,1.937.1,4.209,4.209,0,0,1,3.391,2.678A4.039,4.039,0,0,1,2464.758,789.133Zm-.346-4a2.195,2.195,0,0,0-1.777-1.308,8.408,8.408,0,0,0-1.6-.07v4.032a4.492,4.492,0,0,0,2.62-.383A1.962,1.962,0,0,0,2464.412,785.129Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_363"
-                data-name="Tracé 363"
-                d="M2487.011,791.144h-3.389l-.787,2.791H2480.7l3.418-12.124h2.4l3.419,12.124H2487.8Zm-.579-2.057-1.115-3.955-1.116,3.955Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_364"
-                data-name="Tracé 364"
-                d="M2513.089,781.7v12.209h-1.461l-5.509-7.72v7.642h-2.056V781.7h1.379l5.59,7.834V781.7Z"
-                fill="#fff"/>
-              <path
-                id="Tracé_365"
-                data-name="Tracé 365"
-                d="M2537.026,781.641l-3.828,6.381v5.86h-2.057v-5.859l-3.943-6.382h2.372l2.542,4.424,2.543-4.424Z"
-                fill="#fff"/>
-            </g>
-          </g>
-        </svg>
-
+        <logo-name/>
       </nuxt-link>
 
-      <!-- <layout-menu-icon
-        class="z-20"
-        @click="isOpen = !isOpen"
-        :is-open="isOpen"
-      /> -->
       <button
         class="focus:outline-none z-20"
         @click="isOpen = !isOpen"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="34"
-          height="22"
-          viewBox="0 0 34 22">
-          <line
-            id="Ligne_54"
-            data-name="Ligne 54"
-            x2="33"
-            transform="translate(0.5 0.5)"
-            fill="none"
-            stroke="#fff"
-            stroke-linecap="square"
-            stroke-miterlimit="10"
-            stroke-width="1"/>
-          <line
-            id="Ligne_55"
-            data-name="Ligne 55"
-            x2="16"
-            transform="translate(0.5 21.5)"
-            fill="none"
-            stroke="#fff"
-            stroke-linecap="square"
-            stroke-miterlimit="10"
-            stroke-width="1"/>
-          <line
-            id="Ligne_56"
-            data-name="Ligne 56"
-            x2="33"
-            transform="translate(0.5 11.5)"
-            fill="none"
-            stroke="#fff"
-            stroke-linecap="square"
-            stroke-miterlimit="10"
-            stroke-width="1"/>
-        </svg>
+        <menu-closed/>
       </button>
 
       <layout-menu v-show="isOpen"/>
@@ -173,6 +34,9 @@
 <script>
   import LayoutMenuIcon from '~/components/LayoutMenuIcon'
   import LayoutMenu from '~/components/LayoutMenu'
+  import LogoRound from '~/assets/images/ressources/logoRound.svg'
+  import LogoName from '~/assets/images/ressources/logoName.svg'
+  import MenuClosed from '~/assets/images/icons/menuClosed.svg'
 
   import { mapState } from 'vuex'
 
@@ -185,9 +49,9 @@
     },
 
     computed: {
-      ...mapState([
-        'colorSections'
-      ])
+      ...mapState({
+        colorSections: 'colorSections'
+      })
     },
 
     methods: {
@@ -227,7 +91,10 @@
 
     components: {
       LayoutMenuIcon,
-      LayoutMenu
+      LayoutMenu,
+      LogoRound,
+      LogoName,
+      MenuClosed
     }
   }
 </script>

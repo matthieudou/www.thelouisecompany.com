@@ -20,10 +20,22 @@
       </nuxt-link>
 
       <button
-        class="focus:outline-none z-20"
+        class="focus:outline-none z-20 w-10 h-10 flex items-center justify-center"
         @click="isOpen = !isOpen"
       >
-        <menu-closed/>
+        <transition
+          name="spin"
+        >
+          <!-- mode="out-in" -->
+          <menu-closed
+            key="menuClosed"
+            class="absolute"
+            v-if="!isOpen"/>
+          <menu-open
+            key="menuOpen"
+            class="absolute"
+            v-if="isOpen"/>
+        </transition>
       </button>
 
       <layout-menu
@@ -40,6 +52,7 @@
   import LogoRound from '~/assets/images/ressources/logoRound.svg'
   import LogoName from '~/assets/images/ressources/logoName.svg'
   import MenuClosed from '~/assets/images/icons/menuClosed.svg'
+  import MenuOpen from '~/assets/images/icons/menuOpen.svg'
 
   import { mapState } from 'vuex'
 
@@ -97,18 +110,19 @@
       LayoutMenu,
       LogoRound,
       LogoName,
-      MenuClosed
+      MenuClosed,
+      MenuOpen
     }
   }
 </script>
 
 <style scoped>
-.fadeInRight-enter-active, .fadeInRight-leave-active {
+.spin-enter-active, .spin-leave-active {
   transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.fadeInRight-enter, .fadeInRight-leave-to {
+.spin-enter, .spin-leave-to {
   opacity: 0;
-  transform: translateX(10px);
+  transform: rotate(100deg);
 }
 </style>

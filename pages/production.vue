@@ -56,29 +56,29 @@
   export default {
     mixins: [sectionColor],
 
-    // head () {
-    //   return {
-    //     title: this.localize(this.title),
+    head () {
+      return {
+        title: this.localize(this.production.title),
 
-    //     meta: [
-    //       { hid: 'description', name: 'description', content: this.localize(this.meta.description) },
+        meta: [
+          { hid: 'description', name: 'description', content: this.localize(this.production.meta.description) },
 
-    //       // OG
-    //       { hid: 'og:type', property: 'og:type', content: 'website' },
-    //       { hid: 'og:url', property: 'og:url', content: process.env.URL },
-    //       { hid: 'og:title', property: 'og:title', content: this.localize(this.title) },
-    //       { hid: 'og:description', property: 'og:description', content: this.localize(this.meta.description) },
-    //       { hid: 'og:image', property: 'og:image', content: this.urlFor(this.meta.image).width(1200).height(630).url() },
+          // OG
+          { hid: 'og:type', property: 'og:type', content: 'website' },
+          { hid: 'og:url', property: 'og:url', content: process.env.URL },
+          { hid: 'og:title', property: 'og:title', content: this.localize(this.production.title) },
+          { hid: 'og:description', property: 'og:description', content: this.localize(this.production.meta.description) },
+          { hid: 'og:image', property: 'og:image', content: this.urlFor(this.production.meta.image).width(1200).height(630).url() },
 
-    //       // TWITTER
-    //       { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
-    //       { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL },
-    //       { hid: 'twitter:title', property: 'twitter:title', content: this.localize(this.title) },
-    //       { hid: 'twitter:description', property: 'twitter:description', content: this.localize(this.meta.description) },
-    //       { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.meta.image).width(1200).height(600).url() }
-    //     ]
-    //   }
-    // },
+          // TWITTER
+          { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+          { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL },
+          { hid: 'twitter:title', property: 'twitter:title', content: this.localize(this.production.title) },
+          { hid: 'twitter:description', property: 'twitter:description', content: this.localize(this.production.meta.description) },
+          { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.production.meta.image).width(1200).height(600).url() }
+        ]
+      }
+    },
 
     async fetch ({ store }) {
       await store.dispatch('production/fetch')

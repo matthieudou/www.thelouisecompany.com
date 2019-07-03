@@ -27,6 +27,12 @@ export default {
       type: 'url'
     },
     {
+      name: 'backgroundImage',
+      title: 'Background image',
+      description: 'Image is displayed when video is not loaded and on mobile',
+      type: 'image'
+    },
+    {
       name: 'hashtags',
       title: 'Hashtags',
       type: 'array',

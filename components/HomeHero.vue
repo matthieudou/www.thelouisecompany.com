@@ -11,7 +11,7 @@
         autoplay
         loop
         muted
-        poster="https://ichef.bbci.co.uk/news/660/cpsprodpb/16CDE/production/_106260439_438.jpg"
+        :poster="urlFor(hero.backgroundImage)"
       >
         <source
           v-if="showVideo"

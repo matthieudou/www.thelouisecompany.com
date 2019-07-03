@@ -1,23 +1,96 @@
 <template>
-  <section
-    class="bg-cover h-3/4-screen flex items-center justify-center"
-    :style="`background-image: url(${urlFor(image.asset || '')});`"
-  >
-    <h1 class="text-4xl font-bold">{{ localize(title) }}</h1>
+  <section>
+    <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between">
+      <!-- IMAGES -->
+      <div class="rounded-full overflow-hidden border-8 border-blue-light w-80 h-80 flex-shrink-0 relative mr-24">
+        <transition name="fade">
+          <v-lazy-image
+            :key="number"
+            class="inset-0 w-full h-full absolute object-cover"
+            :src="urlFor(images[number]).url()"
+            :src-placeholder="urlFor(images[number]).width(20).url()"
+          />
+        </transition>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="mr-24 self-end">
+        <h1 class="text-4xl font-serif tracking-widest">
+          <div class="-mb-3">
+            Louise
+          </div>
+          <div>
+            {{ title }}
+          </div>
+        </h1>
+        <p class="mt-4 leading-loose">
+          {{ text }}
+        </p>
+
+        <button
+          class="mt-12 focus:outline-none"
+          @click="$scrollTo('#main')"
+        >
+          <arrow-down-circle/>
+        </button>
+      </div>
+
+      <!-- SOCIALS -->
+      <base-socials class="self-center"/>
+    </div>
   </section>
 </template>
 
 <script>
+  import BaseSocials from '~/components/BaseSocials'
+  import ArrowDownCircle from '~/assets/images/icons/arrowDownCircle.svg'
+
+  import random from 'lodash/random'
+
   export default {
     props: {
-      image: {
-        type: Object,
+      images: {
+        type: Array,
         required: true
       },
       title: {
-        type: Object,
-        default: () => ({})
+        type: String,
+        default: ''
+      },
+      text: {
+        type: String,
+        default: ''
       }
+    },
+
+    data () {
+      return {
+        number: random(this.images.length - 1)
+      }
+    },
+
+    mounted () {
+      this.__headerInterval__ = setInterval(() => {
+        this.number = random(this.images.length - 1)
+      }, 5000)
+    },
+
+    beforeDestroy () {
+      clearInterval(this.__headerInterval__)
+    },
+
+    components: {
+      BaseSocials,
+      ArrowDownCircle
     }
   }
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

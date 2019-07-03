@@ -1,43 +1,30 @@
+import isEmpty from 'lodash/isEmpty'
+
 const initialState = () => ({
-  title: '',
-  image: {},
-  items: [],
-  meta: {}
+  item: {}
 })
 
 export const state = initialState
 
-export const getters = {
-
-}
+export const getters = {}
 
 export const mutations = {
-  setItems (state, value) {
-    Object.assign(state, {
-      title: value.title,
-      image: value.image,
-      meta: value.meta,
-      items: value.productionItems
-    })
+  setItem (state, value) {
+    state.item = value
   }
 }
 
 export const actions = {
   fetch ({ state, commit }) {
-    if (state.items.length > 0) return
+    if (!isEmpty(state.item)) return
 
     return this.app.$sanity.fetch(fetchQuery)
       .then(res => {
-        commit('setItems', res)
+        commit('setItem', res)
       })
   }
 }
 
 const fetchQuery = `
-  *[_type == 'productionPage'] {
-    title,
-    image,
-    meta,
-    productionItems
-  }[0]
+*[_id == 'productionPage'][0]
 `

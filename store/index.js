@@ -1,5 +1,5 @@
 const initialState = () => ({
-  colorSections: [],
+  menuColor: 'text-white',
   informations: {
     sharing: {},
     socials: {},
@@ -21,8 +21,8 @@ export const mutations = {
     state.informations[item] = value
   },
 
-  setColorSections (state, value) {
-    state.colorSections = value
+  setMenuColor (state, value) {
+    state.menuColor = value
   }
 }
 

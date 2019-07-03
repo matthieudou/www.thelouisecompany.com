@@ -1,7 +1,7 @@
 <template>
   <header
     class="fixed inset-x-0 top-0 transition z-10"
-    :class="isOpen ? 'text-white' : navbarTextColor"
+    :class="isOpen ? 'text-white' : menuColor"
   >
     <div class="container mx-auto flex justify-between items-center p-8 md:p-12">
 
@@ -66,18 +66,8 @@
 
     computed: {
       ...mapState({
-        colorSections: 'colorSections'
+        menuColor: 'menuColor'
       })
-    },
-
-    methods: {
-      navigationScroll () {
-        this.colorSections.forEach(sect => {
-          if (sect.offsetTop < window.pageYOffset + 32) {
-            this.navbarTextColor = sect.getAttribute('data-section-color')
-          }
-        })
-      }
     },
 
     watch: {
@@ -93,16 +83,6 @@
           }
         }
       }
-    },
-
-    created () {
-      if (process.client) {
-        document.addEventListener('scroll', this.navigationScroll)
-      }
-    },
-
-    beforeDestroy () {
-      document.removeEventListener('scroll', this.navigationScroll)
     },
 
     components: {

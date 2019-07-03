@@ -50,33 +50,7 @@
             class="w-full lg:w-5/12 flex items-center lg:justify-center focus:outline-none mt-12 lg:mt-0"
             @click="videoOpen = true"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="text-white stroke-current fill-current"
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-            >
-              <g
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              >
-                <circle
-                  fill="none"
-                  stroke-miterlimit="10"
-                  cx="32"
-                  cy="32"
-                  r="30"
-                />
-                <polygon
-                  data-color="color-2"
-                  fill="none"
-                  stroke-miterlimit="10"
-                  points=" 24,46 24,18 44,32 "
-                />
-              </g>
-            </svg>
+            <play-circle/>
             <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
               Lire la vidéo
             </div>
@@ -194,6 +168,7 @@
 
 <script>
   import BaseSocials from '~/components/BaseSocials'
+  import PlayCircle from '~/assets/images/icons/playCircle.svg'
 
   import { mapState } from 'vuex'
   import sample from 'lodash/sample'
@@ -239,7 +214,8 @@
 
     components: {
       BaseSocials,
-      BaseModal: () => import('~/components/BaseModal')
+      BaseModal: () => import('~/components/BaseModal'),
+      PlayCircle
     }
   }
 </script>

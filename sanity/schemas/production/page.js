@@ -1,7 +1,7 @@
 export default {
   title: 'Production page',
   name: 'productionPage',
-  type: 'document',
+  type: 'object',
   fields: [
     {
       title: 'Title',
@@ -9,9 +9,17 @@ export default {
       type: 'localeString'
     },
     {
-      title: 'Background image',
-      name: 'image',
-      type: 'altImage'
+      name: 'text',
+      title: 'Text',
+      type: 'localeText'
+    },
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        { type: 'altImage' }
+      ]
     },
     {
       title: 'Production items',

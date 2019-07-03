@@ -6,6 +6,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       'transparent-black': 'rgba(0, 0, 0, .95)',
+      'transparent-black-light': 'rgba(0, 0, 0, .5)',
 
       black: '#000',
       white: '#fff',
@@ -80,15 +81,8 @@ module.exports = {
         900: '#234e52'
       },
       blue: {
-        100: '#ebf8ff',
-        200: '#bee3f8',
-        300: '#90cdf4',
-        400: '#63b3ed',
-        500: '#4299e1',
-        600: '#3182ce',
-        700: '#2b6cb0',
-        800: '#2c5282',
-        900: '#2a4365'
+        'light': '#bbf1ff',
+        'lighter': '#E1FBFF'
       },
       indigo: {
         100: '#ebf4ff',
@@ -300,8 +294,7 @@ module.exports = {
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
-      screen: '100vh',
-      '3/4-screen': '75vh'
+      screen: '100vh'
     }),
     minWidth: {
       '0': '0',
@@ -310,7 +303,8 @@ module.exports = {
     minHeight: {
       '0': '0',
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
+      '3/4-screen': '75vh'
     },
     maxWidth: {
       xs: '20rem',

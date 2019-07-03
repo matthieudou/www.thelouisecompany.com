@@ -62,7 +62,7 @@
       v-if="videoOpen"
       @close="videoOpen = false"
       size="2xl"
-      background-class="bg-white"
+      background-class="bg-black"
     >
       <div class="embed-responsive">
         <iframe

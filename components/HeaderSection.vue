@@ -79,11 +79,13 @@
       computeBackgroundColor () {
         if (this.color === 'blue') return 'bg-blue-lighter'
         if (this.color === 'green') return 'bg-green-lighter'
+        if (this.color === 'yellow') return 'bg-yellow-lighter'
       },
 
       computeActiveColor () {
         if (this.color === 'blue') return 'border-blue-light bg-blue-light'
         if (this.color === 'green') return 'border-green-light bg-green-light'
+        if (this.color === 'yellow') return 'border-yellow-light bg-yellow-light'
       }
     },
 

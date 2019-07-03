@@ -5,6 +5,6 @@ export default S.listItem()
   .child(
     S.editor()
       .id('listEditor')
-      .schemaType('influencerPage')
-      .documentId('influencerPage')
+      .schemaType('managementPage')
+      .documentId('managementPage')
   )

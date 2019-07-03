@@ -1,17 +1,47 @@
 export default {
-  title: 'Influencer page',
-  name: 'influencerPage',
-  type: 'document',
+  title: 'Management page',
+  name: 'managementPage',
+  type: 'object',
   fields: [
     {
-      title: 'Titre',
+      title: 'Title',
       name: 'title',
       type: 'localeString'
     },
     {
-      title: 'Slug',
-      name: 'slug',
-      type: 'localeSlug'
+      name: 'text',
+      title: 'Text',
+      type: 'localeText'
+    },
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        { type: 'altImage' }
+      ]
+    },
+    {
+      title: 'Management items',
+      name: 'managementItems',
+      type: 'array',
+      of: [
+        { type: 'managementItem' }
+      ]
+    },
+    {
+      title: 'Meta',
+      name: 'meta',
+      type: 'meta'
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Management page'
+      }
+    }
+  }
 }

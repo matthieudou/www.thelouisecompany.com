@@ -5,12 +5,12 @@
   },
   "api": {
     "projectId": "frs718jp",
-    "dataset": "development"
+    "dataset": "production"
   },
   "env": {
     "development": {
       "api": {
-        "dataset": "development"
+        "dataset": "production"
       },
       "plugins": [
         "@sanity/vision"

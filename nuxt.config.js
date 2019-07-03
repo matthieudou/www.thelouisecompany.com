@@ -112,7 +112,7 @@ export default {
   },
 
   purgeCSS: {
-    whitelist: ['body', 'html', 'nuxt-progress'],
+    whitelist: ['body', 'html', 'nuxt-progress', 'fill-current', 'stroke-current'],
     whitelistPatterns: [
       /^svg-.*/,
       /^v-lazy.*/

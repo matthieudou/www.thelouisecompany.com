@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400i&display=swap');
+
 /* IMPORT FONTS */
 @font-face {
   font-family: 'HankenGrotesk';
@@ -43,13 +45,6 @@
   src: url(/fonts/Ogg/Ogg-Roman.otf) format('opentype');
 }
 
-@font-face {
-  font-family: 'ogg';
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url(/fonts/Ogg/Ogg-Italic.otf) format('opentype');
-}
 
 @tailwind base;
 

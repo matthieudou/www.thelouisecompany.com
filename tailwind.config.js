@@ -170,6 +170,14 @@ module.exports = {
         '"Times New Roman"',
         'Times',
         'serif'
+      ],
+      citation: [
+        'EB Garamond',
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif'
       ]
     },
     fontSize: {

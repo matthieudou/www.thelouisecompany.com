@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto flex flex-col md:flex-row md:-mb-40 p-12">
+  <section class="container mx-auto flex flex-col md:flex-row md:-mb-32 lg:-mb-40 p-12">
     <div class="order-2 md:order-1 mt-12 md:mt-0 md:w-1/2 flex flex-col items-center md:pr-8">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,14 +19,14 @@
       </svg>
 
       <blockquote
-        class="mt-6 text-3xl md:text-xl lg:text-3xl text-center font-serif tracking-widest italic"
+        class="mt-6 text-3xl md:text-3xl lg:text-4xl text-center font-citation font-normal tracking-widest italic"
         v-html="localize(citation.citation)"
       />
 
       <div class="md:hidden xl:block w-px h-12 bg-black my-4"/>
 
       <svg
-        class="text-gray-darker md:text-gray-light xl:text-gray-darker fill-current md:mt-16 xl:mt-0"
+        class="text-gray-darker md:text-gray-light lg:text-gray-darker fill-current md:mt-16 lg:mt-8 xl:mt-0"
         xmlns="http://www.w3.org/2000/svg"
         width="296.347"
         height="43.306"

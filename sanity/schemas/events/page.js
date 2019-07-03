@@ -1,17 +1,47 @@
 export default {
-  title: 'Event’s page',
+  title: 'Production page',
   name: 'eventPage',
-  type: 'document',
+  type: 'object',
   fields: [
     {
-      title: 'Titre',
+      title: 'Title',
       name: 'title',
       type: 'localeString'
     },
     {
-      title: 'Slug',
-      name: 'slug',
-      type: 'localeSlug'
+      name: 'text',
+      title: 'Text',
+      type: 'localeText'
+    },
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        { type: 'altImage' }
+      ]
+    },
+    {
+      title: 'Events items',
+      name: 'eventItems',
+      type: 'array',
+      of: [
+        { type: 'eventItem' }
+      ]
+    },
+    {
+      title: 'Meta',
+      name: 'meta',
+      type: 'meta'
     }
-  ]
+  ],
+
+  preview: {
+    select: {},
+    prepare () {
+      return {
+        title: 'Events page page'
+      }
+    }
+  }
 }

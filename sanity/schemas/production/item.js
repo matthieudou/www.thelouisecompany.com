@@ -1,7 +1,7 @@
 export default {
   title: 'Production items',
   name: 'productionItem',
-  type: 'document',
+  type: 'object',
   fields: [
     {
       title: 'Title',

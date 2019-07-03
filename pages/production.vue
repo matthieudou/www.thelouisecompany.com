@@ -2,7 +2,7 @@
   <div>
     <main>
       <header-section
-        class="bg-blue-lighter"
+        color="blue"
         :title="localize(production.title)"
         :text="localize(production.text)"
         :images="production.images"

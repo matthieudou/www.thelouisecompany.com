@@ -37,11 +37,13 @@
 
         <div class="flex flex-col lg:flex-row items-center justify-between">
           <div class="w-full lg:w-7/12 flex-shrink-0 pr-8 lg:pr-0">
-            <div class="uppercase text-xs mb-4">Lorem ipsum</div>
+            <div class="uppercase text-xs mb-4">{{ localize(hero.subtitle) }}</div>
             <h1 class="text-3xl md:text-5xl font-serif font-normal tracking-widest leading-tight">{{ localize(hero.title) }}</h1>
-            <button class="w-32 flex items-center mt-4 focus:outline-none group">
+            <button
+              class="w-40 flex items-center mt-4 focus:outline-none group"
+              @click="$scrollTo('#actuality')">
               <div class="flex-1 h-px bg-white mr-6"/>
-              <div class="group-hover:translate-r-2 transition">Discover</div>
+              <div class="group-hover:translate-r-2 transition">{{ localize(hero.cta) }}</div>
             </button>
 
           </div>
@@ -52,13 +54,13 @@
           >
             <play-circle/>
             <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
-              Lire la vidéo
+              {{ $t('home.watchVideo') }}
             </div>
           </button>
         </div>
 
         <div class="self-start">
-          <base-socials/>
+          <base-socials color="white"/>
         </div>
       </div>
 

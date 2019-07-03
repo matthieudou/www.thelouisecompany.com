@@ -2,12 +2,14 @@
   <transition name="menu">
     <nav class="fixed inset-0 text-white bg-black overflow-scroll transition long">
       <div class="container mx-auto mt-24 md:mt-32 flex justify-between p-8">
-        <base-socials class="navigation-appear-left transition"/>
+        <base-socials
+          color="white"
+          class="navigation-appear-left transition"/>
 
         <!-- CONTACT -->
         <div class="hidden lg:flex self-end opacity-50 navigation-appear-up transition long">
           <div class="pr-8 border-r border-white flex flex-col justify-between">
-            <h3 class="uppercase text-xs font-bold tracking-wider">Address</h3>
+            <h3 class="uppercase text-xs font-bold tracking-wider">{{ $t('navigation.address') }}</h3>
             <address class="not-italic">
               <div class="mt-1">{{ localize(contact.streetName) }} {{ contact.streetNumber }}</div>
               <div class="mt-1">{{ contact.postalCode }} {{ localize(contact.city) }}</div>
@@ -16,7 +18,7 @@
           </div>
 
           <div class="ml-8 ">
-            <h3 class="mb-2 uppercase text-xs font-black tracking-widest">Tel</h3>
+            <h3 class="mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.phone') }}</h3>
             <a
               class="block"
               :href="`tel:${contact.phone}`"
@@ -24,7 +26,7 @@
               {{ contact.phone }}
             </a>
 
-            <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">Email</h3>
+            <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.email') }}</h3>
             <a
               class="block"
               :href="`mailto:${contact.email}`"
@@ -43,7 +45,7 @@
               exact
               @click.native="$emit('close')"
             >
-              Accueil
+              {{ $t('navigation.home') }}
             </nuxt-link>
           </div>
 
@@ -62,7 +64,7 @@
               v-if="activePages.production"
               @click.native="$emit('close')"
             >
-              Louise production
+              {{ $t('navigation.production') }}
             </nuxt-link>
             <nuxt-link
               class="link navigation-appear-up transition long"
@@ -71,7 +73,7 @@
               v-if="activePages.events"
               @click.native="$emit('close')"
             >
-              Louise Events
+              {{ $t('navigation.events') }}
             </nuxt-link>
             <nuxt-link
               class="link navigation-appear-up transition long"
@@ -80,7 +82,7 @@
               v-if="activePages.management"
               @click.native="$emit('close')"
             >
-              Louise Management
+              {{ $t('navigation.management') }}
             </nuxt-link>
             <nuxt-link
               class="link navigation-appear-up transition long"
@@ -89,7 +91,7 @@
               v-if="activePages.charity"
               @click.native="$emit('close')"
             >
-              Louise Charity
+              {{ $t('navigation.charity') }}
             </nuxt-link>
           </div>
 
@@ -101,7 +103,7 @@
               :to="localePath('contact')"
               @click.native="$emit('close')"
             >
-              Contact
+              {{ $t('navigation.contact') }}
             </nuxt-link>
           </div>
         </div>

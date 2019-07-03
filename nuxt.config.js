@@ -1,4 +1,6 @@
-import translatedRoutes from './utils/translatedRoutes'
+import translatedRoutes from './lang/translatedRoutes'
+import fr from './lang/fr'
+import en from './lang/en'
 
 require('dotenv').config()
 
@@ -69,7 +71,11 @@ export default {
         baseUrl: 'https://www.thelouisecompany.com',
         strategy: 'prefix_and_default',
         vueI18n: {
-          fallbackLocale: 'fr'
+          fallbackLocale: 'fr',
+          messages: {
+            en: en,
+            fr: fr
+          }
         },
         parsePages: false,
         pages: translatedRoutes

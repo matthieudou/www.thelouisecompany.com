@@ -4,7 +4,8 @@
       <a
         v-for="(item, i) in socials.items"
         :key="i"
-        class="w-6 h-6 p-1 border border-white rounded-full flex items-center justify-center my-2"
+        class="w-6 h-6 p-1 border rounded-full flex items-center justify-center my-2"
+        :class="computeBorderColor"
         :title="item.name"
         :href="item.link"
       >
@@ -24,10 +25,21 @@
   import { mapState } from 'vuex'
 
   export default {
+    props: {
+      color: {
+        type: String,
+        default: 'black'
+      }
+    },
     computed: {
       ...mapState({
         socials: state => state.informations.socials
-      })
+      }),
+
+      computeBorderColor () {
+        if (this.color === 'black') return 'border-black'
+        return 'border-white'
+      }
     }
   }
 </script>

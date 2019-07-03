@@ -1,8 +1,10 @@
 <template>
-  <section>
+  <section :class="computeBackgroundColor">
     <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between">
       <!-- IMAGES -->
-      <div class="rounded-full overflow-hidden border-8 border-blue-light w-80 h-80 flex-shrink-0 relative mr-24">
+      <div
+        :class="computeActiveColor"
+        class="rounded-full overflow-hidden border-8 w-80 h-80 flex-shrink-0 relative mr-24">
         <transition name="fade">
           <v-lazy-image
             :key="number"
@@ -60,12 +62,26 @@
       text: {
         type: String,
         default: ''
+      },
+      color: {
+        type: String,
+        required: true
       }
     },
 
     data () {
       return {
         number: random(this.images.length - 1)
+      }
+    },
+
+    computed: {
+      computeBackgroundColor () {
+        if (this.color === 'blue') return 'bg-blue-lighter'
+      },
+
+      computeActiveColor () {
+        if (this.color === 'blue') return 'border-blue-light bg-blue-light'
       }
     },
 

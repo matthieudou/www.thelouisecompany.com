@@ -30,13 +30,13 @@
       </div>
     </div>
 
-    <div class="pl-12 h-24 flex overflow-x-hidden">
+    <!-- <div class="pl-12 h-24 flex overflow-x-hidden">
       <div class="hidden lg:block w-2/5"/>
       <v-lazy-image
         class="h-full"
         src="~/assets/images/tlcScript.svg"
       />
-    </div>
+    </div> -->
   </section>
 </template>
 

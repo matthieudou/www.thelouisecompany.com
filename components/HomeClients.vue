@@ -13,14 +13,12 @@
           class="w-1/2 sm:w-1/3 p-4 sm:p-8"
           v-for="client in clients.clients"
           :key="client._client"
-          :title="client.name"
-        >
+          :title="client.name">
           <v-lazy-image
             class="w-full object-contain"
             :src="urlFor(client.thumbnail).url()"
             :src-placeholder="urlFor(client.thumbnail).width(20).url()"
-            :alt="client.name"
-          />
+            :alt="client.name"/>
         </div>
       </div>
     </div>

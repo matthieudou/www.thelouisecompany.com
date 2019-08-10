@@ -2,8 +2,7 @@
   <section
     id="hero"
     class="min-h-screen relative text-white"
-    data-section-color="text-white"
-  >
+    data-section-color="text-white">
     <!-- BG VIDEO -->
     <div class="absolute inset-0 overflow-hidden">
       <video
@@ -11,18 +10,15 @@
         autoplay
         loop
         muted
-        :poster="urlFor(hero.backgroundImage)"
-      >
+        :poster="urlFor(hero.backgroundImage)">
         <source
           v-if="showVideo"
           src="~/assets/videos/backgroundVideo.webm"
-          type="video/webm"
-        >
+          type="video/webm">
         <source
           v-if="showVideo"
           src="~/assets/videos/backgroundVideo.mp4"
-          type="video/mp4"
-        >
+          type="video/mp4">
       </video>
     </div>
 
@@ -50,8 +46,7 @@
 
           <button
             class="w-full lg:w-5/12 flex items-center lg:justify-center focus:outline-none mt-12 lg:mt-0"
-            @click="videoOpen = true"
-          >
+            @click="videoOpen = true">
             <play-circle/>
             <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
               {{ $t('home.watchVideo') }}
@@ -70,16 +65,14 @@
           <nuxt-link
             :to="switchLocalePath('fr')"
             class="opacity-50 transition"
-            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}"
-          >
+            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}">
             Fr
           </nuxt-link>
           <span class="opacity-75">/</span>
           <nuxt-link
             :to="switchLocalePath('en')"
             class="opacity-50 transition"
-            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}"
-          >
+            :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}">
             En
           </nuxt-link>
         </div>
@@ -97,8 +90,7 @@
             <div
               class="inline-block w-1/2"
               style="transition-delay: .5s"
-              :key="'hash2' + currentHashtag._key"
-            >
+              :key="'hash2' + currentHashtag._key">
               {{ currentHashtag.hashtag2 }}
             </div>
           </transition>
@@ -151,8 +143,7 @@
       v-if="videoOpen"
       @close="videoOpen = false"
       size="3xl"
-      background-class="bg-transparent-black"
-    >
+      background-class="bg-transparent-black">
       <div class="embed-responsive">
         <iframe
           class="absolute inset-0 w-full h-full"

@@ -3,8 +3,7 @@
     v-on="$listeners"
     class="focus:outline-none hamburger hamburger--slider flex items-center"
     :class="{'is-active': isOpen}"
-    type="button"
-  >
+    type="button">
     <span class="mr-4 uppercase font-hairline text-xs hidden md:block">Menu</span>
     <span class="hamburger-box">
       <span class="hamburger-inner"/>

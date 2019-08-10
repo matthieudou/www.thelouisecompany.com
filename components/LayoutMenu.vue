@@ -21,16 +21,14 @@
             <h3 class="mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.phone') }}</h3>
             <a
               class="block"
-              :href="`tel:${contact.phone}`"
-            >
+              :href="`tel:${contact.phone}`">
               {{ contact.phone }}
             </a>
 
             <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.email') }}</h3>
             <a
               class="block"
-              :href="`mailto:${contact.email}`"
-            >
+              :href="`mailto:${contact.email}`">
               {{ contact.email }}
             </a>
           </div>
@@ -43,8 +41,7 @@
               class="link"
               :to="localePath('index')"
               exact
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.home') }}
             </nuxt-link>
           </div>
@@ -53,8 +50,7 @@
           <div class="border-b border-white pb-8 navigation-appear transition long">
             <div
               class="uppercase text-xs font-sans mt-4 tracking-widest navigation-appear-up transition long"
-              :style="{'transition-delay': '.03s'}"
-            >
+              :style="{'transition-delay': '.03s'}">
               Work
             </div>
             <nuxt-link
@@ -62,8 +58,7 @@
               :style="{'transition-delay': '.06s'}"
               :to="localePath('production')"
               v-if="activePages.production"
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.production') }}
             </nuxt-link>
             <nuxt-link
@@ -71,8 +66,7 @@
               :style="{'transition-delay': '.09s'}"
               :to="localePath('events')"
               v-if="activePages.events"
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.events') }}
             </nuxt-link>
             <nuxt-link
@@ -80,8 +74,7 @@
               :style="{'transition-delay': '.12s'}"
               :to="localePath('management')"
               v-if="activePages.management"
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.management') }}
             </nuxt-link>
             <nuxt-link
@@ -101,8 +94,7 @@
               class="link navigation-appear-up transition long"
               :style="{'transition-delay': '.18s'}"
               :to="localePath('contact')"
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.contact') }}
             </nuxt-link>
           </div>
@@ -113,16 +105,14 @@
         <nuxt-link
           :to="switchLocalePath('fr')"
           class="opacity-50 transition long"
-          :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}"
-        >
+          :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}">
           Fr
         </nuxt-link>
         <span class="opacity-75">/</span>
         <nuxt-link
           :to="switchLocalePath('en')"
           class="opacity-50 transition long"
-          :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}"
-        >
+          :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}">
           En
         </nuxt-link>
       </div>

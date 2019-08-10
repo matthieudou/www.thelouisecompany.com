@@ -8,8 +8,7 @@
           v-touch:swipe.right="previous"
           :key="currentIndex"
           :src="urlFor(items[currentIndex]).url()"
-          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"
-        />
+          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"/>
       </transition>
 
       <!-- CONTROLS -->
@@ -17,23 +16,20 @@
         <button
           class="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none bg-transparent-black-light"
           v-show="(items[currentIndex] || {}).link"
-          @click="videoOpen = true"
-        >
+          @click="videoOpen = true">
           <play-circle/>
         </button>
       </transition>
 
       <div
         class="absolute bottom-0 inset-x-0 text-center"
-        v-if="items.length > 1"
-      >
+        v-if="items.length > 1">
         <span
           v-for="(i, idx) in items.length"
           :key="idx"
           class="text-gray-600 text-xl cursor-pointer select-none"
           :class="{'active-bullet': idx === currentIndex}"
-          @click="setIndex(idx)"
-        >
+          @click="setIndex(idx)">
           •
         </span>
       </div>
@@ -41,19 +37,16 @@
 
     <div
       class="w-12 h-12 flex items-center justify-between border border-black ml-auto mr-8 mt-6 rounded-full"
-      v-if="items.length > 1"
-    >
+      v-if="items.length > 1">
       <button
         class="focus:outline-none select-none p-2"
-        @click="previous"
-      >
+        @click="previous">
         <chevron-left/>
       </button>
 
       <button
         class="focus:outline-none select-none p-2"
-        @click="next"
-      >
+        @click="next">
         <chevron-right/>
       </button>
     </div>
@@ -62,8 +55,7 @@
       v-if="videoOpen"
       @close="videoOpen = false"
       size="2xl"
-      background-class="bg-black"
-    >
+      background-class="bg-black">
       <div class="embed-responsive">
         <iframe
           class="absolute inset-0 w-full h-full"

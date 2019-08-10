@@ -39,13 +39,11 @@
           <select
             name=""
             id=""
-            class="form-select w-full mt-4"
-          >
+            class="form-select w-full mt-4">
             <option
               value="price-offer"
               disabled
-              selected
-            >
+              selected>
               Vous nous contactez pour ?
             </option>
             <option value="price-offer">Demande de prix</option>
@@ -55,25 +53,21 @@
             <input
               type="text"
               class="form-input block w-full mt-4"
-              placeholder="prénom"
-            >
+              placeholder="prénom">
             <input
               type="email"
               class="form-input block w-full mt-4"
-              placeholder="email"
-            >
+              placeholder="email">
             <textarea
               name=""
               id=""
               cols="30"
               rows="10"
-              class="form-textarea mt-4 w-full"
-            />
+              class="form-textarea mt-4 w-full"/>
             <input
               type="submit"
               class="w-full p-2 bg-gray-500 rounded mt-8"
-              value="Envoyer"
-            >
+              value="Envoyer">
           </div>
         </form>
       </div>

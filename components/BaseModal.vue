@@ -8,12 +8,10 @@
     <div
       class="modal__backdrop fixed flex flex-col inset-0 z-20 overflow-auto md:py-24 transition"
       :class="backgroundClass"
-      @click.self="close"
-    >
+      @click.self="close">
       <button
         class="absolute top-0 right-0 p-8 md:p-12 focus:outline-none"
-        @click="$emit('close')"
-      >
+        @click="$emit('close')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24.749"
@@ -47,8 +45,7 @@
       <!-- MODAL CONTAINER -->
       <div
         class="modal__container w-full m-auto transition"
-        :class="computeClasses"
-      >
+        :class="computeClasses">
         <slot/>
       </div>
     </div>

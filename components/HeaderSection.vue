@@ -10,8 +10,7 @@
             :key="number"
             class="inset-0 w-full h-full absolute object-cover"
             :src="urlFor(images[number]).url()"
-            :src-placeholder="urlFor(images[number]).width(20).url()"
-          />
+            :src-placeholder="urlFor(images[number]).width(20).url()"/>
         </transition>
       </div>
 
@@ -31,8 +30,7 @@
 
         <button
           class="mt-12 focus:outline-none"
-          @click="$scrollTo('#main')"
-        >
+          @click="$scrollTo('#main')">
           <arrow-down-circle/>
         </button>
       </div>

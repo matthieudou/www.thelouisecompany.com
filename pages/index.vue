@@ -10,8 +10,7 @@
 
     <div
       class="bg-gray-dark"
-      data-section-color-classes="text-white"
-    >
+      data-section-color-classes="text-white">
       <layout-footer class="text-white container mx-auto p-8 md:p-12"/>
     </div>
   </div>

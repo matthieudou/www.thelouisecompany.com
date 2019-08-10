@@ -1,31 +1,25 @@
 <template>
   <header
     class="fixed inset-x-0 top-0 transition z-10"
-    :class="isOpen ? 'text-white' : menuColor"
-  >
+    :class="isOpen ? 'text-white' : menuColor">
     <div class="container mx-auto flex justify-between items-center p-8 md:p-12">
 
       <nuxt-link
         :to="localePath({name: 'index'})"
-        class="z-20"
-      >
+        class="z-20">
         <logo-round class="h-16"/>
       </nuxt-link>
 
       <nuxt-link
         class="hidden md:block z-20"
-        :to="localePath({name: 'index'})"
-      >
+        :to="localePath({name: 'index'})">
         <logo-name/>
       </nuxt-link>
 
       <button
         class="focus:outline-none z-20 w-10 h-10 flex items-center justify-center"
-        @click="isOpen = !isOpen"
-      >
-        <transition
-          name="spin"
-        >
+        @click="isOpen = !isOpen">
+        <transition name="spin">
           <!-- mode="out-in" -->
           <menu-closed
             key="menuClosed"
@@ -40,8 +34,7 @@
 
       <layout-menu
         @close="isOpen = false"
-        v-show="isOpen"
-      />
+        v-show="isOpen"/>
     </div>
   </header>
 </template>

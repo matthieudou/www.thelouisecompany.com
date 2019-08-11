@@ -77,64 +77,14 @@
           </nuxt-link>
         </div>
 
-        <div class="font-serif text-lg flex flex-1">
-          <transition name="hashTransition">
-            <div
-              class="inline-block w-1/2 text-right"
-              :key="'hash1' + currentHashtag._key">
-              {{ currentHashtag.hashtag1 }}
-            </div>
-          </transition>
-
-          <transition name="hashTransition">
-            <div
-              class="inline-block w-1/2"
-              style="transition-delay: .5s"
-              :key="'hash2' + currentHashtag._key">
-              {{ currentHashtag.hashtag2 }}
-            </div>
-          </transition>
-        </div>
+        <home-hashtags
+          class="flex-1 font-serif"
+          :items="hero.hashtags"/>
 
         <button
           class="p-2 focus:outline-none"
-          @click="$scrollTo('#actuality')"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="7.657"
-            height="21"
-            viewBox="0 0 7.657 21">
-            <g
-              id="Groupe_292"
-              data-name="Groupe 292"
-              transform="translate(-3055.638 -1390.037)">
-              <g
-                id="Groupe_291"
-                data-name="Groupe 291">
-                <line
-                  id="Ligne_64"
-                  data-name="Ligne 64"
-                  y2="19"
-                  transform="translate(3059.467 1391.037)"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"/>
-                <path
-                  id="Tracé_384"
-                  data-name="Tracé 384"
-                  d="M3062.3,1407.209l-2.828,2.828-2.828-2.828"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"/>
-              </g>
-            </g>
-          </svg>
-
+          @click="$scrollTo('#actuality')">
+          <arrow-down/>
         </button>
       </div>
     </div>
@@ -161,10 +111,11 @@
 
 <script>
   import BaseSocials from '~/components/BaseSocials'
+  import HomeHashtags from '~/components/HomeHashtags'
   import PlayCircle from '~/assets/images/icons/playCircle.svg'
+  import ArrowDown from '~/assets/images/icons/arrowDown.svg'
 
   import { mapState } from 'vuex'
-  import sample from 'lodash/sample'
 
   export default {
     data () {
@@ -190,25 +141,12 @@
       }
     },
 
-    mounted () {
-      this.currentHashtag = sample(this.hero.hashtags)
-      this.__hashInterval__ = setInterval(() => {
-        // this.currentHashtag = { _key: 'sample', hash1: '', hash2: '' }
-
-        this.currentHashtag = sample(this.hero.hashtags)
-        // setTimeout(() => {
-        // }, 2000)
-      }, 5000)
-    },
-
-    beforeDestroy () {
-      clearInterval(this.__hashInterval__)
-    },
-
     components: {
       BaseSocials,
+      HomeHashtags,
       BaseModal: () => import('~/components/BaseModal'),
-      PlayCircle
+      PlayCircle,
+      ArrowDown
     }
   }
 </script>

@@ -47,10 +47,9 @@
 
 
 @tailwind base;
-
 @tailwind components;
 
-@tailwind utilities;
+/* purgecss start ignore */
 
 .transition {
   transition: .25s ease-in-out;
@@ -75,16 +74,8 @@
     transform: translateX(0.5rem);
   }
 
-  .translate-l-2 {
-    transform: translateX(-0.5rem);
-  }
-
   .translate-t-2 {
     transform: translateY(-0.5rem);
-  }
-
-  .translate-b-2 {
-    transform: translateY(0.5rem);
   }
 }
 
@@ -117,3 +108,6 @@
   padding-bottom: 56.25%;
   width: 100%;
 }
+/* purgecss end ignore */
+
+@tailwind utilities;

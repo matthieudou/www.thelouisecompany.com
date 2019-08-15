@@ -25,8 +25,7 @@
 
 <script>
   import sample from 'lodash/sample'
-  import TweenLite from 'gsap/TweenLite'
-  import 'gsap/CSSPlugin'
+  import TweenMax from 'gsap'
 
   export default {
     props: {
@@ -50,13 +49,13 @@
       },
 
       enter (el, done) {
-        TweenLite.from(el.firstElementChild, 1, {
+        TweenMax.from(el.firstElementChild, 1, {
           opacity: 0,
           y: '50%',
           transformStyle: 'preserve-3d',
           rotationX: 90
         })
-        TweenLite.from(el.lastElementChild, 1, {
+        TweenMax.from(el.lastElementChild, 1, {
           opacity: 0,
           y: '-50%',
           rotationX: -90,
@@ -65,12 +64,12 @@
       },
 
       leave (el, done) {
-        TweenLite.to(el.firstElementChild, 1, {
+        TweenMax.to(el.firstElementChild, 1, {
           opacity: 0,
           y: '-50%',
           rotationX: -90
         })
-        TweenLite.to(el.lastElementChild, 1, {
+        TweenMax.to(el.lastElementChild, 1, {
           opacity: 0,
           y: '50%',
           rotationX: 90,

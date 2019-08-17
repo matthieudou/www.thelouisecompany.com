@@ -1,13 +1,18 @@
 <template>
   <header
-    class="fixed inset-x-0 top-0 transition z-10"
-    :class="isOpen ? 'text-white' : menuColor">
-    <div class="container mx-auto flex justify-between items-center p-8 md:p-12">
+    class="fixed inset-x-0 top-0 transition z-10 transition"
+    :class="[
+      isOpen ? 'text-white' : 'text-black',
+      isScrolled ? 'text-black bg-white' : menuColor
+  ]">
+    <div
+      class="container mx-auto flex justify-between items-center p-8 md:p-12 transition"
+      :class="{'py-6 md:py-6': isScrolled}">
 
       <nuxt-link
         :to="localePath({name: 'index'})"
         class="z-20">
-        <logo-round class="h-16"/>
+        <logo-round class="h-16 w-16"/>
       </nuxt-link>
 
       <nuxt-link
@@ -47,13 +52,15 @@
   import MenuClosed from '~/assets/images/icons/menuClosed.svg'
   import MenuOpen from '~/assets/images/icons/menuOpen.svg'
 
+  import throttle from 'lodash/throttle'
   import { mapState } from 'vuex'
 
   export default {
     data () {
       return {
         isOpen: false,
-        navbarTextColor: 'text-white'
+        navbarTextColor: 'text-white',
+        isScrolled: false
       }
     },
 
@@ -61,6 +68,14 @@
       ...mapState({
         menuColor: 'menuColor'
       })
+    },
+
+    methods: {
+      checkScroll () {
+        window.scrollY >= 100
+          ? this.isScrolled = true
+          : this.isScrolled = false
+      }
     },
 
     watch: {
@@ -76,6 +91,16 @@
           }
         }
       }
+    },
+
+    mounted () {
+      if (process.client) {
+        document.addEventListener('scroll', throttle(this.checkScroll, 0, { leading: false }))
+      }
+    },
+
+    beforeDestroy () {
+      document.removeEventListener('scroll', throttle(this.checkScroll, 0, { leading: false }))
     },
 
     components: {

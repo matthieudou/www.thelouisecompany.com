@@ -79,7 +79,7 @@
     },
 
     mounted () {
-      this.__hashInterval__ = setInterval(() => { this.setSampleHashtag() }, 2000)
+      this.__hashInterval__ = setInterval(() => { this.setSampleHashtag() }, 3000)
     },
 
     beforeDestroy () {

@@ -2,9 +2,7 @@
   <section :class="computeBackgroundColor">
     <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between">
       <!-- IMAGES -->
-      <div
-        :class="computeActiveColor"
-        class="rounded-full overflow-hidden border-8 w-80 h-80 flex-shrink-0 relative mr-24">
+      <div class="rounded-full overflow-hidden w-80 h-80 flex-shrink-0 relative mr-24">
         <transition name="fade">
           <v-lazy-image
             :key="number"
@@ -78,12 +76,6 @@
         if (this.color === 'blue') return 'bg-blue-lighter'
         if (this.color === 'green') return 'bg-green-lighter'
         if (this.color === 'yellow') return 'bg-yellow-lighter'
-      },
-
-      computeActiveColor () {
-        if (this.color === 'blue') return 'border-blue-light bg-blue-light'
-        if (this.color === 'green') return 'border-green-light bg-green-light'
-        if (this.color === 'yellow') return 'border-yellow-light bg-yellow-light'
       }
     },
 

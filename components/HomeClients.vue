@@ -1,14 +1,14 @@
 <template>
-  <section class="md:pt-40 bg-gray-dark text-white">
+  <section class="bg-gray-dark text-white">
     <div class="container mx-auto p-12 flex flex-wrap">
-      <div class="w-full md:w-2/5">
+      <div class="w-full text-center md:text-left md:w-2/5">
         <h2 class="font-serif text-5xl md:text-4xl lg:text-5xl tracking-widest">{{ localize(clients.title) }}</h2>
-        <p class="w-64 mt-12">
+        <p class="mt-12 lg:w-64">
           {{ localize(clients.content) }}
         </p>
       </div>
 
-      <div class="w-full md:w-3/5 mt-16 flex flex-wrap items-center">
+      <div class="w-full md:w-3/5 mt-12 md:mt-0 flex flex-wrap items-center">
         <div
           class="w-1/2 sm:w-1/3 p-4 sm:p-8"
           v-for="client in clients.clients"

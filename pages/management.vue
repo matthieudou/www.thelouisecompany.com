@@ -46,11 +46,9 @@
   import CarouselCard from '~/components/CarouselCard'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { mapState } from 'vuex'
-  import { sectionColor } from '~/utils/mixins'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
-    mixins: [sectionColor],
 
     head () {
       return {
@@ -86,9 +84,14 @@
       })
     },
 
+    methods: {
+      ...mapMutations({
+        setMenuColor: 'setMenuColor'
+      })
+    },
+
     mounted () {
-      // comes from the mixin
-      this.initializeMixin()
+      this.setMenuColor('text-black')
     },
 
     components: {

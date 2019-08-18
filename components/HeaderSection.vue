@@ -3,7 +3,7 @@
     <div class="min-h-3/4-screen container mx-auto px-8 md:px-12 pb-8 flex justify-between pt-32">
       <!-- IMAGES -->
       <div class="flex-1 flex flex-col lg:flex-row items-center lg:items-start">
-        <div class="rounded-full overflow-hidden w-full pb-full sm:pb-0 sm:w-80 sm:h-80 flex-shrink-0 relative shadow-xl lg:mr-12">
+        <div class="rounded-full overflow-hidden w-full pb-full sm:pb-0 sm:w-80 sm:h-80 flex-shrink-0 relative lg:mr-12">
           <transition name="fade">
             <v-lazy-image
               :key="number"
@@ -81,6 +81,7 @@
         if (this.color === 'blue') return 'bg-blue-lighter'
         if (this.color === 'green') return 'bg-green-lighter'
         if (this.color === 'yellow') return 'bg-yellow-lighter'
+        if (this.color === 'pink') return 'bg-pink-lighter'
       }
     },
 

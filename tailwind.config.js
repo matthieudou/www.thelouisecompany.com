@@ -41,6 +41,9 @@ module.exports = {
         'light': '#bbf1ff',
         'lighter': '#E1FBFF'
       },
+      pink: {
+        lighter: '#FFE6E6'
+      },
       outline: 'rgba(66, 153, 225, 0.5)'
     },
     spacing: {
@@ -288,6 +291,7 @@ module.exports = {
     },
     zIndex: {
       auto: 'auto',
+      '-1': '-1',
       '0': '0',
       '10': '10',
       '20': '20',

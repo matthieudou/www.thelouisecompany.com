@@ -28,7 +28,7 @@
 
         <button
           class="mt-12 focus:outline-none"
-          @click="$scrollTo('[data-scroll-to]')">
+          @click="$scrollTo('[data-scroll-to]', 300, {offset: -110})">
           <arrow-down-circle class="w-8 h-8"/>
         </button>
       </div>

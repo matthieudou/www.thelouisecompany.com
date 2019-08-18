@@ -5,12 +5,10 @@
         color="green"
         :title="localize(event.title)"
         :text="localize(event.text)"
-        :images="event.images"
-        data-section-color-classes="text-black"/>
+        :images="event.images"/>
       <section
-        id="main"
-        class="container mx-auto p-8 md:p-12"
-        data-section-color-classes="text-black">
+        data-scroll-to
+        class="container mx-auto p-8 md:p-12">
         <article
           class="mt-16 flex flex-wrap"
           :class="{'flex-row-reverse': i % 2 === 1}"

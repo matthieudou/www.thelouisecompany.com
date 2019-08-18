@@ -5,12 +5,10 @@
         color="yellow"
         :title="localize(management.title)"
         :text="localize(management.text)"
-        :images="management.images"
-        data-section-color-classes="text-black"/>
+        :images="management.images"/>
       <section
-        id="main"
-        class="container mx-auto p-8 md:p-12"
-        data-section-color-classes="text-black">
+        data-scroll-to
+        class="container mx-auto p-8 md:p-12">
         <article
           class="mt-16 flex flex-wrap"
           :class="{

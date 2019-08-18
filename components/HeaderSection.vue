@@ -1,6 +1,6 @@
 <template>
   <section :class="computeBackgroundColor">
-    <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between">
+    <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between md:pt-32">
       <!-- IMAGES -->
       <div class="rounded-full overflow-hidden w-80 h-80 flex-shrink-0 relative mr-24">
         <transition name="fade">
@@ -28,8 +28,8 @@
 
         <button
           class="mt-12 focus:outline-none"
-          @click="$scrollTo('#main')">
-          <arrow-down-circle/>
+          @click="$scrollTo('[data-scroll-to]')">
+          <arrow-down-circle class="w-8 h-8"/>
         </button>
       </div>
 

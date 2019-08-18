@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <div class="relative w-full h-72 overflow-hidden">
+  <div>
+    <div class="relative h-full w-full overflow-hidden">
       <transition :name="transitionName">
         <v-lazy-image
           class="absolute w-full h-full object-cover"
@@ -8,8 +8,7 @@
           v-touch:swipe.right="previous"
           :key="currentIndex"
           :src="urlFor(items[currentIndex]).url()"
-          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"
-        />
+          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"/>
       </transition>
 
       <!-- CONTROLS -->
@@ -17,23 +16,20 @@
         <button
           class="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none bg-transparent-black-light"
           v-show="(items[currentIndex] || {}).link"
-          @click="videoOpen = true"
-        >
-          <play-circle/>
+          @click="videoOpen = true">
+          <play-circle class="w-12 h-12"/>
         </button>
       </transition>
 
       <div
         class="absolute bottom-0 inset-x-0 text-center"
-        v-if="items.length > 1"
-      >
+        v-if="items.length > 1">
         <span
           v-for="(i, idx) in items.length"
           :key="idx"
-          class="text-gray-600 text-xl cursor-pointer select-none"
+          class="text-gray-800 text-xl cursor-pointer select-none"
           :class="{'active-bullet': idx === currentIndex}"
-          @click="setIndex(idx)"
-        >
+          @click="setIndex(idx)">
           •
         </span>
       </div>
@@ -41,20 +37,17 @@
 
     <div
       class="w-12 h-12 flex items-center justify-between border border-black ml-auto mr-8 mt-6 rounded-full"
-      v-if="items.length > 1"
-    >
+      v-if="items.length > 1">
       <button
         class="focus:outline-none select-none p-2"
-        @click="previous"
-      >
-        <chevron-left/>
+        @click="previous">
+        <chevron-left class="h-3"/>
       </button>
 
       <button
         class="focus:outline-none select-none p-2"
-        @click="next"
-      >
-        <chevron-right/>
+        @click="next">
+        <chevron-right class="h-3"/>
       </button>
     </div>
 
@@ -62,8 +55,7 @@
       v-if="videoOpen"
       @close="videoOpen = false"
       size="2xl"
-      background-class="bg-black"
-    >
+      background-class="bg-black">
       <div class="embed-responsive">
         <iframe
           class="absolute inset-0 w-full h-full"

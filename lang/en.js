@@ -2,7 +2,7 @@ export default {
   navigation: {
     home: 'Home',
     production: 'Louise production',
-    events: 'Louise events',
+    events: 'Louise event',
     management: 'Louise management',
     charity: 'Louise charity',
     contact: 'Contact',

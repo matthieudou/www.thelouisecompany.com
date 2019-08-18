@@ -1,7 +1,7 @@
 <template>
   <footer class="flex justify-between flex-wrap border-t">
     <div class="w-full lg:w-auto flex justify-center">
-      <full-logo class="mt-4"/>
+      <full-logo class="mt-4 h-16"/>
     </div>
     <!-- ADDRESS -->
     <div class="mt-8 sm:w-1/2 md:w-auto">
@@ -18,16 +18,14 @@
       <h3 class="mb-2 uppercase text-xs font-black tracking-widest">Tel</h3>
       <a
         class="block"
-        :href="`tel:${contact.phone}`"
-      >
+        :href="`tel:${contact.phone}`">
         {{ contact.phone }}
       </a>
 
       <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">Email</h3>
       <a
         class="block"
-        :href="`mailto:${contact.email}`"
-      >
+        :href="`mailto:${contact.email}`">
         {{ contact.email }}
       </a>
     </div>

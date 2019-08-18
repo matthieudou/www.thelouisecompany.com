@@ -7,12 +7,10 @@
         class="w-6 h-6 p-1 border rounded-full flex items-center justify-center my-2"
         :class="computeBorderColor"
         :title="item.name"
-        :href="item.link"
-      >
+        :href="item.link">
         <icon
           class="w-full h-full"
-          :name="item.name"
-        />
+          :name="item.name"/>
       </a>
       <div class="relative">
         <div class="rotated top-0 absolute text-xs pr-6">{{ localize(socials.catchPhrase) }}</div>

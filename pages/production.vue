@@ -5,36 +5,30 @@
         color="blue"
         :title="localize(production.title)"
         :text="localize(production.text)"
-        :images="production.images"
-        data-section-color-classes="text-black"
-      />
+        :images="production.images"/>
       <section
-        id="main"
-        class="container mx-auto p-8 md:p-12"
-        data-section-color-classes="text-black"
-      >
+        data-scroll-to
+        class="container mx-auto p-8 md:p-12">
         <article
-          v-for="(item, i) in production.productionItems"
-          :key="item._id"
-          class="mt-16 flex flex-wrap"
+          class="mt-24 first:mt-0 flex flex-wrap"
           :class="{
             'flex-row-reverse': i % 2 === 1
           }"
-        >
+          v-for="(item, i) in production.productionItems"
+          :key="item._id">
           <div class="w-full md:w-1/2 p-8">
             <h3 class="uppercase text-xs tracking-wider">{{ item.clientName }}</h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>
 
-            <div class="leading-relaxed tracking-wide">
+            <div class="leading-relaxed tracking-wide text-gray-300">
               {{ localize(item.description) }}
             </div>
           </div>
 
           <carousel-card
             class="w-full md:w-1/2 h-80 flex-shrink-0"
-            :items="item.media"
-          />
+            :items="item.media"/>
         </article>
       </section>
     </main>
@@ -50,11 +44,9 @@
   import CarouselCard from '~/components/CarouselCard'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { mapState } from 'vuex'
-  import { sectionColor } from '~/utils/mixins'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
-    mixins: [sectionColor],
 
     head () {
       return {
@@ -90,9 +82,14 @@
       })
     },
 
+    methods: {
+      ...mapMutations({
+        setMenuColor: 'setMenuColor'
+      })
+    },
+
     mounted () {
-      // comes from the mixin
-      this.initializeMixin()
+      this.setMenuColor('text-black')
     },
 
     components: {

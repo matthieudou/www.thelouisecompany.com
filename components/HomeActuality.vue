@@ -1,8 +1,7 @@
 <template>
   <section
     id="actuality"
-    class="container mx-auto p-12"
-  >
+    class="container mx-auto p-12">
     <h2 class="font-serif text-4xl tracking-menu">
       {{ localize(actuality.title) }}
     </h2>
@@ -12,21 +11,18 @@
         class="p-1 group"
         v-for="item in actuality.items"
         :key="item._key"
-        :to="localePath({name: item.link})"
-      >
+        :to="localePath({name: item.link})">
         <div class="w-80 h-80 relative">
           <v-lazy-image
             class="w-full h-full object-cover"
             :src="urlFor(item.thumbnail).url()"
-            :src-placeholder="urlFor(item.thumbnail).width(20).url()"
-          />
+            :src-placeholder="urlFor(item.thumbnail).width(20).url()"/>
           <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition"/>
           <div class="absolute inset-0 p-20 hover-show">
             <v-lazy-image
               class="w-full h-full object-contain hover-show"
               :src="urlFor(item.logo).url()"
-              :src-placeholder="urlFor(item.logo).width(20).url()"
-            />
+              :src-placeholder="urlFor(item.logo).width(20).url()"/>
           </div>
         </div>
         <div class="border-l border-black mx-8">
@@ -67,7 +63,6 @@
                 stroke-width="1"/>
             </g>
           </svg>
-
         </div>
       </nuxt-link>
     </div>

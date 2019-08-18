@@ -5,21 +5,18 @@
         color="green"
         :title="localize(event.title)"
         :text="localize(event.text)"
-        :images="event.images"
-        data-section-color-classes="text-black"/>
+        :images="event.images"/>
       <section
-        id="main"
-        class="container mx-auto p-8 md:p-12"
-        data-section-color-classes="text-black">
+        data-scroll-to
+        class="container mx-auto p-8 md:p-12">
         <article
+          class="mt-24 first:mt-0 flex flex-wrap"
+          :class="{'flex-row-reverse': i % 2 === 1}"
           v-for="(item, i) in event.eventItems"
-          :key="item._id"
-          class="mt-16 flex flex-wrap"
-          :class="{
-            'flex-row-reverse': i % 2 === 1
-          }"
-        >
-          <div class="w-full md:w-1/2 p-8">
+          :key="item._id">
+          <div
+            class="w-full md:w-1/2 pb-8 md:pb-0"
+            :class="i % 2 === 1 ? 'md:pl-8' : 'md:pr-8'">
             <h3 class="uppercase text-xs tracking-wider">{{ item.category }}</h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>
@@ -31,8 +28,7 @@
 
           <carousel-card
             class="w-full md:w-1/2 h-80 flex-shrink-0"
-            :items="item.media"
-          />
+            :items="item.media"/>
         </article>
       </section>
     </main>
@@ -48,11 +44,9 @@
   import CarouselCard from '~/components/CarouselCard'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { mapState } from 'vuex'
-  import { sectionColor } from '~/utils/mixins'
+  import { mapState, mapMutations } from 'vuex'
 
   export default {
-    mixins: [sectionColor],
 
     head () {
       return {
@@ -88,9 +82,14 @@
       })
     },
 
+    methods: {
+      ...mapMutations({
+        setMenuColor: 'setMenuColor'
+      })
+    },
+
     mounted () {
-      // comes from the mixin
-      this.initializeMixin()
+      this.setMenuColor('text-black')
     },
 
     components: {

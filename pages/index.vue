@@ -1,17 +1,14 @@
 <template>
   <div>
     <main>
-      <home-hero data-section-color-classes="text-white"/>
-      <home-actuality data-section-color-classes="text-black"/>
-      <home-who-we-are data-section-color-classes="text-black"/>
-      <home-citation data-section-color-classes="text-black"/>
-      <home-clients data-section-color-classes="text-white"/>
+      <home-hero />
+      <home-actuality />
+      <home-who-we-are />
+      <home-citation />
+      <home-clients />
     </main>
 
-    <div
-      class="bg-gray-dark"
-      data-section-color-classes="text-white"
-    >
+    <div class="bg-gray-800">
       <layout-footer class="text-white container mx-auto p-8 md:p-12"/>
     </div>
   </div>
@@ -26,18 +23,27 @@
   import HomeServices from '~/components/HomeServices'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { sectionColor } from '~/utils/mixins'
+  import { mapMutations } from 'vuex'
 
   export default {
-    mixins: [sectionColor],
+    head () {
+      return {
+        title: 'Accueil'
+      }
+    },
 
     async fetch ({ store }) {
       await store.dispatch('home/fetch')
     },
 
+    methods: {
+      ...mapMutations({
+        setMenuColor: 'setMenuColor'
+      })
+    },
+
     mounted () {
-      // comes from the mixin
-      this.initializeMixin()
+      this.setMenuColor('text-white')
     },
 
     components: {

@@ -47,7 +47,7 @@
           <button
             class="w-full lg:w-5/12 flex items-center lg:justify-center focus:outline-none mt-12 lg:mt-0"
             @click="videoOpen = true">
-            <play-circle/>
+            <play-circle class="w-16 h-16"/>
             <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
               {{ $t('home.watchVideo') }}
             </div>
@@ -84,7 +84,7 @@
         <button
           class="p-2 focus:outline-none"
           @click="$scrollTo('#actuality')">
-          <arrow-down/>
+          <arrow-down class="h-6"/>
         </button>
       </div>
     </div>

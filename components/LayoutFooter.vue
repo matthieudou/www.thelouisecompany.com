@@ -1,7 +1,7 @@
 <template>
   <footer class="flex justify-between flex-wrap border-t">
     <div class="w-full lg:w-auto flex justify-center">
-      <full-logo class="mt-4"/>
+      <full-logo class="mt-4 h-16"/>
     </div>
     <!-- ADDRESS -->
     <div class="mt-8 sm:w-1/2 md:w-auto">

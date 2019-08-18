@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed inset-x-0 top-0 transition z-10 transition"
+    class="fixed inset-x-0 top-0 transition z-10"
     :class="[
       isOpen ? 'text-white' : 'text-black',
       isScrolled ? 'text-black bg-white' : menuColor
@@ -18,7 +18,7 @@
       <nuxt-link
         class="hidden md:block z-20"
         :to="localePath({name: 'index'})">
-        <logo-name/>
+        <logo-name class="h-10"/>
       </nuxt-link>
 
       <button
@@ -28,11 +28,11 @@
           <!-- mode="out-in" -->
           <menu-closed
             key="menuClosed"
-            class="absolute"
+            class="absolute w-8 h-8"
             v-if="!isOpen"/>
           <menu-open
             key="menuOpen"
-            class="absolute"
+            class="absolute w-8 h-8"
             v-if="isOpen"/>
         </transition>
       </button>
@@ -59,7 +59,6 @@
     data () {
       return {
         isOpen: false,
-        navbarTextColor: 'text-white',
         isScrolled: false
       }
     },
@@ -96,6 +95,7 @@
     mounted () {
       if (process.client) {
         document.addEventListener('scroll', throttle(this.checkScroll, 0, { leading: false }))
+        this.checkScroll()
       }
     },
 

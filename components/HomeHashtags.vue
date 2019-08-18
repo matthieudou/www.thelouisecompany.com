@@ -1,12 +1,11 @@
 <template>
   <div class="relative">
-    <div ref="animation"/>
     <transition
       :css="false"
       @enter="enter"
       @leave="leave">
       <div
-        class="absolute w-full flex text-lg"
+        class="absolute w-full flex items-center inset-y-0 text-lg"
         :key="current._key">
         <div
           ref="firstHashtag"

@@ -16,7 +16,9 @@
           :class="{'flex-row-reverse': i % 2 === 1}"
           v-for="(item, i) in event.eventItems"
           :key="item._id">
-          <div class="w-full md:w-1/2 p-8">
+          <div
+            class="w-full md:w-1/2 pb-8 md:pb-0"
+            :class="i % 2 === 1 ? 'md:pl-8' : 'md:pr-8'">
             <h3 class="uppercase text-xs tracking-wider">{{ item.category }}</h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>

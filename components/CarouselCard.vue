@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <div class="relative w-full h-72 overflow-hidden">
+  <div>
+    <div class="relative h-full w-full overflow-hidden">
       <transition :name="transitionName">
         <v-lazy-image
           class="absolute w-full h-full object-cover"
@@ -27,7 +27,7 @@
         <span
           v-for="(i, idx) in items.length"
           :key="idx"
-          class="text-gray-600 text-xl cursor-pointer select-none"
+          class="text-gray-800 text-xl cursor-pointer select-none"
           :class="{'active-bullet': idx === currentIndex}"
           @click="setIndex(idx)">
           •

@@ -1,40 +1,45 @@
 <template>
   <section :class="computeBackgroundColor">
-    <div class="min-h-3/4-screen container mx-auto p-8 md:p-12 flex items-center justify-between md:pt-32">
+    <div class="min-h-3/4-screen container mx-auto px-8 md:px-12 pb-8 flex justify-between pt-32">
       <!-- IMAGES -->
-      <div class="rounded-full overflow-hidden w-80 h-80 flex-shrink-0 relative mr-24">
-        <transition name="fade">
-          <v-lazy-image
-            :key="number"
-            class="inset-0 w-full h-full absolute object-cover"
-            :src="urlFor(images[number]).url()"
-            :src-placeholder="urlFor(images[number]).width(20).url()"/>
-        </transition>
-      </div>
+      <div class="flex-1 flex flex-col lg:flex-row items-center lg:items-start">
+        <div class="rounded-full overflow-hidden w-full pb-full sm:pb-0 sm:w-80 sm:h-80 flex-shrink-0 relative shadow-xl lg:mr-12">
+          <transition name="fade">
+            <v-lazy-image
+              :key="number"
+              class="inset-0 w-full h-full absolute object-cover"
+              :src="urlFor(images[number]).url()"
+              :src-placeholder="urlFor(images[number]).width(20).url()"/>
+          </transition>
+        </div>
 
-      <!-- CONTENT -->
-      <div class="mr-24 self-end">
-        <h1 class="text-4xl font-serif tracking-widest">
-          <div class="-mb-3">
-            Louise
-          </div>
-          <div>
-            {{ title }}
-          </div>
-        </h1>
-        <p class="mt-4 leading-loose">
-          {{ text }}
-        </p>
+        <!-- CONTENT -->
+        <div class="mt-12 lg:mt-0 lg:mr-12">
+          <h1 class="text-4xl font-serif tracking-widest">
+            <div class="-mb-3">
+              Louise
+            </div>
+            <div>
+              {{ title }}
+            </div>
+          </h1>
 
-        <button
-          class="mt-12 focus:outline-none"
-          @click="$scrollTo('[data-scroll-to]', 300, {offset: -110})">
-          <arrow-down-circle class="w-8 h-8"/>
-        </button>
+          <p class="mt-4 leading-loose">
+            {{ text }}
+          </p>
+
+          <div class="text-center md:text-left">
+            <button
+              class="mt-12 focus:outline-none"
+              @click="$scrollTo('[data-scroll-to]', 300, {offset: -95})">
+              <arrow-down-circle class="w-8 h-8"/>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- SOCIALS -->
-      <base-socials class="self-center"/>
+      <base-socials class="hidden sm:block"/>
     </div>
   </section>
 </template>
@@ -82,7 +87,7 @@
     mounted () {
       this.__headerInterval__ = setInterval(() => {
         this.number = random(this.images.length - 1)
-      }, 5000)
+      }, 3000)
     },
 
     beforeDestroy () {

@@ -8,7 +8,7 @@
       <home-clients />
     </main>
 
-    <div class="bg-gray-dark">
+    <div class="bg-gray-800">
       <layout-footer class="text-white container mx-auto p-8 md:p-12"/>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <section class="container mx-auto flex flex-col md:flex-row p-12">
-    <div class="order-2 md:order-1 mt-12 md:mt-0 md:w-1/2 flex flex-col items-center md:pr-8">
+    <div class="order-2 md:order-1 md:w-3/5 flex flex-col items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="43.701"
@@ -25,7 +25,7 @@
       <div class="w-px h-12 bg-black my-4"/>
 
       <svg
-        class="text-gray-darker fill-current"
+        class="text-gray-900 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         width="296.347"
         height="43.306"
@@ -54,9 +54,9 @@
       </svg>
     </div>
 
-    <div class="order-1 md:order-1 md:w-1/2">
+    <div class="order-1 md:order-1 md:w-2/5 relative h-80 md:h-auto mb-12 md:mb-0 ml-12">
       <v-lazy-image
-        class="w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-contain"
         :src="urlFor(citation.thumbnail).url()"
         :src-placeholder="urlFor(citation.thumbnail).width(20).url()"/>
     </div>

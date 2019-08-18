@@ -10,7 +10,7 @@
         data-scroll-to
         class="container mx-auto p-8 md:p-12">
         <article
-          class="mt-16 flex flex-wrap"
+          class="mt-24 first:mt-0 flex flex-wrap"
           :class="{'flex-row-reverse': i % 2 === 1}"
           v-for="(item, i) in event.eventItems"
           :key="item._id">

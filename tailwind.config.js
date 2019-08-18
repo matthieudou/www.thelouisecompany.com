@@ -12,18 +12,11 @@ module.exports = {
       white: '#fff',
 
       gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        300: '#e2e8f0',
-        400: '#cbd5e0',
-        500: '#a0aec0',
-        600: '#718096',
-        700: '#4a5568',
-        800: '#2d3748',
-        900: '#1a202c',
-        'light': '#efefef',
-        'dark': '#383838',
-        'darker': '#231f20'
+        100: '#efefef',
+        200: '#EDEDED',
+        300: '#808080',
+        800: '#383838',
+        900: '#231f20'
       },
       red: {
         100: '#fff5f5',
@@ -47,7 +40,8 @@ module.exports = {
       blue: {
         'light': '#bbf1ff',
         'lighter': '#E1FBFF'
-      }
+      },
+      outline: 'rgba(66, 153, 225, 0.5)'
     },
     spacing: {
       px: '1px',
@@ -367,7 +361,7 @@ module.exports = {
     borderColor: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderWidth: ['responsive', 'first'],
     cursor: ['responsive'],
     display: ['responsive'],
     flexDirection: ['responsive'],
@@ -398,7 +392,7 @@ module.exports = {
     opacity: ['responsive', 'group-hover'],
     outline: ['focus'],
     overflow: ['responsive'],
-    padding: ['responsive'],
+    padding: ['responsive', 'first'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     inset: ['responsive'],

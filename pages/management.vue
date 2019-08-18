@@ -10,25 +10,61 @@
         data-scroll-to
         class="container mx-auto p-8 md:p-12">
         <article
-          class="mt-16 flex flex-wrap"
+          class="mt-16 first:mt-0 flex flex-wrap border-t first:border-0 pt-16 first:pt-0"
           :class="{
             'flex-row-reverse': i % 2 === 1
           }"
           v-for="(item, i) in management.managementItems"
           :key="item._id">
-          <div class="w-full md:w-1/2 p-8">
-            <h3 class="uppercase text-xs tracking-wider">{{ item.category }}</h3>
-            <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
+          <div
+            class="w-full md:w-1/2"
+            :class="i % 2 === 1 ? 'pl-8' : 'pr-8'">
+            <div class="flex items-center">
+              <div
+                v-if="item.socials.length"
+                class="mr-8">
+                <div
+                  v-for="social in item.socials"
+                  :key="social._key"
+                  class="flex items-center mt-2 first:mt-0">
+                  <div class="w-8 h-8 border border-gray-900 rounded-full flex items-center justify-center">
+                    <icon :name="social.socialName"/>
+                  </div>
+                  <div class="text-xl ml-4">
+                    {{ social.amount }}
+                  </div>
+                </div>
+              </div>
+              <div class="text-2xl font-serif">
+                <div>
+                  {{ item.firstName }}
+                </div>
+                <div>
+                  {{ item.lastName }}
+                </div>
+              </div>
+            </div>
+
+            <!-- separator -->
             <div class="my-6 h-px w-12 bg-black"/>
 
-            <div class="leading-relaxed tracking-wide">
+            <div class="pb-4">
+              <div class="text-xs my-2 font-bold">{{ localize(item.profession) }}</div>
+              <div class="text-xs my-2 font-bold">{{ localize(item.sector) }}</div>
+              <div class="text-xs my-2 font-bold">{{ localize(item.location) }}</div>
+            </div>
+
+            <div class="leading-relaxed tracking-wide text-gray-300">
               {{ localize(item.description) }}
             </div>
           </div>
 
-          <carousel-card
-            class="w-full md:w-1/2 h-80 flex-shrink-0"
-            :items="item.media"/>
+          <div class="w-full md:w-1/2">
+            <carousel-card
+              class="w-10/12 h-80 sm:w-80 md:w-64 md:h-64 lg:w-80 lg:h-80 mx-auto flex-shrink-0 relative"
+              :items="item.media"/>
+            <div class="bg-gray-200 h-32 -mt-20"/>
+          </div>
         </article>
       </section>
     </main>

@@ -6,8 +6,8 @@
       isScrolled ? 'text-black bg-white' : menuColor
   ]">
     <div
-      class="container mx-auto flex justify-between items-center p-8 md:p-12 transition"
-      :class="{'py-6 md:py-6': isScrolled}">
+      class="container mx-auto flex justify-between items-center p-8 md:px-12 transition"
+      :class="{'py-4 md:py-4': isScrolled && !isOpen}">
 
       <nuxt-link
         :to="localePath({name: 'index'})"

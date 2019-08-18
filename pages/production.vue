@@ -10,7 +10,7 @@
         data-scroll-to
         class="container mx-auto p-8 md:p-12">
         <article
-          class="mt-16 flex flex-wrap"
+          class="mt-24 first:mt-0 flex flex-wrap"
           :class="{
             'flex-row-reverse': i % 2 === 1
           }"
@@ -21,7 +21,7 @@
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>
 
-            <div class="leading-relaxed tracking-wide">
+            <div class="leading-relaxed tracking-wide text-gray-300">
               {{ localize(item.description) }}
             </div>
           </div>

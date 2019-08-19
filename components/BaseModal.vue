@@ -44,7 +44,7 @@
 
       <!-- MODAL CONTAINER -->
       <div
-        class="modal__container w-full m-auto transition"
+        class="modal__container w-full m-auto transition p-8"
         :class="computeClasses">
         <slot/>
       </div>
@@ -68,7 +68,12 @@
     computed: {
       computeClasses () {
         return {
-          [`md:max-w-${this.size}`]: true
+          'md:max-w-sm': this.size === 'sm',
+          'md:max-w-md': this.size === 'md',
+          'md:max-w-lg': this.size === 'lg',
+          'md:max-w-xl': this.size === 'xl',
+          'md:max-w-2xl': this.size === '2xl',
+          'md:max-w-3xl': this.size === '3xl'
         }
       }
     },

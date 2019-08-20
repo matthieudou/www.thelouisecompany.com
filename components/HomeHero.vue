@@ -1,8 +1,7 @@
 <template>
   <section
     id="hero"
-    class="min-h-screen relative text-white"
-    data-section-color="text-white">
+    class="min-h-screen relative text-white">
     <!-- BG VIDEO -->
     <div class="absolute inset-0 overflow-hidden">
       <video
@@ -29,7 +28,7 @@
 
       <div class="h-12 p-12"/>
 
-      <div class="container mx-auto p-8 md:p-12 flex items-center justify-between">
+      <div class="container mx-auto px-container py-8 flex items-center justify-between">
 
         <div class="flex flex-col lg:flex-row items-center justify-between">
           <div class="w-full lg:w-7/12 flex-shrink-0 pr-8 lg:pr-0">
@@ -59,7 +58,7 @@
         </div>
       </div>
 
-      <div class="container mx-auto flex justify-between items-center p-12">
+      <div class="container mx-auto flex justify-between items-center py-12 px-container">
 
         <div class="text-sm">
           <nuxt-link

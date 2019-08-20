@@ -14,7 +14,7 @@ const builder = imageUrlBuilder(client)
 Vue.mixin({
   methods: {
     urlFor (source) {
-      return builder.image(source)
+      return builder.image(source).auto('format')
     },
 
     localize (value) {

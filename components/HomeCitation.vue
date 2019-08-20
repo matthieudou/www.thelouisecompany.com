@@ -1,10 +1,10 @@
 <template>
-  <section class="container mx-auto flex flex-col md:flex-row p-12">
+  <section class="container mx-auto flex flex-col md:flex-row px-container py-separation">
     <div class="order-2 md:order-1 md:w-3/5 flex flex-col items-center">
       <quotation-marks class="w-12"/>
 
       <blockquote
-        class="mt-6 text-3xl md:text-3xl lg:text-4xl text-center font-citation font-normal tracking-widest italic"
+        class="mt-6 text-3xl text-center font-citation font-normal tracking-widest italic"
         v-html="localize(citation.citation)"/>
 
       <div class="w-px h-12 bg-black my-4"/>

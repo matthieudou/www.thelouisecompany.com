@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex justify-between flex-wrap border-t">
+  <footer class="flex justify-between flex-wrap border-t text-xs">
     <div class="w-full lg:w-auto flex justify-center">
       <full-logo class="mt-4 h-16"/>
     </div>

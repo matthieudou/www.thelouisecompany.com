@@ -1,6 +1,6 @@
 <template>
   <section :class="computeBackgroundColor">
-    <div class="min-h-3/4-screen container mx-auto px-8 md:px-12 pb-8 flex justify-between pt-32">
+    <div class="min-h-3/4-screen container mx-auto px-8 md:px-20 pb-8 flex justify-between pt-32">
       <!-- IMAGES -->
       <div class="flex-1 flex flex-col lg:flex-row items-center lg:items-start">
         <div class="rounded-full overflow-hidden w-full pb-full sm:pb-0 sm:w-80 sm:h-80 flex-shrink-0 relative lg:mr-12">
@@ -14,7 +14,7 @@
         </div>
 
         <!-- CONTENT -->
-        <div class="mt-12 lg:mt-0 lg:mr-12">
+        <div class="mt-12 lg:mt-0 lg:mr-24 md:ml-16 lg:ml-20">
           <h1 class="text-4xl font-serif tracking-widest">
             <div class="-mb-3">
               Louise

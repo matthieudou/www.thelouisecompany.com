@@ -1,15 +1,15 @@
 <template>
   <transition name="menu">
     <nav class="fixed inset-0 text-white bg-black overflow-scroll transition long">
-      <div class="container mx-auto mt-24 md:mt-32 flex justify-between p-8">
+      <div class="container mx-auto mt-24 md:mt-32 flex justify-between pt-separation px-container">
         <base-socials
           color="white"
-          class="navigation-appear-left transition"/>
+          class="hidden sm:block navigation-appear-left transition"/>
 
         <!-- CONTACT -->
-        <div class="hidden lg:flex self-end opacity-50 navigation-appear-up transition long">
+        <div class="hidden lg:flex self-end opacity-50 navigation-appear-up transition long text-xs">
           <div class="pr-8 border-r border-white flex flex-col justify-between">
-            <h3 class="uppercase text-xs font-bold tracking-wider">{{ $t('navigation.address') }}</h3>
+            <h3 class="uppercase font-bold tracking-wider">{{ $t('navigation.address') }}</h3>
             <address class="not-italic">
               <div class="mt-1">{{ localize(contact.streetName) }} {{ contact.streetNumber }}</div>
               <div class="mt-1">{{ contact.postalCode }} {{ localize(contact.city) }}</div>
@@ -18,14 +18,14 @@
           </div>
 
           <div class="ml-8 ">
-            <h3 class="mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.phone') }}</h3>
+            <h3 class="mb-2 uppercase font-black tracking-widest">{{ $t('navigation.phone') }}</h3>
             <a
               class="block"
               :href="`tel:${contact.phone}`">
               {{ contact.phone }}
             </a>
 
-            <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">{{ $t('navigation.email') }}</h3>
+            <h3 class="mt-6 mb-2 uppercase font-black tracking-widest">{{ $t('navigation.email') }}</h3>
             <a
               class="block"
               :href="`mailto:${contact.email}`">
@@ -34,9 +34,9 @@
           </div>
         </div>
 
-        <div class="font-serif text-right tracking-menu text-3xl w-full sm:w-menu whitespace-no-wrap">
+        <div class="font-serif text-right tracking-widest text-2xl w-full sm:w-menu whitespace-no-wrap">
           <!-- HOME -->
-          <div class="border-b border-white pb-4 navigation-appear-up transition">
+          <div class="border-b border-gray-300 pb-4 navigation-appear-up transition">
             <nuxt-link
               class="link"
               :to="localePath('index')"
@@ -47,9 +47,9 @@
           </div>
 
           <!-- WORK -->
-          <div class="border-b border-white pb-8 navigation-appear transition long">
+          <div class="border-b border-gray-300 pb-8 navigation-appear transition long">
             <div
-              class="uppercase text-xs font-sans mt-4 tracking-widest navigation-appear-up transition long"
+              class="uppercase text-xs font-sans mt-8 tracking-widest navigation-appear-up transition long"
               :style="{'transition-delay': '.03s'}">
               Work
             </div>
@@ -166,7 +166,7 @@
 }
 
 .link {
-  @apply flex justify-end items-center mt-4 opacity-50;
+  @apply flex justify-end items-center mt-2 opacity-50;
 }
 
 .link:after {

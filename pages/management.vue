@@ -8,7 +8,7 @@
         :images="management.images"/>
       <section
         data-scroll-to
-        class="container mx-auto p-8 md:p-12">
+        class="container mx-auto py-separation px-container">
         <article
           class="mt-16 first:mt-0 flex flex-wrap border-t first:border-0 pt-16 first:pt-0"
           :class="{
@@ -27,15 +27,15 @@
                   v-for="social in item.socials"
                   :key="social._key"
                   class="flex items-center mt-2 first:mt-0">
-                  <div class="w-8 h-8 border border-gray-900 rounded-full flex items-center justify-center">
+                  <div class="w-6 h-6 p-1 border border-gray-900 rounded-full flex items-center justify-center">
                     <icon :name="social.socialName"/>
                   </div>
-                  <div class="text-xl ml-4">
+                  <div class="text-lg ml-4">
                     {{ social.amount }}
                   </div>
                 </div>
               </div>
-              <div class="text-2xl font-serif">
+              <div class="text-3xl font-serif leading-tight">
                 <div>
                   {{ item.firstName }}
                 </div>
@@ -69,8 +69,8 @@
       </section>
     </main>
 
-    <div class="bg-white p-8 md:p-12">
-      <layout-footer class="text-black container mx-auto border-black"/>
+    <div class="bg-white container mx-auto pb-separation px-container">
+      <layout-footer class="text-black border-black"/>
     </div>
   </div>
 </template>

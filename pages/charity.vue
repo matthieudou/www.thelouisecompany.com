@@ -8,7 +8,7 @@
 
     <section
       data-scroll-to
-      class="container mx-auto p-8 md:p-12">
+      class="container mx-auto px-container py-separation">
       <h3 class="font-bold text-xs">{{ charity.firstSectionSubtitle }}</h3>
       <h2 class="font-light text-2xl mt-4">{{ charity.firstSectionTitle }}</h2>
       <div class="border-l-2 border-black mt-4 pl-8 pt-8 text-gray-300 whitespace-pre-line">
@@ -16,7 +16,7 @@
       </div>
     </section>
 
-    <section class="container mx-auto px-8 pt-8 md:px-12 md:pt-12 flex">
+    <section class="container mx-auto pt-separation px-container flex">
       <div class="w-1/3 flex-shrink-0">
         <v-lazy-image
           class="w-full h-full object-cover"
@@ -32,7 +32,7 @@
             {{ charity.secondSectionCitationAuthor }}
           </div>
         </div>
-        <div class="bg-gray-200 px-12 pt-12 mt-12">
+        <div class="bg-gray-200 px-20 pt-12 mt-12">
           <h3 class="font-light text-2xl">{{ charity.secondSectionTitle }}</h3>
           <div class="h-px bg-black w-12 my-4"/>
           <p class="text-gray-300">{{ charity.secondSectionText }}</p>
@@ -40,8 +40,10 @@
       </div>
     </section>
 
-    <div class="p-8 md:p-12 bg-gray-200 pt-20 md:pt-20">
-      <layout-footer class="text-black container mx-auto border-black"/>
+    <div class="bg-gray-200">
+      <div class="container mx-auto px-container py-separation">
+        <layout-footer class="text-black border-black"/>
+      </div>
     </div>
   </main>
 </template>

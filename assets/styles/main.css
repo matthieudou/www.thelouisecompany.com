@@ -108,6 +108,46 @@
   padding-bottom: 56.25%;
   width: 100%;
 }
+
+.pt-separation {
+  @apply pt-20;
+}
+
+.pb-separation {
+  @apply pb-20;
+}
+
+.py-separation {
+  @apply py-20;
+}
+
+.px-container {
+  @apply px-8;
+}
+
+@screen sm {
+  .px-container {
+    @apply px-10;
+  }
+}
+
+@screen md {
+  .px-container {
+    @apply px-12;
+  }
+}
+
+@screen lg {
+  .px-container {
+    @apply px-16;
+  }
+}
+
+@screen xl {
+  .px-container {
+    @apply px-20;
+  }
+}
 /* purgecss end ignore */
 
 @tailwind utilities;

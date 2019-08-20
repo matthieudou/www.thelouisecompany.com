@@ -6,8 +6,8 @@
       isScrolled ? 'text-black bg-white' : menuColor
   ]">
     <div
-      class="container mx-auto flex justify-between items-center p-8 md:px-12 transition"
-      :class="{'py-4 md:py-4': isScrolled && !isOpen}">
+      class="container mx-auto px-container flex justify-between items-center transition"
+      :class="isScrolled && !isOpen ? 'py-4' : 'py-8'">
 
       <nuxt-link
         :to="localePath({name: 'index'})"
@@ -18,7 +18,7 @@
       <nuxt-link
         class="hidden md:block z-20"
         :to="localePath({name: 'index'})">
-        <logo-name class="h-10"/>
+        <logo-name class="h-8"/>
       </nuxt-link>
 
       <button
@@ -28,11 +28,11 @@
           <!-- mode="out-in" -->
           <menu-closed
             key="menuClosed"
-            class="absolute w-8 h-8"
+            class="absolute w-6 h-6"
             v-if="!isOpen"/>
           <menu-open
             key="menuOpen"
-            class="absolute w-8 h-8"
+            class="absolute w-5 h-5"
             v-if="isOpen"/>
         </transition>
       </button>

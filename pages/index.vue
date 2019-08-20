@@ -9,7 +9,7 @@
     </main>
 
     <div class="bg-gray-800">
-      <layout-footer class="text-white container mx-auto p-8 md:p-12"/>
+      <layout-footer class="text-white container mx-auto px-container pt-4 pb-separation"/>
     </div>
   </div>
 </template>
@@ -20,7 +20,6 @@
   import HomeClients from '~/components/HomeClients'
   import HomeWhoWeAre from '~/components/HomeWhoWeAre'
   import HomeActuality from '~/components/HomeActuality'
-  import HomeServices from '~/components/HomeServices'
   import LayoutFooter from '~/components/LayoutFooter'
 
   import { mapMutations } from 'vuex'
@@ -51,7 +50,6 @@
       HomeCitation,
       HomeClients,
       HomeWhoWeAre,
-      HomeServices,
       HomeActuality,
       LayoutFooter
     }

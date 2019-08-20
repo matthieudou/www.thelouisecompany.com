@@ -1,7 +1,7 @@
 <template>
   <section
     id="actuality"
-    class="container mx-auto p-12">
+    class="container mx-auto pt-separation pb-separation px-container">
     <h2 class="font-serif text-4xl tracking-menu">
       {{ localize(actuality.title) }}
     </h2>

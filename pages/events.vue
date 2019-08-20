@@ -8,15 +8,15 @@
         :images="event.images"/>
       <section
         data-scroll-to
-        class="container mx-auto p-8 md:p-12">
+        class="container mx-auto px-container py-separation">
         <article
-          class="mt-24 first:mt-0 flex flex-wrap"
+          class="mt-32 first:mt-0 flex flex-wrap"
           :class="{'flex-row-reverse': i % 2 === 1}"
           v-for="(item, i) in event.eventItems"
           :key="item._id">
           <div
             class="w-full md:w-1/2 pb-8 md:pb-0"
-            :class="i % 2 === 1 ? 'md:pl-8' : 'md:pr-8'">
+            :class="i % 2 === 1 ? 'md:pl-12' : 'md:pr-12'">
             <h3 class="uppercase text-xs tracking-wider">{{ item.category }}</h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>
@@ -33,8 +33,8 @@
       </section>
     </main>
 
-    <div class="bg-white p-8 md:p-12">
-      <layout-footer class="text-black container mx-auto border-black"/>
+    <div class="bg-white container mx-auto px-container py-separation">
+      <layout-footer class="text-black border-black"/>
     </div>
   </div>
 </template>

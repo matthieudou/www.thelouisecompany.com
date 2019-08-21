@@ -16,14 +16,14 @@
       </div>
     </section>
 
-    <section class="container mx-auto pt-separation px-container flex">
-      <div class="w-1/3 flex-shrink-0">
+    <section class="container mx-auto pt-separation px-container flex flex-wrap">
+      <div class="w-full md:w-1/3 h-80 md:h-auto flex-shrink-0 mb-12 md:mb-0">
         <v-lazy-image
           class="w-full h-full object-cover"
           :src="urlFor(charity.secondSectionImage).url()"
           :src-placeholder="urlFor(charity.secondSectionImage).width(20).url()"/>
       </div>
-      <div class="">
+      <div class="w-full md:w-2/3">
         <div class="flex flex-col items-center">
           <quotation-marks class="w-12 mb-4"/>
           <div class="text-2xl max-w-sm text-center font-serif italic">{{ charity.secondSectionCitation }}</div>

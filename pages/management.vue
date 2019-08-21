@@ -17,8 +17,8 @@
           v-for="(item, i) in management.managementItems"
           :key="item._id">
           <div
-            class="w-full md:w-1/2"
-            :class="i % 2 === 1 ? 'pl-8' : 'pr-8'">
+            class="w-full md:w-1/2 mb-12 md:mb-0"
+            :class="i % 2 === 1 ? 'md:pl-12' : 'md:pr-12'">
             <div class="flex items-center">
               <div
                 v-if="item.socials.length"

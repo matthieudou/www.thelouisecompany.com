@@ -17,8 +17,8 @@
           v-for="(item, i) in production.productionItems"
           :key="item._id">
           <div
-            class="w-full md:w-1/2"
-            :class="i%2 === 1 ? 'pl-8' : 'pr-8'">
+            class="w-full md:w-1/2 mb-12 md:mb-0"
+            :class="i%2 === 1 ? 'md:pl-12' : 'md:pr-12'">
             <h3 class="uppercase text-xs tracking-wider">{{ item.clientName }}</h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
             <div class="my-6 h-px w-12 bg-black"/>

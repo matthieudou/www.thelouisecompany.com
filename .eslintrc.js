@@ -53,6 +53,18 @@ module.exports = {
       ]
     }],
     "handle-callback-err": "off",
+    "handle-callback-err": "off",
+    "vue/max-attributes-per-line": ["error", {
+      "singleline": 1,
+      "multiline": {
+        "max": 1,
+        "allowFirstLine": false
+      }
+    }],
+    "vue/html-closing-bracket-newline": ["error", {
+      "singleline": "never",
+      "multiline": "never"
+    }]
   },
 
   globals: {

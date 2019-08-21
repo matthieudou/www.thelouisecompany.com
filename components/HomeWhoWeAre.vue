@@ -3,10 +3,12 @@
     <v-lazy-image
       class="w-full md:w-2/5 object-cover"
       :src="urlFor(whoWeAre.thumbnail).url()"
-      :src-placeholder="urlFor(whoWeAre.thumbnail).width(20).url()"/>
+      :src-placeholder="urlFor(whoWeAre.thumbnail).width(20).url()" />
 
     <div class="w-full md:w-3/5 mt-12 md:mt-0 md:pl-12">
-      <h2 class="font-serif text-4xl">{{ localize(whoWeAre.title) }}</h2>
+      <h2 class="font-serif text-4xl">
+        {{ localize(whoWeAre.title) }}
+      </h2>
       <div class="flex flex-col lg:flex-row mt-4">
         <div class="mt-8 lg:mt-0">
           <p class="leading-loose font-light">
@@ -15,8 +17,12 @@
           <nuxt-link
             class="w-32 flex items-center mt-4 focus:outline-none group"
             :to="localePath({name: 'contact'})">
-            <div class="flex-shrink-0 mr-4">-></div>
-            <div class="group-hover:translate-r-2 transition flex-shrink-0 text-2xl font-hairline">{{ localize(whoWeAre.cta) }}</div>
+            <div class="flex-shrink-0 mr-4">
+              ->
+            </div>
+            <div class="group-hover:translate-r-2 transition flex-shrink-0 text-2xl font-hairline">
+              {{ localize(whoWeAre.cta) }}
+            </div>
           </nuxt-link>
         </div>
       </div>

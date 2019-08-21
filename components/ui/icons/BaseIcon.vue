@@ -2,8 +2,7 @@
   <svgicon
     v-bind="$attrs"
     v-on="$listeners"
-    :name="importedIconName"
-  />
+    :name="importedIconName" />
 </template>
 
 <script>

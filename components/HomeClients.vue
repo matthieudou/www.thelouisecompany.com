@@ -2,7 +2,9 @@
   <section class="bg-gray-800 text-white">
     <div class="container mx-auto px-20 py-24 flex flex-wrap">
       <div class="w-full text-center md:text-left md:w-2/5">
-        <h2 class="font-serif text-5xl md:text-4xl lg:text-5xl tracking-widest">{{ localize(clients.title) }}</h2>
+        <h2 class="font-serif text-5xl md:text-4xl lg:text-5xl tracking-widest">
+          {{ localize(clients.title) }}
+        </h2>
         <p class="mt-12 lg:w-64">
           {{ localize(clients.content) }}
         </p>
@@ -18,7 +20,7 @@
             class="w-full object-contain"
             :src="urlFor(client.thumbnail).url()"
             :src-placeholder="urlFor(client.thumbnail).width(20).url()"
-            :alt="client.name"/>
+            :alt="client.name" />
         </div>
       </div>
     </div>

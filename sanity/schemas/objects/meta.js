@@ -19,8 +19,8 @@ export default {
       type: 'localeText',
       validation: Rule => [
         Rule.custom(texts => {
-          const frCondition = texts['fr'].length < 160
-          const enCondition = texts['en'].length < 160
+          const frCondition = texts.fr.length < 160
+          const enCondition = texts.en.length < 160
           return frCondition && enCondition
         })
       ]

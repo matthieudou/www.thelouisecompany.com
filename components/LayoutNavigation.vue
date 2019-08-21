@@ -4,21 +4,20 @@
     :class="[
       isOpen ? 'text-white' : 'text-black',
       isScrolled ? 'text-black bg-white' : menuColor
-  ]">
+    ]">
     <div
       class="container mx-auto px-container flex justify-between items-center transition"
       :class="isScrolled && !isOpen ? 'py-4' : 'py-8'">
-
       <nuxt-link
         :to="localePath({name: 'index'})"
         class="z-20">
-        <logo-round class="h-16 w-16"/>
+        <logo-round class="h-16 w-16" />
       </nuxt-link>
 
       <nuxt-link
         class="hidden md:block z-20"
         :to="localePath({name: 'index'})">
-        <logo-name class="h-8"/>
+        <logo-name class="h-8" />
       </nuxt-link>
 
       <button
@@ -29,23 +28,22 @@
           <menu-closed
             key="menuClosed"
             class="absolute w-6 h-6"
-            v-if="!isOpen"/>
+            v-if="!isOpen" />
           <menu-open
             key="menuOpen"
             class="absolute w-5 h-5"
-            v-if="isOpen"/>
+            v-if="isOpen" />
         </transition>
       </button>
 
       <layout-menu
         @close="isOpen = false"
-        v-show="isOpen"/>
+        v-show="isOpen" />
     </div>
   </header>
 </template>
 
 <script>
-  import LayoutMenuIcon from '~/components/LayoutMenuIcon'
   import LayoutMenu from '~/components/LayoutMenu'
   import LogoRound from '~/assets/images/ressources/logoRound.svg'
   import LogoName from '~/assets/images/ressources/logoName.svg'
@@ -104,7 +102,6 @@
     },
 
     components: {
-      LayoutMenuIcon,
       LayoutMenu,
       LogoRound,
       LogoName,

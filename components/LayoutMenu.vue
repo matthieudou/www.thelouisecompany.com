@@ -4,28 +4,40 @@
       <div class="container mx-auto mt-24 md:mt-32 flex justify-between pt-separation px-container">
         <base-socials
           color="white"
-          class="hidden sm:block navigation-appear-left transition"/>
+          class="hidden sm:block navigation-appear-left transition" />
 
         <!-- CONTACT -->
         <div class="hidden lg:flex self-end opacity-50 navigation-appear-up transition long text-xs">
           <div class="pr-8 border-r border-white flex flex-col justify-between">
-            <h3 class="uppercase font-bold tracking-wider">{{ $t('navigation.address') }}</h3>
+            <h3 class="uppercase font-bold tracking-wider">
+              {{ $t('navigation.address') }}
+            </h3>
             <address class="not-italic">
-              <div class="mt-1">{{ localize(contact.streetName) }} {{ contact.streetNumber }}</div>
-              <div class="mt-1">{{ contact.postalCode }} {{ localize(contact.city) }}</div>
-              <div class="mt-1">{{ localize(contact.country) }}</div>
+              <div class="mt-1">
+                {{ localize(contact.streetName) }} {{ contact.streetNumber }}
+              </div>
+              <div class="mt-1">
+                {{ contact.postalCode }} {{ localize(contact.city) }}
+              </div>
+              <div class="mt-1">
+                {{ localize(contact.country) }}
+              </div>
             </address>
           </div>
 
           <div class="ml-8 ">
-            <h3 class="mb-2 uppercase font-black tracking-widest">{{ $t('navigation.phone') }}</h3>
+            <h3 class="mb-2 uppercase font-black tracking-widest">
+              {{ $t('navigation.phone') }}
+            </h3>
             <a
               class="block"
               :href="`tel:${contact.phone}`">
               {{ contact.phone }}
             </a>
 
-            <h3 class="mt-6 mb-2 uppercase font-black tracking-widest">{{ $t('navigation.email') }}</h3>
+            <h3 class="mt-6 mb-2 uppercase font-black tracking-widest">
+              {{ $t('navigation.email') }}
+            </h3>
             <a
               class="block"
               :href="`mailto:${contact.email}`">
@@ -82,8 +94,7 @@
               :style="{'transition-delay': '.15s'}"
               :to="localePath('charity')"
               v-if="activePages.charity"
-              @click.native="$emit('close')"
-            >
+              @click.native="$emit('close')">
               {{ $t('navigation.charity') }}
             </nuxt-link>
           </div>

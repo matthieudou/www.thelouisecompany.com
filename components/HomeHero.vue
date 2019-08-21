@@ -22,31 +22,34 @@
     </div>
 
     <!-- BLACK TRANSPARENT LAYER -->
-    <div class="absolute inset-0 bg-black opacity-75"/>
+    <div class="absolute inset-0 bg-black opacity-75" />
 
     <div class="absolute inset-0 flex flex-col justify-between">
-
-      <div class="h-12 p-12"/>
+      <div class="h-12 p-12" />
 
       <div class="container mx-auto px-container py-8 flex items-center justify-between">
-
         <div class="flex flex-col lg:flex-row items-center justify-between">
           <div class="w-full lg:w-7/12 flex-shrink-0 pr-8 lg:pr-0">
-            <div class="uppercase text-xs mb-4">{{ localize(hero.subtitle) }}</div>
-            <h1 class="text-3xl md:text-5xl font-serif font-normal tracking-widest leading-tight">{{ localize(hero.title) }}</h1>
+            <div class="uppercase text-xs mb-4">
+              {{ localize(hero.subtitle) }}
+            </div>
+            <h1 class="text-3xl md:text-5xl font-serif font-normal tracking-widest leading-tight">
+              {{ localize(hero.title) }}
+            </h1>
             <button
               class="w-40 flex items-center mt-4 focus:outline-none group"
               @click="$scrollTo('#actuality')">
-              <div class="flex-1 h-px bg-white mr-6"/>
-              <div class="group-hover:translate-r-2 transition">{{ localize(hero.cta) }}</div>
+              <div class="flex-1 h-px bg-white mr-6" />
+              <div class="group-hover:translate-r-2 transition">
+                {{ localize(hero.cta) }}
+              </div>
             </button>
-
           </div>
 
           <button
             class="w-full lg:w-5/12 flex items-center lg:justify-center focus:outline-none mt-12 lg:mt-0"
             @click="videoOpen = true">
-            <play-circle class="w-16 h-16"/>
+            <play-circle class="w-16 h-16" />
             <div class="w-16 ml-4 uppercase text-xs tracking-widest leading-loose">
               {{ $t('home.watchVideo') }}
             </div>
@@ -54,12 +57,11 @@
         </div>
 
         <div class="self-start">
-          <base-socials color="white"/>
+          <base-socials color="white" />
         </div>
       </div>
 
       <div class="container mx-auto flex justify-between items-center py-12 px-container">
-
         <div class="text-sm">
           <nuxt-link
             :to="switchLocalePath('fr')"
@@ -78,12 +80,12 @@
 
         <home-hashtags
           class="flex-1 font-serif"
-          :items="hero.hashtags"/>
+          :items="hero.hashtags" />
 
         <button
           class="p-2 focus:outline-none"
           @click="$scrollTo('#actuality')">
-          <arrow-down class="h-6"/>
+          <arrow-down class="h-6" />
         </button>
       </div>
     </div>
@@ -101,8 +103,7 @@
           webkitallowfullscreen
           mozallowfullscreen
           allowfullscreen
-          autoplay=1
-        />
+          autoplay="1" />
       </div>
     </base-modal>
   </section>

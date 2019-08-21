@@ -1,7 +1,7 @@
 <template>
   <div class="h-full font-sans text-sm">
-    <layout-navigation/>
-    <nuxt/>
+    <layout-navigation />
+    <nuxt />
   </div>
 </template>
 

@@ -9,7 +9,7 @@
               :key="number"
               class="inset-0 w-full h-full absolute object-cover"
               :src="urlFor(images[number]).url()"
-              :src-placeholder="urlFor(images[number]).width(20).url()"/>
+              :src-placeholder="urlFor(images[number]).width(20).url()" />
           </transition>
         </div>
 
@@ -32,14 +32,13 @@
             <button
               class="mt-12 focus:outline-none"
               @click="$scrollTo('[data-scroll-to]', 300, {offset: -95})">
-              <arrow-down-circle class="w-8 h-8"/>
+              <arrow-down-circle class="w-8 h-8" />
             </button>
           </div>
         </div>
       </div>
-
       <!-- SOCIALS -->
-      <base-socials class="hidden sm:block"/>
+      <base-socials class="hidden sm:block" />
     </div>
   </section>
 </template>
@@ -82,6 +81,7 @@
         if (this.color === 'green') return 'bg-green-lighter'
         if (this.color === 'yellow') return 'bg-yellow-lighter'
         if (this.color === 'pink') return 'bg-pink-lighter'
+        return 'bg-blue-lighter'
       }
     },
 

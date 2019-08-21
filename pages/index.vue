@@ -9,7 +9,7 @@
     </main>
 
     <div class="bg-gray-800">
-      <layout-footer class="text-white container mx-auto px-container pt-4 pb-separation"/>
+      <layout-footer class="text-white container mx-auto px-container pt-4 pb-separation" />
     </div>
   </div>
 </template>

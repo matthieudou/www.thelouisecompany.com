@@ -16,17 +16,19 @@
           <v-lazy-image
             class="w-full h-full object-cover"
             :src="urlFor(item.thumbnail).url()"
-            :src-placeholder="urlFor(item.thumbnail).width(20).url()"/>
-          <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition"/>
+            :src-placeholder="urlFor(item.thumbnail).width(20).url()" />
+          <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition" />
           <div class="absolute inset-0 p-20 hover-show">
             <v-lazy-image
               class="w-full h-full object-contain hover-show"
               :src="urlFor(item.logo).url()"
-              :src-placeholder="urlFor(item.logo).width(20).url()"/>
+              :src-placeholder="urlFor(item.logo).width(20).url()" />
           </div>
         </div>
         <div class="border-l border-black mx-8">
-          <h3 class="ml-4 pt-4 uppercase text-lg tracking-widest">{{ localize(item.title) }}</h3>
+          <h3 class="ml-4 pt-4 uppercase text-lg tracking-widest">
+            {{ localize(item.title) }}
+          </h3>
 
           <div class="ml-4 mt-4 uppercase text-xs font-hairline">
             {{ localize(item.type) }}
@@ -51,7 +53,7 @@
                 stroke="#000"
                 stroke-linecap="square"
                 stroke-miterlimit="10"
-                stroke-width="1"/>
+                stroke-width="1" />
               <path
                 id="Tracé_368"
                 data-name="Tracé 368"
@@ -60,7 +62,7 @@
                 fill="none"
                 stroke="#000"
                 stroke-miterlimit="10"
-                stroke-width="1"/>
+                stroke-width="1" />
             </g>
           </svg>
         </div>

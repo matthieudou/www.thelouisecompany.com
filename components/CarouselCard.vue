@@ -8,7 +8,7 @@
           v-touch:swipe.right="previous"
           :key="currentIndex"
           :src="urlFor(items[currentIndex]).url()"
-          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"/>
+          :src-placeholder="urlFor(items[currentIndex]).width(20).url()" />
       </transition>
 
       <!-- CONTROLS -->
@@ -17,7 +17,7 @@
           class="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none bg-transparent-black-light"
           v-show="(items[currentIndex] || {}).link"
           @click="videoOpen = true">
-          <play-circle class="w-12 h-12"/>
+          <play-circle class="w-12 h-12" />
         </button>
       </transition>
 
@@ -41,13 +41,13 @@
       <button
         class="focus:outline-none select-none p-2"
         @click="previous">
-        <chevron-left class="h-3"/>
+        <chevron-left class="h-3" />
       </button>
 
       <button
         class="focus:outline-none select-none p-2"
         @click="next">
-        <chevron-right class="h-3"/>
+        <chevron-right class="h-3" />
       </button>
     </div>
 
@@ -64,8 +64,7 @@
           webkitallowfullscreen
           mozallowfullscreen
           allowfullscreen
-          autoplay=1
-        />
+          autoplay="1" />
       </div>
     </base-modal>
   </div>

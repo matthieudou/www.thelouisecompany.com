@@ -5,7 +5,7 @@
         color="green"
         :title="localize(event.title)"
         :text="localize(event.text)"
-        :images="event.images"/>
+        :images="event.images" />
       <section
         data-scroll-to
         class="container mx-auto px-container py-separation">
@@ -17,9 +17,13 @@
           <div
             class="w-full md:w-1/2 pb-12 md:pb-0"
             :class="i % 2 === 1 ? 'md:pl-12' : 'md:pr-12'">
-            <h3 class="uppercase text-xs tracking-wider">{{ item.category }}</h3>
-            <h2 class="text-2xl mt-4 font-hairline tracking-wider">{{ localize(item.title) }}</h2>
-            <div class="my-6 h-px w-12 bg-black"/>
+            <h3 class="uppercase text-xs tracking-wider">
+              {{ item.category }}
+            </h3>
+            <h2 class="text-2xl mt-4 font-hairline tracking-wider">
+              {{ localize(item.title) }}
+            </h2>
+            <div class="my-6 h-px w-12 bg-black" />
 
             <div class="leading-relaxed tracking-wide">
               {{ localize(item.description) }}
@@ -28,13 +32,13 @@
 
           <carousel-card
             class="w-full md:w-1/2 h-80 flex-shrink-0"
-            :items="item.media"/>
+            :items="item.media" />
         </article>
       </section>
     </main>
 
     <div class="bg-white container mx-auto px-container py-separation">
-      <layout-footer class="text-black border-black"/>
+      <layout-footer class="text-black border-black" />
     </div>
   </div>
 </template>

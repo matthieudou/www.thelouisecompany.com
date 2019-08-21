@@ -1,9 +1,7 @@
 <template>
   <transition
     name="modal"
-    appear
-  >
-
+    appear>
     <!-- BACKGROUND BLACK TRANSPARENT -->
     <div
       class="modal__backdrop fixed flex flex-col inset-0 z-20 overflow-auto md:py-24 transition"
@@ -27,7 +25,7 @@
             stroke="#fff"
             stroke-linecap="square"
             stroke-miterlimit="10"
-            stroke-width="1"/>
+            stroke-width="1" />
           <line
             id="Ligne_51"
             data-name="Ligne 51"
@@ -38,7 +36,7 @@
             stroke="#fff"
             stroke-linecap="square"
             stroke-miterlimit="10"
-            stroke-width="1"/>
+            stroke-width="1" />
         </svg>
       </button>
 
@@ -46,7 +44,7 @@
       <div
         class="modal__container w-full m-auto transition p-8"
         :class="computeClasses">
-        <slot/>
+        <slot />
       </div>
     </div>
   </transition>

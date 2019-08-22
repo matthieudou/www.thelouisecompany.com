@@ -30,6 +30,22 @@ export const localeText = {
   ))
 }
 
+export const localeArray = {
+  name: 'localeArray',
+  type: 'object',
+  fields: supportedLanguages.map(lang => (
+    {
+      title: ' ',
+      description: lang.title,
+      name: lang.id,
+      type: 'array',
+      of: [
+        { type: 'string' }
+      ]
+    }
+  ))
+}
+
 export const localeSlug = {
   name: 'localeSlug',
   type: 'object',

@@ -8,7 +8,7 @@ import blockContent from './blockContent'
 import altImage from './altImage'
 import video from './video'
 import meta from './objects/meta'
-import { localeString, localeText, localeSlug, localeBlock } from './localizedContent'
+import { localeString, localeText, localeSlug, localeBlock, localeArray } from './localizedContent'
 
 import test from './test'
 
@@ -52,6 +52,7 @@ export default createSchema({
     localeText,
     localeSlug,
     localeBlock,
+    localeArray,
     meta,
 
     // LAYOUT TYPES

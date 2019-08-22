@@ -25,6 +25,14 @@ export default {
       fieldset: 'contact'
     },
     {
+      title: 'Sujets de contact',
+      name: 'contactSubjects',
+      type: 'localeArray'
+      // of: [
+      //   { type: 'string' }
+      // ]
+    },
+    {
       title: 'Rue',
       name: 'streetName',
       type: 'localeString',

@@ -64,8 +64,11 @@
                     selected>
                     Vous nous contactez pour ?
                   </option>
-                  <option>Une demande de prix</option>
-                  <option>Des questions de fonctionnement</option>
+                  <option
+                    v-for="(option, i) in localize(contact.contactSubjects)"
+                    :key="i">
+                    {{ option }}
+                  </option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg

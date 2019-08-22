@@ -59,9 +59,13 @@
                 <select
                   class="block appearance-none w-full rounded-none border border-black text-black py-3 px-4 pr-8 leading-tight focus:outline-none"
                   id="grid-state">
-                  <option>New Mexico</option>
-                  <option>Missouri</option>
-                  <option>Texas</option>
+                  <option
+                    disabled
+                    selected>
+                    Vous nous contactez pour ?
+                  </option>
+                  <option>Une demande de prix</option>
+                  <option>Des questions de fonctionnement</option>
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                   <svg

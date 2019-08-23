@@ -1014,6 +1014,12 @@
     tempy "^0.3.0"
     whatwg-url "^7.0.0"
 
+"@sanity/language-filter@^0.142.0":
+  version "0.142.0"
+  resolved "https://registry.npmjs.org/@sanity/language-filter/-/language-filter-0.142.0.tgz#50bdafe533da4bda6317cdaea5f16dcc05b17c5f"
+  dependencies:
+    rxjs "^6.1.0"
+
 "@sanity/mutator@0.142.0":
   version "0.142.0"
   resolved "https://registry.npmjs.org/@sanity/mutator/-/mutator-0.142.0.tgz#b193e36504990abae36c691d3bb6c3f53a485148"

@@ -24,7 +24,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/google-maps-input",
-    "@sanity/dashboard"
+    "@sanity/language-filter"
   ],
   "parts": [
     {
@@ -34,6 +34,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./structureBuilder"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./parts/languageFilterConfig.js"
     }
   ]
 }

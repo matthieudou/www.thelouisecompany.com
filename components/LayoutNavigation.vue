@@ -14,26 +14,28 @@
         <logo-round class="h-16 w-16" />
       </nuxt-link>
 
-      <nuxt-link
-        class="hidden md:block z-20"
-        :to="localePath({name: 'index'})">
-        <logo-name class="h-8" />
-      </nuxt-link>
-
       <button
-        class="focus:outline-none z-20 w-10 h-10 flex items-center justify-center"
+        class="focus:outline-none z-20 flex items-center"
         @click="isOpen = !isOpen">
-        <transition name="spin">
-          <!-- mode="out-in" -->
-          <menu-closed
-            key="menuClosed"
-            class="absolute w-6 h-6"
-            v-if="!isOpen" />
-          <menu-open
-            key="menuOpen"
-            class="absolute w-5 h-5"
-            v-if="isOpen" />
+        <transition name="slideInTop">
+          <div
+            v-show="!isOpen"
+            class="uppercase text-xs mr-2">
+            Menu
+          </div>
         </transition>
+        <div class="w-10 h-10 flex items-center justify-center">
+          <transition name="spin">
+            <menu-closed
+              key="menuClosed"
+              class="absolute w-6 h-6"
+              v-if="!isOpen" />
+            <menu-open
+              key="menuOpen"
+              class="absolute w-5 h-5"
+              v-if="isOpen" />
+          </transition>
+        </div>
       </button>
 
       <layout-menu
@@ -46,7 +48,6 @@
 <script>
   import LayoutMenu from '~/components/LayoutMenu'
   import LogoRound from '~/assets/images/ressources/logoRound.svg'
-  import LogoName from '~/assets/images/ressources/logoName.svg'
   import MenuClosed from '~/assets/images/icons/menuClosed.svg'
   import MenuOpen from '~/assets/images/icons/menuOpen.svg'
 
@@ -104,7 +105,6 @@
     components: {
       LayoutMenu,
       LogoRound,
-      LogoName,
       MenuClosed,
       MenuOpen
     }
@@ -119,5 +119,14 @@
 .spin-enter, .spin-leave-to {
   opacity: 0;
   transform: rotate(100deg);
+}
+
+.slideInTop-enter-active, .slideInTop-leave-active {
+  transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slideInTop-enter, .slideInTop-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
 }
 </style>

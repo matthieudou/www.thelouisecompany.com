@@ -18,7 +18,7 @@
             class="w-32 flex items-center mt-4 focus:outline-none group"
             :to="localePath({name: 'contact'})">
             <div class="flex-shrink-0 mr-4">
-              ->
+              <long-arrow-right class="h-2" />
             </div>
             <div class="group-hover:translate-r-2 transition flex-shrink-0 text-2xl font-hairline">
               {{ localize(whoWeAre.cta) }}
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+  import LongArrowRight from '~/assets/images/icons/LongArrowRight.svg'
+
   import { mapState } from 'vuex'
 
   export default {
@@ -38,6 +40,10 @@
       ...mapState('home', {
         whoWeAre: 'whoWeAre'
       })
+    },
+
+    components: {
+      LongArrowRight
     }
   }
 </script>

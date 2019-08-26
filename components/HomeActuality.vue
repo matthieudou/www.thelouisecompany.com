@@ -34,37 +34,7 @@
             {{ localize(item.type) }}
           </div>
 
-          <svg
-            class="ml-4 mt-4 group-hover:translate-r-2 transition"
-            xmlns="http://www.w3.org/2000/svg"
-            width="62.451"
-            height="11.62"
-            viewBox="0 0 62.451 11.62">
-            <g
-              id="Groupe_283"
-              data-name="Groupe 283"
-              transform="translate(0.5 0.354)">
-              <line
-                id="Ligne_59"
-                data-name="Ligne 59"
-                x1="60.851"
-                transform="translate(0 5.456)"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-miterlimit="10"
-                stroke-width="1" />
-              <path
-                id="Tracé_368"
-                data-name="Tracé 368"
-                d="M2015.141,2937.019l5.456,5.456-5.456,5.456"
-                transform="translate(-1959.354 -2937.019)"
-                fill="none"
-                stroke="#000"
-                stroke-miterlimit="10"
-                stroke-width="1" />
-            </g>
-          </svg>
+          <long-arrow-right class="ml-4 mt-4 h-3 group-hover:translate-r-2 transition" />
         </div>
       </nuxt-link>
     </div>
@@ -72,6 +42,8 @@
 </template>
 
 <script>
+  import LongArrowRight from '~/assets/images/icons/LongArrowRight.svg'
+
   import { mapState } from 'vuex'
 
   export default {
@@ -79,6 +51,10 @@
       ...mapState('home', {
         actuality: 'actuality'
       })
+    },
+
+    components: {
+      LongArrowRight
     }
   }
 </script>

@@ -1,12 +1,34 @@
 <template>
-  <div class="h-full font-sans text-sm">
+  <div class="font-sans text-sm">
     <layout-navigation />
     <nuxt />
+    <div
+      data-transition="container"
+      class="fixed inset-0 z-50 hidden">
+      <div
+        data-transition="grayFirst"
+        class="absolute w-full h-full bg-gray-100" />
+      <div
+        data-transition="graySecond"
+        class="absolute w-full h-full bg-gray-300" />
+      <div
+        data-transition="grayThird"
+        class="absolute w-full h-full bg-gray-900" />
+      <div
+        data-transition="black"
+        class="absolute w-full h-full bg-black" />
+      <div
+        data-transition="logo"
+        class="absolute text-white w-full h-full flex justify-center items-center">
+        <logo-round class="fill-current text-white w-32 h-32" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import LayoutNavigation from '~/components/LayoutNavigation'
+  import LogoRound from '~/assets/images/ressources/logoRound.svg'
 
   import { mapState } from 'vuex'
 
@@ -41,17 +63,8 @@
     },
 
     components: {
-      LayoutNavigation
+      LayoutNavigation,
+      LogoRound
     }
   }
 </script>
-
-<style>
-.page-enter-active, .page-leave-active {
-  transition: .4s;
-}
-
-.page-enter, .page-leave-to {
-  opacity: 0;
-}
-</style>

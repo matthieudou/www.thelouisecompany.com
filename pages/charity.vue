@@ -64,8 +64,11 @@
   import QuotationMarks from '~/assets/images/icons/quotationMarks.svg'
 
   import { mapState, mapMutations } from 'vuex'
+  import baseTransition from '~/mixins/baseTransition'
 
   export default {
+    mixins: [baseTransition],
+
     async fetch ({ store }) {
       await store.dispatch('charity/fetch')
     },

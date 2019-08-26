@@ -126,8 +126,11 @@
 
   import BaseSocials from '~/components/BaseSocials'
   import LayoutFooter from '~/components/LayoutFooter'
+  import baseTransition from '~/mixins/baseTransition'
 
   export default {
+    mixins: [baseTransition],
+
     data () {
       return {
         loading: false,

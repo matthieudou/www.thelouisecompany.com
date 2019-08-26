@@ -87,8 +87,10 @@
   import LayoutFooter from '~/components/LayoutFooter'
 
   import { mapState, mapMutations } from 'vuex'
+  import baseTransition from '~/mixins/baseTransition'
 
   export default {
+    mixins: [baseTransition],
 
     head () {
       return {

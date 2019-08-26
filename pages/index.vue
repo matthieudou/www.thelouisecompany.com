@@ -23,8 +23,11 @@
   import LayoutFooter from '~/components/LayoutFooter'
 
   import { mapMutations } from 'vuex'
+  import baseTransition from '~/mixins/baseTransition'
 
   export default {
+    mixins: [baseTransition],
+
     head () {
       return {
         title: 'Accueil'

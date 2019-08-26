@@ -1,27 +1,8 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  class="text-white stroke-current fill-current"
-  width="64"
-  height="64"
-  viewBox="0 0 64 64"
->
-  <g
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="2"
-  >
-    <circle
-      fill="none"
-      stroke-miterlimit="10"
-      cx="32"
-      cy="32"
-      r="30"
-    />
-    <polygon
-      data-color="color-2"
-      fill="none"
-      stroke-miterlimit="10"
-      points=" 24,46 24,18 44,32 "
-    />
+<svg xmlns="http://www.w3.org/2000/svg" width="83.411" height="83.411" viewBox="0 0 83.411 83.411">
+  <g id="Groupe_264" data-name="Groupe 264" transform="translate(-2729.335 -1087.297)">
+    <g id="Groupe_263" data-name="Groupe 263">
+      <circle id="Ellipse_54" data-name="Ellipse 54" cx="41.58" cy="41.58" r="41.58" transform="translate(2729.46 1087.422)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="0.25"/>
+      <path id="Tracé_366" data-name="Tracé 366" d="M2765.237,1114.759l18.99,13.023a1.4,1.4,0,0,1,0,2.439l-18.99,13.023c-1.413.969-3.688.217-3.688-1.219v-26.047C2761.549,1114.542,2763.824,1113.79,2765.237,1114.759Z" fill="#fff"/>
+    </g>
   </g>
 </svg>

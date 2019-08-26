@@ -30,7 +30,7 @@
 
           <div class="text-center md:text-left">
             <button
-              class="mt-12 focus:outline-none"
+              class="mt-12 focus:outline-none hover:scale transition"
               @click="$scrollTo('[data-scroll-to]', 300, {offset: -95})">
               <arrow-down-circle class="w-8 h-8" />
             </button>

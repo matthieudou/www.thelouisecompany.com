@@ -76,6 +76,10 @@
 
   .translate-t-2 {
     transform: translateY(-0.5rem);
+  },
+
+  .scale {
+    transform: scale(1.2);
   }
 }
 

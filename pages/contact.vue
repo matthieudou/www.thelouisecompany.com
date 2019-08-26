@@ -131,6 +131,12 @@
   export default {
     mixins: [baseTransition],
 
+    head () {
+      return {
+        title: this.$t('titles.contact')
+      }
+    },
+
     data () {
       return {
         loading: false,

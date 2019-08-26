@@ -14,5 +14,10 @@ export default {
 
   home: {
     watchVideo: 'Lire la vidéo'
+  },
+
+  titles: {
+    home: 'Accueil',
+    contact: 'Nous contacter'
   }
 }

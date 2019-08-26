@@ -14,5 +14,10 @@ export default {
 
   home: {
     watchVideo: 'Watch the video'
+  },
+
+  titles: {
+    home: 'Home',
+    contact: 'Contact us'
   }
 }

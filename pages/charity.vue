@@ -73,6 +73,12 @@
       await store.dispatch('charity/fetch')
     },
 
+    head () {
+      return {
+        title: this.charity.title
+      }
+    },
+
     computed: {
       ...mapState('charity', {
         item: 'item'

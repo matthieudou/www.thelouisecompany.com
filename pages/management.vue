@@ -101,14 +101,14 @@
 
           // OG
           { hid: 'og:type', property: 'og:type', content: 'website' },
-          { hid: 'og:url', property: 'og:url', content: process.env.URL },
+          { hid: 'og:url', property: 'og:url', content: process.env.URL + this.localePath('management') },
           { hid: 'og:title', property: 'og:title', content: this.localize(this.management.title) },
           { hid: 'og:description', property: 'og:description', content: this.localize(this.management.meta.description) },
           { hid: 'og:image', property: 'og:image', content: this.urlFor(this.management.meta.image).width(1200).height(630).url() },
 
           // TWITTER
           { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
-          { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL },
+          { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL + this.localePath('management') },
           { hid: 'twitter:title', property: 'twitter:title', content: this.localize(this.management.title) },
           { hid: 'twitter:description', property: 'twitter:description', content: this.localize(this.management.meta.description) },
           { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.management.meta.image).width(1200).height(600).url() }

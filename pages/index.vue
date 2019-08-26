@@ -30,7 +30,7 @@
 
     head () {
       return {
-        title: 'Accueil'
+        title: this.$t('titles.home')
       }
     },
 

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import LongArrowRight from '~/assets/images/icons/LongArrowRight.svg'
+  import LongArrowRight from '~/assets/images/icons/longArrowRight.svg'
 
   import { mapState } from 'vuex'
 

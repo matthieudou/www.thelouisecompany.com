@@ -19,5 +19,18 @@ export default {
   titles: {
     home: 'Home',
     contact: 'Contact us'
+  },
+
+  contact: {
+    title: 'A question ?',
+    placeholders: {
+      contact: 'Purpose of your contact.',
+      firstName: 'First name',
+      lastName: 'Last name',
+      email: 'Email',
+      company: 'Company (Opt.)',
+      message: 'Your message',
+      submit: 'Send'
+    }
   }
 }

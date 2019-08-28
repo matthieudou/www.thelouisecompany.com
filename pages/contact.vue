@@ -1,7 +1,7 @@
 <template>
   <main class="min-h-screen container px-container mx-auto pt-32">
     <div class="flex flex-col-reverse md:flex-row ">
-      <section class="bg-gray-300 flex-1">
+      <section class="bg-gray-300 flex-1 mt-12 md:mt-0 h-64 md:h-auto">
         <iframe
           class="w-full h-full grayscale"
           src="https://maps.google.com/maps?q=Rue%20Veydt%2C%2074%2F76%201050%20Bruxelles%20Belgium&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -11,7 +11,7 @@
           marginwidth="0" />
       </section>
 
-      <section class="flex-1 pl-16 flex">
+      <section class="flex-1 pl-0 md:pl-16 flex">
         <div class="flex-1">
           <div class="mt-12 flex justify-between">
             <div>
@@ -51,18 +51,21 @@
 
           <div class="mt-12">
             <h2 class="uppercase text-xs">
-              Une question ?
+              {{ $t('contact.title') }}
             </h2>
 
-            <form action="">
+            <form @submit.prevent="submit">
               <div class="relative mt-4">
                 <select
                   class="block appearance-none w-full rounded-none border border-black text-black py-3 px-4 pr-8 leading-tight focus:outline-none"
-                  id="grid-state">
+                  id="grid-state"
+                  v-model="form.subject"
+                  required>
                   <option
                     disabled
+                    value="null"
                     selected>
-                    Vous nous contactez pour ?
+                    {{ $t('contact.placeholders.contact') }}
                   </option>
                   <option
                     v-for="(option, i) in localize(contact.contactSubjects)"
@@ -81,33 +84,43 @@
               <div class="flex mt-4">
                 <input
                   type="text"
+                  v-model="form.firstName"
                   class="appearance-none focus:outline-none border-b border-black block w-full mt-4 md:mr-2 py-2"
-                  placeholder="prénom">
+                  :placeholder="$t('contact.placeholders.firstName')"
+                  required>
                 <input
                   type="text"
+                  v-model="form.lastName"
                   class="appearance-none focus:outline-none border-b border-black block w-full mt-4 md:ml-2 py-2"
-                  placeholder="nom">
+                  :placeholder="$t('contact.placeholders.lastName')"
+                  required>
               </div>
               <div class="flex mt-4">
                 <input
-                  type="text"
+                  type="email"
+                  v-model="form.email"
                   class="appearance-none focus:outline-none border-b border-black block w-full mt-4 md:mr-2 py-2"
-                  placeholder="email">
+                  :placeholder="$t('contact.placeholders.email')"
+                  required>
                 <input
                   type="text"
+                  v-model="form.company"
                   class="appearance-none focus:outline-none border-b border-black block w-full mt-4 md:ml-2 py-2"
-                  placeholder="entreprise (opt)">
+                  :placeholder="$t('contact.placeholders.company')">
               </div>
               <textarea
                 name=""
                 id=""
                 rows="10"
+                v-model="form.text"
                 placeholder="Votre message"
-                class="appearance-none focus:outline-none border-b border-black block w-full h-10 mt-4" />
+                class="appearance-none focus:outline-none border-b border-black block w-full h-10 mt-8"
+                required />
               <input
                 type="submit"
-                class="appearance-none w-full p-2 bg-black text-white rounded-none mt-8 focus:outline-none focus:shadow-outline"
-                value="Envoyer">
+                class="appearance-none w-full p-2 bg-black text-white rounded-none mt-8 focus:outline-none focus:shadow-outline cursor-pointer"
+                :class="{loading: loading}"
+                :value="$t('contact.placeholders.submit')">
             </form>
           </div>
         </div>
@@ -141,11 +154,12 @@
       return {
         loading: false,
         form: {
-          to: 'matthieu.doultremont@gmail.com',
-          from: 'matthieudou@gmail.com',
-          subject: 'Super mail envoyé',
-          text: 'Bonjour c’est matthieu',
-          html: '<b>Bonjour</b> c’est <i>Matthieu</i>'
+          subject: null,
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          text: ''
         }
       }
     },
@@ -161,14 +175,44 @@
         setMenuColor: 'setMenuColor'
       }),
 
-      async submit () {
+      submit () {
+        if (!this.form.subject) return alert('Please fill in the subject')
         const url = `${process.env.FUNCTIONS_URL}/send-mail`
-        const response = await this.$axios.$post(
-          url,
-          this.form
-        )
+        const params = {
+          to: process.env.NODE_ENV === 'production' ? this.contact.email : 'matthieu.doultremont@gmail.com',
+          from: this.form.email,
+          subject: this.form.subject,
+          text: this.form.text,
+          html: `
+            <div style="font-weight: bold;">Message subject :</div>
+            <div>${this.form.subject}</div>
+            <br><br>
+            <div style="font-weight: bold;">Message from :</div>
+            <div>${this.form.firstName} ${this.form.lastName} [${this.form.company}] - ${this.form.email}</div>
+            <br><br>
+            <div style="font-weight: bold;">Content :</div>
+            <div>${this.form.text}</div>
+          `
+        }
+        this.$axios.$post(url, params)
+          .then(response => {
+            alert('Message sent successfully')
+            this.resetForm()
+          })
+          .catch(err => {
+            alert('Sorry, there was an error in the sending of the message. Try again or directly send a mail.')
+          })
+      },
 
-        console.log(response)
+      resetForm () {
+        Object.assign(this.form, {
+          subject: null,
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          text: ''
+        })
       }
     },
 

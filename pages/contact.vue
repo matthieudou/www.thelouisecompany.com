@@ -13,8 +13,8 @@
 
       <section class="flex-1 pl-0 md:pl-16 flex">
         <div class="flex-1">
-          <div class="mt-12 flex justify-between">
-            <div>
+          <div class="mt-12 flex justify-between flex-wrap">
+            <div class="mt-4">
               <h2 class="uppercase text-xs font-bold mb-2">
                 {{ $t('navigation.address') }}
               </h2>
@@ -31,7 +31,7 @@
               </address>
             </div>
 
-            <div>
+            <div class="mt-4">
               <div>
                 <h2 class="uppercase text-xs font-bold mb-2">
                   {{ $t('navigation.phone') }}

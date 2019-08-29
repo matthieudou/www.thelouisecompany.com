@@ -14,6 +14,7 @@
           :class="{
             'flex-row-reverse': i % 2 === 1
           }"
+          :id="item.hash"
           v-for="(item, i) in management.managementItems"
           :key="item._id">
           <div

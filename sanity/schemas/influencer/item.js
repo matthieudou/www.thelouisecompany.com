@@ -80,6 +80,19 @@ export default {
         { type: 'altImage' },
         { type: 'video' }
       ]
+    },
+    {
+      name: 'hash',
+      title: 'Link from homepage',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'First', value: 'first' },
+          { title: 'Second', value: 'second' },
+          { title: 'Third', value: 'third' },
+          { title: 'Fourth', value: 'fourth' }
+        ]
+      }
     }
   ],
 

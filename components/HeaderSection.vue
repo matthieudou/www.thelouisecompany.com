@@ -1,5 +1,5 @@
 <template>
-  <section :class="computeBackgroundColor">
+  <section class="bg-gray-50">
     <div class="min-h-3/4-screen container mx-auto px-8 md:px-20 pb-8 flex justify-between pt-32">
       <!-- IMAGES -->
       <div class="flex-1 flex flex-col lg:flex-row items-center lg:items-start">
@@ -76,13 +76,13 @@
     },
 
     computed: {
-      computeBackgroundColor () {
-        if (this.color === 'blue') return 'bg-blue-lighter'
-        if (this.color === 'green') return 'bg-green-lighter'
-        if (this.color === 'yellow') return 'bg-yellow-lighter'
-        if (this.color === 'pink') return 'bg-pink-lighter'
-        return 'bg-blue-lighter'
-      }
+      // computeBackgroundColor () {
+      //   if (this.color === 'blue') return 'bg-blue-lighter'
+      //   if (this.color === 'green') return 'bg-green-lighter'
+      //   if (this.color === 'yellow') return 'bg-yellow-lighter'
+      //   if (this.color === 'pink') return 'bg-pink-lighter'
+      //   return 'bg-blue-lighter'
+      // }
     },
 
     mounted () {

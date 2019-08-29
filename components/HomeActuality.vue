@@ -18,9 +18,11 @@
             :src="urlFor(item.thumbnail).url()"
             :src-placeholder="urlFor(item.thumbnail).width(20).url()" />
           <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition" />
-          <div class="absolute inset-0 p-20 hover-show">
+          <div
+            v-if="item.logo && item.logo.asset"
+            class="absolute inset-0 p-20 hover-show">
             <v-lazy-image
-              class="w-full h-full object-contain hover-show"
+              class="w-full h-full object-contain"
               :src="urlFor(item.logo).url()"
               :src-placeholder="urlFor(item.logo).width(20).url()" />
           </div>

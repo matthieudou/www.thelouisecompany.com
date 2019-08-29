@@ -8,7 +8,11 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'localeString'
+      type: 'localeString',
+      validation: Rule => [
+        Rule.custom(titles => (titles.fr || '').length < 65 ? true : 'Title fr is too long.').warning(),
+        Rule.custom(titles => (titles.en || '').length < 65 ? true : 'Title en is too long.').warning()
+      ]
     },
     {
       name: 'subtitle',

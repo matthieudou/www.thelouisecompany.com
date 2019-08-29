@@ -11,7 +11,7 @@
         class="p-1 group"
         v-for="item in actuality.items"
         :key="item._key"
-        :to="localePath({name: item.link})">
+        :to="localePath({name: item.link, hash: item.hash})">
         <div class="w-80 h-80 relative">
           <v-lazy-image
             class="w-full h-full object-cover"

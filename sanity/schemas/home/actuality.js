@@ -45,6 +45,19 @@ export default {
               }
             },
             {
+              name: 'hash',
+              title: 'Specific item',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'First', value: 'first' },
+                  { title: 'Second', value: 'second' },
+                  { title: 'Third', value: 'third' },
+                  { title: 'Fourth', value: 'fourth' }
+                ]
+              }
+            },
+            {
               name: 'thumbnail',
               title: 'Thumbnail',
               type: 'altImage',

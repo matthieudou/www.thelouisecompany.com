@@ -99,6 +99,9 @@
 
     mounted () {
       this.setMenuColor('text-black')
+      if (this.$route.hash) {
+        this.$scrollTo(this.$route.hash, 300, { offset: -110 })
+      }
     },
 
     components: {

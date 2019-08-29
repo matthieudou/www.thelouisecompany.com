@@ -87,14 +87,14 @@ export default {
     select: {
       firstName: 'firstName',
       lastName: 'lastName',
-      location: 'location',
-      sector: 'sector',
+      location: 'location.en',
+      sector: 'sector.en',
       media: 'media'
     },
     prepare ({ firstName, lastName, media, location, sector }) {
       return {
         title: firstName + ' ' + lastName,
-        subtitle: sector && sector.en ? sector.en || sector.fr : '' + ' ' + location && location.en ? location.en || location.fr : '',
+        subtitle: (location || '-') + ' | ' + (sector || '-'),
         media: media[0]
       }
     }

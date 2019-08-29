@@ -10,8 +10,6 @@ import video from './video'
 import meta from './objects/meta'
 import { localeString, localeText, localeSlug, localeBlock, localeArray } from './localizedContent'
 
-import test from './test'
-
 import generalInformations from './config/generalInformations'
 import sharing from './config/sharing'
 import contact from './config/contact'
@@ -56,7 +54,6 @@ export default createSchema({
     meta,
 
     // LAYOUT TYPES
-    test,
 
     generalInformations,
     sharing,

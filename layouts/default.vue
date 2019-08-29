@@ -20,7 +20,7 @@
       <div
         data-transition="logo"
         class="absolute text-white w-full h-full flex justify-center items-center">
-        <logo-round class="fill-current text-white w-32 h-32" />
+        <logo-round class="fill-current text-white w-56 h-56" />
       </div>
     </div>
   </div>

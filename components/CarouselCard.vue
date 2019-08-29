@@ -3,6 +3,7 @@
     <div class="relative h-full w-full overflow-hidden">
       <transition :name="transitionName">
         <v-lazy-image
+          v-if="urlFor(items[currentIndex]).url()"
           class="absolute w-full h-full object-cover"
           v-touch:swipe.left="next"
           v-touch:swipe.right="previous"

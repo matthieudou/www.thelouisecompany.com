@@ -27,8 +27,8 @@
           :src="urlFor(charity.secondSectionImage).url()"
           :src-placeholder="urlFor(charity.secondSectionImage).width(20).url()" />
       </div>
-      <div class="w-full md:w-2/3">
-        <div class="flex flex-col items-center">
+      <div class="w-full md:w-2/3 flex flex-col">
+        <div class="flex flex-col items-center flex-1">
           <quotation-marks class="w-12 mb-4" />
           <div class="text-2xl max-w-sm text-center font-serif italic">
             {{ charity.secondSectionCitation }}
@@ -38,7 +38,7 @@
             {{ charity.secondSectionCitationAuthor }}
           </div>
         </div>
-        <div class="bg-gray-200 px-20 pt-12 mt-12">
+        <div class="bg-gray-200 px-20 py-12 mt-12">
           <h3 class="font-light text-2xl">
             {{ charity.secondSectionTitle }}
           </h3>

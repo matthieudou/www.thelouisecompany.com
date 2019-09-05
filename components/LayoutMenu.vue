@@ -1,7 +1,5 @@
 <template>
-  <transition
-    name="menu"
-    appear>
+  <transition name="menu">
     <nav class="fixed inset-0 text-white bg-black overflow-scroll transition long">
       <div class="container mx-auto mt-24 md:mt-32 flex justify-between pt-separation px-container">
         <base-socials

@@ -40,7 +40,7 @@
 
       <layout-menu
         @close="isOpen = false"
-        v-if="isOpen" />
+        v-show="isOpen" />
     </div>
   </header>
 </template>

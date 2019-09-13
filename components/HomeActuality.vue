@@ -2,13 +2,30 @@
   <section
     id="actuality"
     class="container mx-auto pt-separation pb-separation px-container">
-    <h2 class="font-serif text-4xl tracking-menu">
-      {{ localize(actuality.title) }}
-    </h2>
+    <div class="flex items-center">
+      <h2 class="font-serif text-4xl tracking-menu">
+        {{ localize(actuality.title) }}
+      </h2>
 
-    <div class="mt-8 flex overflow-x-scroll no-scroll-bar">
+      <div class="w-12 h-12 flex items-center justify-between border border-black ml-auto mr-8 mt-6 rounded-full">
+        <button
+          class="focus:outline-none select-none p-2"
+          @click="previous">
+          <chevron-left class="h-3" />
+        </button>
+
+        <button
+          class="focus:outline-none select-none p-2"
+          @click="next">
+          <chevron-right class="h-3" />
+        </button>
+      </div>
+    </div>
+    <div
+      ref="links"
+      class="mt-8 flex overflow-x-scroll no-scroll-bar scroll-container">
       <nuxt-link
-        class="p-1 group"
+        class="p-1 group scroll-item"
         v-for="item in actuality.items"
         :key="item._key"
         :to="localePath({name: item.link, hash: item.hash ? `#${item.hash}` : ''})">
@@ -45,6 +62,8 @@
 
 <script>
   import LongArrowRight from '~/assets/images/icons/longArrowRight.svg'
+  import ChevronRight from '~/assets/images/icons/chevronRight.svg'
+  import ChevronLeft from '~/assets/images/icons/chevronLeft.svg'
 
   import { mapState } from 'vuex'
 
@@ -60,16 +79,46 @@
         let to = this.localePath({ name: item.link })
         if (item.hash) { to += '#' + item.hash }
         return to
+      },
+
+      next () {
+        const linksContainer = this.$refs.links
+        const width = this.$refs.links.firstChild.offsetWidth
+        linksContainer.scrollBy({
+          top: 0,
+          left: width,
+          behavior: 'smooth'
+        })
+      },
+
+      previous () {
+        const linksContainer = this.$refs.links
+        const width = this.$refs.links.firstChild.offsetWidth
+        linksContainer.scrollBy({
+          top: 0,
+          left: -width,
+          behavior: 'smooth'
+        })
       }
     },
 
     components: {
-      LongArrowRight
+      LongArrowRight,
+      ChevronRight,
+      ChevronLeft
     }
   }
 </script>
 
 <style scoped>
+.scroll-container {
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-item {
+  scroll-snap-align: start;
+}
+
 .hover-show {
   animation: fadeOutDown .2s ease-in-out;
   @apply opacity-0;

@@ -62,5 +62,11 @@ const activePagesQuery = `
 `
 
 const contact = `
-  *[_id == 'config-contact'][0]
+  *[_id == 'config-contact'][0]{
+    ...,
+    informationsItems[] {
+      "file": file.asset->url,
+      text
+    }
+  }
 `

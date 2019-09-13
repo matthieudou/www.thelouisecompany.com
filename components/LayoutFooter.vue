@@ -6,17 +6,17 @@
     <!-- ADDRESS -->
     <div class="mt-8 sm:w-1/2 md:w-auto">
       <h3 class="mb-2 uppercase text-xs font-black tracking-widest">
-        Notre adresse
+        {{ contact.addressTitle }}
       </h3>
       <address class="not-italic">
         <div class="mt-1">
-          {{ localize(contact.streetName) }} {{ contact.streetNumber }}
+          {{ contact.streetName }} {{ contact.streetNumber }}
         </div>
         <div class="mt-1">
-          {{ contact.postalCode }} {{ localize(contact.city) }}
+          {{ contact.postalCode }} {{ contact.city }}
         </div>
         <div class="mt-1">
-          {{ localize(contact.country) }}
+          {{ contact.country }}
         </div>
       </address>
     </div>
@@ -24,31 +24,39 @@
     <!-- CONTACT -->
     <div class="mt-8 sm:w-1/2 md:w-auto">
       <h3 class="mb-2 uppercase text-xs font-black tracking-widest">
-        Tel
+        {{ contact.phoneTitle }}
       </h3>
       <a
-        class="block"
+        class="block hover:text-gray-300 transition"
         :href="`tel:${contact.phone}`">
         {{ contact.phone }}
       </a>
 
       <h3 class="mt-6 mb-2 uppercase text-xs font-black tracking-widest">
-        Email
+        {{ contact.emailTitle }}
       </h3>
       <a
-        class="block"
+        class="block hover:text-gray-300 transition"
         :href="`mailto:${contact.email}`">
         {{ contact.email }}
       </a>
     </div>
 
     <!-- INFORMATIONS -->
-    <div class="mt-8 sm:w-1/2 md:w-auto">
+    <div
+      class="mt-8 sm:w-1/2 md:w-auto"
+      v-if="contact.informationsItems.length > 0">
       <h3 class="uppercase text-xs font-black tracking-widest mb-2">
-        Informations
+        {{ contact.informationsTitle }}
       </h3>
-      <div>Conditions générales</div>
-      <div>Mentions légales</div>
+      <a
+        v-for="item in contact.informationsItems"
+        :key="item._key"
+        :href="item.file"
+        target="_blank"
+        class="block mt-1 hover:text-gray-300 transition">
+        {{ item.text }}
+      </a>
     </div>
   </footer>
 </template>
@@ -61,8 +69,16 @@
   export default {
     computed: {
       ...mapState({
-        contact: state => state.informations.contact
-      })
+        contactPage: state => state.informations.contact
+      }),
+
+      contact () {
+        return this.localize(this.contactPage)
+      }
+    },
+
+    mounted () {
+      console.log(this.contact.informationsItems)
     },
 
     components: {

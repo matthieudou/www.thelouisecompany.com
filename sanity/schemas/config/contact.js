@@ -1,3 +1,5 @@
+import fileIcon from 'react-icons/lib/fa/file'
+
 export default {
   name: 'contact',
   type: 'object',
@@ -28,9 +30,6 @@ export default {
       title: 'Sujets de contact',
       name: 'contactSubjects',
       type: 'localeArray'
-      // of: [
-      //   { type: 'string' }
-      // ]
     },
     {
       title: 'Rue',
@@ -61,6 +60,61 @@ export default {
       name: 'country',
       type: 'localeString',
       fieldset: 'geolocation'
+    },
+    {
+      name: 'addressTitle',
+      title: 'Titre de l’adresse',
+      type: 'localeString'
+    },
+    {
+      name: 'emailTitle',
+      title: 'Titre de l’email',
+      type: 'localeString'
+    },
+    {
+      name: 'phoneTitle',
+      title: 'Titre du téléphone',
+      type: 'localeString'
+    },
+    {
+      name: 'informationsTitle',
+      title: 'Titre des informations',
+      type: 'localeString'
+    },
+    {
+      name: 'informationsItems',
+      title: 'Fichiers informations',
+      type: 'array',
+      of: [
+        {
+          name: 'item',
+          title: 'Fichier',
+          type: 'object',
+          fields: [
+            {
+              name: 'file',
+              title: 'Fichier',
+              type: 'file'
+            },
+            {
+              name: 'text',
+              title: 'Texte',
+              type: 'localeString'
+            }
+          ],
+          preview: {
+            select: {
+              title: 'text.fr'
+            },
+            prepare ({ title }) {
+              return {
+                title,
+                media: fileIcon
+              }
+            }
+          }
+        }
+      ]
     }
   ],
 

@@ -3,8 +3,8 @@
     <main>
       <header-section
         color="blue"
-        :title="localize(production.title)"
-        :text="localize(production.text)"
+        :title="production.title"
+        :text="production.text"
         :images="production.images" />
       <section
         data-scroll-to
@@ -24,12 +24,12 @@
               {{ item.clientName }}
             </h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">
-              {{ localize(item.title) }}
+              {{ item.title }}
             </h2>
             <div class="my-6 h-px w-12 bg-black" />
 
             <div class="leading-relaxed tracking-wide text-gray-300">
-              {{ localize(item.description) }}
+              {{ item.description }}
             </div>
           </div>
 
@@ -62,20 +62,20 @@
         title: this.localize(this.production.title),
 
         meta: [
-          { hid: 'description', name: 'description', content: this.localize(this.production.meta.description) },
+          { hid: 'description', name: 'description', content: this.production.meta.description },
 
           // OG
           { hid: 'og:type', property: 'og:type', content: 'website' },
           { hid: 'og:url', property: 'og:url', content: process.env.URL + this.localePath('production') },
-          { hid: 'og:title', property: 'og:title', content: this.localize(this.production.title) },
-          { hid: 'og:description', property: 'og:description', content: this.localize(this.production.meta.description) },
+          { hid: 'og:title', property: 'og:title', content: this.production.title },
+          { hid: 'og:description', property: 'og:description', content: this.production.meta.description },
           { hid: 'og:image', property: 'og:image', content: this.urlFor(this.production.meta.image).width(1200).height(630).url() },
 
           // TWITTER
           { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
           { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL + this.localePath('production') },
-          { hid: 'twitter:title', property: 'twitter:title', content: this.localize(this.production.title) },
-          { hid: 'twitter:description', property: 'twitter:description', content: this.localize(this.production.meta.description) },
+          { hid: 'twitter:title', property: 'twitter:title', content: this.production.title },
+          { hid: 'twitter:description', property: 'twitter:description', content: this.production.meta.description },
           { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.production.meta.image).width(1200).height(600).url() }
         ]
       }
@@ -87,8 +87,12 @@
 
     computed: {
       ...mapState('production', {
-        production: 'item'
-      })
+        productionPage: 'item'
+      }),
+
+      production () {
+        return this.localize(this.productionPage)
+      }
     },
 
     methods: {

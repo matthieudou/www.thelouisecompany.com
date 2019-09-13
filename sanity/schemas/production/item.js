@@ -11,7 +11,7 @@ export default {
     {
       title: 'Name of the client',
       name: 'clientName',
-      type: 'string'
+      type: 'localeString'
     },
     {
       title: 'Description',
@@ -48,7 +48,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      clientName: 'clientName',
+      clientName: 'clientName.fr',
       media: 'media'
     },
     prepare ({ title, clientName, media }) {

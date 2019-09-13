@@ -3,8 +3,8 @@
     <main>
       <header-section
         color="green"
-        :title="localize(event.title)"
-        :text="localize(event.text)"
+        :title="event.title"
+        :text="event.text"
         :images="event.images" />
       <section
         data-scroll-to
@@ -22,12 +22,12 @@
               {{ item.category }}
             </h3>
             <h2 class="text-2xl mt-4 font-hairline tracking-wider">
-              {{ localize(item.title) }}
+              {{ item.title }}
             </h2>
             <div class="my-6 h-px w-12 bg-black" />
 
             <div class="leading-relaxed tracking-wide">
-              {{ localize(item.description) }}
+              {{ item.description }}
             </div>
           </div>
 
@@ -57,23 +57,23 @@
 
     head () {
       return {
-        title: this.localize(this.event.title),
+        title: this.event.title,
 
         meta: [
-          { hid: 'description', name: 'description', content: this.localize(this.event.meta.description) },
+          { hid: 'description', name: 'description', content: this.event.meta.description },
 
           // OG
           { hid: 'og:type', property: 'og:type', content: 'website' },
           { hid: 'og:url', property: 'og:url', content: process.env.URL + this.localePath('events') },
-          { hid: 'og:title', property: 'og:title', content: this.localize(this.event.title) },
-          { hid: 'og:description', property: 'og:description', content: this.localize(this.event.meta.description) },
+          { hid: 'og:title', property: 'og:title', content: this.event.title },
+          { hid: 'og:description', property: 'og:description', content: this.event.meta.description },
           { hid: 'og:image', property: 'og:image', content: this.urlFor(this.event.meta.image).width(1200).height(630).url() },
 
           // TWITTER
           { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
           { hid: 'twitter:url', property: 'twitter:url', content: process.env.URL + this.localePath('events') },
-          { hid: 'twitter:title', property: 'twitter:title', content: this.localize(this.event.title) },
-          { hid: 'twitter:description', property: 'twitter:description', content: this.localize(this.event.meta.description) },
+          { hid: 'twitter:title', property: 'twitter:title', content: this.event.title },
+          { hid: 'twitter:description', property: 'twitter:description', content: this.event.meta.description },
           { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.event.meta.image).width(1200).height(600).url() }
         ]
       }

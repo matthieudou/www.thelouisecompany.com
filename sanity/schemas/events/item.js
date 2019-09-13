@@ -11,7 +11,7 @@ export default {
     {
       title: 'Category',
       name: 'category',
-      type: 'string'
+      type: 'localeString'
     },
     {
       title: 'Description',
@@ -48,7 +48,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      category: 'category',
+      category: 'category.fr',
       media: 'media'
     },
     prepare ({ title, category, media }) {

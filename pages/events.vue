@@ -85,8 +85,12 @@
 
     computed: {
       ...mapState('events', {
-        event: 'item'
-      })
+        eventPage: 'item'
+      }),
+
+      event () {
+        return this.localize(this.eventPage)
+      }
     },
 
     methods: {

@@ -12,10 +12,6 @@
         :poster="urlFor(hero.backgroundImage)">
         <source
           v-if="showVideo"
-          src="~/assets/videos/backgroundVideo.webm"
-          type="video/webm">
-        <source
-          v-if="showVideo"
           src="~/assets/videos/backgroundVideo.mp4"
           type="video/mp4">
       </video>

@@ -4,7 +4,7 @@
       <section class="bg-gray-300 flex-1 mt-12 md:mt-0 h-64 md:h-auto">
         <iframe
           class="w-full h-full grayscale"
-          src="https://maps.google.com/maps?q=Rue%20Veydt%2C%2074%2F76%201050%20Bruxelles%20Belgium&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          :src="`https://maps.google.com/maps?q=${localize(contact.streetName)}%20${contact.streetNumber}%20${contact.postalCode}%20${localize(contact.city)}%20${localize(contact.country)}&t=&z=13&ie=UTF8&iwloc=&output=embed`"
           frameborder="0"
           scrolling="no"
           marginheight="0"

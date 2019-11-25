@@ -99,6 +99,12 @@ export default {
       {
         duration: 300
       }
+    ],
+    ['@nuxtjs/sitemap',
+      {
+        hostname: 'https://example.com',
+        gzip: true
+      }
     ]
   ],
 

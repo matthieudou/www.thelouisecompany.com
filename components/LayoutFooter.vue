@@ -77,10 +77,6 @@
       }
     },
 
-    mounted () {
-      console.log(this.contact.informationsItems)
-    },
-
     components: {
       FullLogo
     }

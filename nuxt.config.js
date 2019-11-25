@@ -102,7 +102,7 @@ export default {
     ],
     ['@nuxtjs/sitemap',
       {
-        hostname: 'https://example.com',
+        hostname: 'https://thelouisecompany.com',
         gzip: true
       }
     ]

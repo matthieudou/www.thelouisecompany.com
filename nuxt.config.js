@@ -112,7 +112,10 @@ export default {
     '@nuxtjs/tailwindcss',
     [
       '@nuxtjs/google-analytics',
-      { id: process.env.GOOGLE_ANALYTICS_ID }
+      {
+        id: process.env.GOOGLE_ANALYTICS_ID,
+        debug: { sendHitTask: true }
+      }
     ]
   ],
 

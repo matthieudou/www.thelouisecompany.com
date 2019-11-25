@@ -113,8 +113,7 @@ export default {
     [
       '@nuxtjs/google-analytics',
       {
-        id: process.env.GOOGLE_ANALYTICS_ID,
-        debug: { sendHitTask: true }
+        id: process.env.GOOGLE_ANALYTICS_ID
       }
     ]
   ],

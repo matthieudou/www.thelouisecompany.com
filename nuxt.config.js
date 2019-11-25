@@ -82,13 +82,6 @@ export default {
       }
     ],
     [
-      '@nuxtjs/google-analytics',
-      {
-        id: process.env.GOOGLE_ANALYTICS_ID,
-        dev: false
-      }
-    ],
-    [
       '@nuxtjs/sentry',
       {
         dsn: process.env.SENTRY_DSN,
@@ -110,7 +103,11 @@ export default {
   ],
 
   buildModules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    [
+      '@nuxtjs/google-analytics',
+      { id: process.env.GOOGLE_ANALYTICS_ID }
+    ]
   ],
 
   tailwindcss: {

@@ -12,7 +12,7 @@
         :poster="urlFor(hero.backgroundImage)">
         <source
           v-if="showVideo"
-          src="~/assets/videos/backgroundVideo.mp4"
+          src="https://res.cloudinary.com/thelouisecompany/video/upload/v1578166752/LADBROKES_PUB_CLEAN_ujskvn.mp4"
           type="video/mp4">
       </video>
     </div>

@@ -83,6 +83,20 @@ export default {
       fieldset: 'secondSection'
     },
 
+    // VIDEO SECTION
+    {
+      name: 'mediaItems',
+      title: 'Media items',
+      type: 'array',
+      options: {
+        layout: 'grid'
+      },
+      of: [
+        { type: 'altImage' },
+        { type: 'video' }
+      ]
+    },
+
     // META
     {
       title: 'Meta',

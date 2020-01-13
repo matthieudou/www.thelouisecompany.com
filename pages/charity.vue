@@ -50,6 +50,16 @@
       </div>
     </section>
 
+    <section
+      v-if="charity.mediaItems.length > 0"
+      class="bg-gray-200">
+      <div class="container mx-auto px-container py-separation">
+        <carousel-card
+          class="w-full max-w-md mx-auto h-80 flex-shrink-0"
+          :items="charity.mediaItems" />
+      </div>
+    </section>
+
     <div class="bg-gray-200">
       <div class="container mx-auto px-container py-separation">
         <layout-footer class="text-black border-black" />
@@ -62,6 +72,7 @@
   import HeaderSection from '~/components/HeaderSection'
   import LayoutFooter from '~/components/LayoutFooter'
   import QuotationMarks from '~/assets/images/icons/quotationMarks.svg'
+  import CarouselCard from '~/components/CarouselCard'
 
   import { mapState, mapMutations } from 'vuex'
   import baseTransition from '~/mixins/baseTransition'
@@ -102,7 +113,8 @@
     components: {
       HeaderSection,
       LayoutFooter,
-      QuotationMarks
+      QuotationMarks,
+      CarouselCard
     }
   }
 </script>

@@ -25,7 +25,7 @@ export default {
     ],
 
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
 
@@ -73,8 +73,8 @@ export default {
         vueI18n: {
           fallbackLocale: 'fr',
           messages: {
-            en: en,
-            fr: fr
+            en,
+            fr
           }
         },
         parsePages: false,

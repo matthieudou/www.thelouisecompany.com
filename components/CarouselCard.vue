@@ -9,7 +9,8 @@
           v-touch:swipe.right="previous"
           :key="currentIndex"
           :src="urlFor(items[currentIndex]).url()"
-          :src-placeholder="urlFor(items[currentIndex]).width(20).url()" />
+          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"
+          :alt="`image ${currentIndex + 1}`" />
       </transition>
 
       <!-- CONTROLS -->
@@ -167,16 +168,10 @@
   transition: .3s;
 }
 
-.centered {
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>

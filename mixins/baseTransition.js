@@ -1,9 +1,10 @@
-import { TimelineMax, Power3 } from 'gsap'
+import { gsap } from 'gsap'
+// TimelineMax, Power3,
 
 export default {
   transition: {
     css: false,
-    appear: true,
+    mode: '',
 
     enter (el, done) {
       const container = document.querySelector('[data-transition="container"]')
@@ -13,34 +14,28 @@ export default {
       const black = document.querySelector('[data-transition="black"]')
       const logo = document.querySelector('[data-transition="logo"]')
 
-      const tl = new TimelineMax({ onComplete: done })
-
-      tl
-        .set(container, {
-          className: '-=hidden'
-        })
-        .staggerFromTo([grayFirst, graySecond, grayThird, black, logo], 1, {
-          opacity: 0,
+      gsap.timeline({ onComplete: done })
+        .call(() => { container.classList.remove('hidden') })
+        .from([grayFirst, graySecond, grayThird, black, logo], {
+          autoAlpha: 0,
           y: '100vh',
-          ease: Power3.easeInOut
-        }, {
-          opacity: 1,
-          y: 0,
-          ease: Power3.easeInOut
-        }, 0.07)
-        .staggerTo([logo, black, grayThird, graySecond, grayFirst], 1, {
-          opacity: 0,
-          y: '-100vh',
-          ease: Power3.easeInOut
-        }, 0.07, '+=0.5')
-        .fromTo(el, 1, {
-          opacity: 0
-        }, {
-          opacity: 1
-        }, '-=0.8')
-        .set(container, {
-          className: '+=hidden'
+          ease: 'Power3.easeInOut',
+          stagger: 0.07,
+          duration: 1
         })
+        .to([logo, black, grayThird, graySecond, grayFirst], {
+          autoAlpha: 0,
+          y: '-100vh',
+          ease: 'Power3.easeInOut',
+          duration: 1,
+          stagger: 0.07
+        }, '+=0.5')
+        .from(el, {
+          autoAlpha: 0,
+          duration: 1
+        }, '-=0.8')
+        .set([logo, black, grayThird, graySecond, grayFirst], { clearProps: true })
+        .call(() => { container.classList.add('hidden') })
     }
   }
 }

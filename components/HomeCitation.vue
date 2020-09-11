@@ -43,7 +43,8 @@
       <v-lazy-image
         class="absolute inset-0 w-full h-full object-contain"
         :src="urlFor(citation.thumbnail).url()"
-        :src-placeholder="urlFor(citation.thumbnail).width(20).url()" />
+        :src-placeholder="urlFor(citation.thumbnail).width(20).url()"
+        alt="The louise company citation" />
     </div>
   </section>
 </template>

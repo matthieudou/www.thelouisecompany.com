@@ -9,7 +9,8 @@
               :key="number"
               class="w-full h-full rounded-full object-cover absolute"
               :src="urlFor(images[number]).url()"
-              :src-placeholder="urlFor(images[number]).width(20).url()" />
+              :src-placeholder="urlFor(images[number]).width(20).url()"
+              :alt="`Image ${number + 1}`" />
           </transition>
         </div>
 
@@ -75,16 +76,6 @@
       }
     },
 
-    computed: {
-      // computeBackgroundColor () {
-      //   if (this.color === 'blue') return 'bg-blue-lighter'
-      //   if (this.color === 'green') return 'bg-green-lighter'
-      //   if (this.color === 'yellow') return 'bg-yellow-lighter'
-      //   if (this.color === 'pink') return 'bg-pink-lighter'
-      //   return 'bg-blue-lighter'
-      // }
-    },
-
     mounted () {
       this.__headerInterval__ = setInterval(() => {
         this.number = random(this.images.length - 1)
@@ -106,7 +97,7 @@
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>

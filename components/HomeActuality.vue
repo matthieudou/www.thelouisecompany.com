@@ -33,7 +33,8 @@
           <v-lazy-image
             class="w-full h-full object-cover"
             :src="urlFor(item.thumbnail).url()"
-            :src-placeholder="urlFor(item.thumbnail).width(20).url()" />
+            :src-placeholder="urlFor(item.thumbnail).width(20).url()"
+            :alt="item.title" />
           <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition" />
           <div
             v-if="item.logo && item.logo.asset"
@@ -41,7 +42,8 @@
             <v-lazy-image
               class="w-full h-full object-contain"
               :src="urlFor(item.logo).url()"
-              :src-placeholder="urlFor(item.logo).width(20).url()" />
+              :src-placeholder="urlFor(item.logo).width(20).url()"
+              :alt="`${item.title} (logo)`" />
           </div>
         </div>
         <div class="border-l border-black mx-8">

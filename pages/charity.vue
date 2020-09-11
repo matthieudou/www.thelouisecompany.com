@@ -25,7 +25,8 @@
         <v-lazy-image
           class="w-full h-full object-cover"
           :src="urlFor(charity.secondSectionImage).url()"
-          :src-placeholder="urlFor(charity.secondSectionImage).width(20).url()" />
+          :src-placeholder="urlFor(charity.secondSectionImage).width(20).url()"
+          :alt="charity.secondSectionTitle + ' support image'" />
       </div>
       <div class="w-full md:w-2/3 flex flex-col">
         <div class="flex flex-col items-center flex-1">
@@ -82,6 +83,10 @@
 
     async fetch ({ store }) {
       await store.dispatch('charity/fetch')
+    },
+
+    async asyncData ({ $sanity }) {
+
     },
 
     head () {

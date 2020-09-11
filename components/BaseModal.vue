@@ -65,13 +65,13 @@
 
     computed: {
       computeClasses () {
-        return {
-          'md:max-w-sm': this.size === 'sm',
-          'md:max-w-md': this.size === 'md',
-          'md:max-w-lg': this.size === 'lg',
-          'md:max-w-xl': this.size === 'xl',
-          'md:max-w-2xl': this.size === '2xl',
-          'md:max-w-3xl': this.size === '3xl'
+        switch (this.size) {
+        case 'sm': return 'md:max-w-sm'
+        case 'md': return 'md:max-w-md'
+        case 'xl': return 'md:max-w-xl'
+        case '2xl': return 'md:max-w-2xl'
+        case '3xl': return 'md:max-w-3xl'
+        default: return 'md:max-w-lg'
         }
       }
     },

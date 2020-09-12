@@ -49,11 +49,20 @@
   import CarouselCard from '~/components/CarouselCard'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { mapState, mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex'
   import baseTransition from '~/mixins/baseTransition'
+  import groq from 'groq'
 
   export default {
     mixins: [baseTransition],
+
+    async asyncData ({ app }) {
+      const query = groq`*[_id == 'eventPage'][0]`
+      const response = await app.$sanity.fetch(query)
+      return {
+        item: response
+      }
+    },
 
     head () {
       return {
@@ -79,17 +88,9 @@
       }
     },
 
-    async fetch ({ store }) {
-      await store.dispatch('events/fetch')
-    },
-
     computed: {
-      ...mapState('events', {
-        eventPage: 'item'
-      }),
-
       event () {
-        return this.localize(this.eventPage)
+        return this.localize(this.item)
       }
     },
 

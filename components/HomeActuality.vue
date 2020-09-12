@@ -67,13 +67,12 @@
   import ChevronRight from '~/assets/images/icons/chevronRight.svg'
   import ChevronLeft from '~/assets/images/icons/chevronLeft.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        actuality: 'actuality'
-      })
+    props: {
+      actuality: {
+        type: Object,
+        required: true
+      }
     },
 
     methods: {

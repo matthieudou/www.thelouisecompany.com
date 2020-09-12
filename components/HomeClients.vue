@@ -28,21 +28,18 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        clients: 'clients'
-      }),
+    props: {
+      clients: {
+        type: Object,
+        required: true
+      }
+    },
 
+    computed: {
       filteredClients () {
         return this.clients.clients.filter(c => c.thumbnail)
       }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

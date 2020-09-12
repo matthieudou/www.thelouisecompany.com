@@ -52,13 +52,12 @@
 <script>
   import QuotationMarks from '~/assets/images/icons/quotationMarks.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        citation: 'citation'
-      })
+    props: {
+      citation: {
+        type: Object,
+        required: true
+      }
     },
 
     components: {
@@ -66,7 +65,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

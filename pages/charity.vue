@@ -75,18 +75,18 @@
   import QuotationMarks from '~/assets/images/icons/quotationMarks.svg'
   import CarouselCard from '~/components/CarouselCard'
 
-  import { mapState, mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex'
   import baseTransition from '~/mixins/baseTransition'
 
   export default {
     mixins: [baseTransition],
 
-    async fetch ({ store }) {
-      await store.dispatch('charity/fetch')
-    },
-
-    async asyncData ({ $sanity }) {
-
+    async asyncData ({ app }) {
+      const query = /* groq */"*[_id == 'charityPage'][0]"
+      const item = await app.$sanity.fetch(query)
+      return {
+        item
+      }
     },
 
     head () {
@@ -96,10 +96,6 @@
     },
 
     computed: {
-      ...mapState('charity', {
-        item: 'item'
-      }),
-
       charity () {
         return this.localize(this.item)
       }
@@ -123,7 +119,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

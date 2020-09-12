@@ -109,5 +109,4 @@
   .modal-leave-active .modal__container {
     transform: translateY(50px);
   }
-
 </style>

@@ -34,13 +34,12 @@
 <script>
   import LongArrowRight from '~/assets/images/icons/longArrowRight.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        whoWeAre: 'whoWeAre'
-      })
+    props: {
+      whoWeAre: {
+        type: Object,
+        required: true
+      }
     },
 
     components: {
@@ -48,7 +47,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

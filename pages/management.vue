@@ -87,11 +87,21 @@
   import CarouselCard from '~/components/CarouselCard'
   import LayoutFooter from '~/components/LayoutFooter'
 
-  import { mapState, mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex'
   import baseTransition from '~/mixins/baseTransition'
+  import groq from 'groq'
 
   export default {
     mixins: [baseTransition],
+
+    async asyncData ({ app }) {
+      const query = groq`*[_id == 'managementPage'][0]`
+      const response = await app.$sanity.fetch(query)
+
+      return {
+        management: response
+      }
+    },
 
     head () {
       return {
@@ -115,16 +125,6 @@
           { hid: 'twitter:image', property: 'twitter:image', content: this.urlFor(this.management.meta.image).width(1200).height(600).url() }
         ]
       }
-    },
-
-    async fetch ({ store }) {
-      await store.dispatch('management/fetch')
-    },
-
-    computed: {
-      ...mapState('management', {
-        management: 'item'
-      })
     },
 
     methods: {

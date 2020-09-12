@@ -4,7 +4,6 @@ import { gsap } from 'gsap'
 export default {
   transition: {
     css: false,
-    mode: '',
 
     enter (el, done) {
       const container = document.querySelector('[data-transition="container"]')
@@ -36,6 +35,15 @@ export default {
         }, '-=0.8')
         .set([logo, black, grayThird, graySecond, grayFirst], { clearProps: true })
         .call(() => { container.classList.add('hidden') })
+    },
+
+    leave (el, done) {
+      gsap.to(el, {
+        autoAlpha: 0,
+        duration: 0.3,
+        ease: 'Power3.easeInOut',
+        onComplete: done
+      })
     }
   }
 }

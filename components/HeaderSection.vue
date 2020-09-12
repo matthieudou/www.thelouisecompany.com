@@ -32,8 +32,8 @@
           <div class="text-center md:text-left">
             <button
               class="mt-12 focus:outline-none hover:scale transition"
-              @click="$scrollTo('[data-scroll-to]', 300, {offset: -95})"
-              name="Scroll to next section">
+              @click="$scrollTo('[data-scroll-to]', 300, {offset: -95})">
+              <span class="sr-only">Scroll to next section</span>
               <arrow-down-circle class="w-8 h-8" />
             </button>
           </div>

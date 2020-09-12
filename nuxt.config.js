@@ -80,7 +80,8 @@ export default {
           }
         },
         parsePages: false,
-        pages: translatedRoutes
+        pages: translatedRoutes,
+        seo: true
       }
     ],
     [

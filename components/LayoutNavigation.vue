@@ -11,6 +11,7 @@
       <nuxt-link
         :to="localePath({name: 'index'})"
         class="z-20">
+        <span class="sr-only">Go to home page</span>
         <logo-round class="h-16 w-16" />
       </nuxt-link>
 

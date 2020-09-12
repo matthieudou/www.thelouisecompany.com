@@ -9,8 +9,8 @@
       @click.self="close">
       <button
         class="absolute top-0 right-0 p-8 md:p-12 focus:outline-none"
-        @click="$emit('close')"
-        name="close modal">
+        @click="$emit('close')">
+        <span class="sr-only">Close modal</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24.749"

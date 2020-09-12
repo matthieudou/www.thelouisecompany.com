@@ -18,8 +18,8 @@
         <button
           class="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none bg-transparent-black-light"
           v-show="(items[currentIndex] || {}).link"
-          @click="videoOpen = true"
-          name="Play video">
+          @click="videoOpen = true">
+          <span class="sr-only">Play video</span>
           <play-circle class="w-12 h-12" />
         </button>
       </transition>
@@ -43,15 +43,15 @@
       v-if="items.length > 1">
       <button
         class="focus:outline-none select-none p-2"
-        @click="previous"
-        name="Previous card">
+        @click="previous">
+        <span class="sr-only">Previous card</span>
         <chevron-left class="h-3" />
       </button>
 
       <button
         class="focus:outline-none select-none p-2"
-        @click="next"
-        name="Next card">
+        @click="next">
+        <span class="sr-only">Next card</span>
         <chevron-right class="h-3" />
       </button>
     </div>

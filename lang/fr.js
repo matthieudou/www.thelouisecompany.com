@@ -1,10 +1,10 @@
 export default {
   navigation: {
     home: 'Accueil',
-    production: 'Louise production',
-    events: 'Louise event',
-    management: 'Louise management',
-    charity: 'Louise charity',
+    production: 'Louise consultance',
+    events: 'Louise experience',
+    management: 'Louise competence',
+    charity: 'Louise tendance',
     contact: 'Contact',
 
     address: 'Notre adresse',

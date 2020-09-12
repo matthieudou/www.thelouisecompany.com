@@ -1,11 +1,11 @@
 <template>
   <div>
     <main>
-      <home-hero />
-      <home-actuality />
-      <home-who-we-are />
-      <home-citation />
-      <home-clients />
+      <home-hero :hero="hero" />
+      <home-actuality :actuality="actuality" />
+      <home-who-we-are :who-we-are="whoWeAre" />
+      <home-citation :citation="citation" />
+      <home-clients :clients="clients" />
     </main>
 
     <div class="bg-gray-800">
@@ -24,18 +24,35 @@
 
   import { mapMutations } from 'vuex'
   import baseTransition from '~/mixins/baseTransition'
+  import groq from 'groq'
 
   export default {
     mixins: [baseTransition],
+
+    async asyncData ({ app }) {
+      const query = groq`{
+        'hero': *[_type == 'homeHero'][0],
+        'citation': *[_type == 'homeCitation'][0],
+        'services': *[_type == 'homeServices'][0],
+        'whoWeAre': *[_type == 'homeWhoWeAre'][0],
+        'clients': *[_type == 'homeClients'][0],
+        'actuality': *[_type == 'homeActuality'][0]
+      }`
+      const { hero, citation, services, whoWeAre, clients, actuality } = await app.$sanity.fetch(query)
+      return {
+        hero,
+        citation,
+        services,
+        whoWeAre,
+        clients,
+        actuality
+      }
+    },
 
     head () {
       return {
         title: this.$t('titles.home')
       }
-    },
-
-    async fetch ({ store }) {
-      await store.dispatch('home/fetch')
     },
 
     methods: {
@@ -58,7 +75,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

@@ -5,6 +5,8 @@ import en from './lang/en'
 require('dotenv').config()
 
 export default {
+  target: 'static',
+
   env: {
     SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
     SENTRY_DSN: process.env.SENTRY_DSN,
@@ -78,7 +80,8 @@ export default {
           }
         },
         parsePages: false,
-        pages: translatedRoutes
+        pages: translatedRoutes,
+        seo: true
       }
     ],
     [

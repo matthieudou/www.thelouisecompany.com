@@ -43,7 +43,8 @@
       <v-lazy-image
         class="absolute inset-0 w-full h-full object-contain"
         :src="urlFor(citation.thumbnail).url()"
-        :src-placeholder="urlFor(citation.thumbnail).width(20).url()" />
+        :src-placeholder="urlFor(citation.thumbnail).width(20).url()"
+        alt="The louise company citation" />
     </div>
   </section>
 </template>
@@ -51,13 +52,12 @@
 <script>
   import QuotationMarks from '~/assets/images/icons/quotationMarks.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        citation: 'citation'
-      })
+    props: {
+      citation: {
+        type: Object,
+        required: true
+      }
     },
 
     components: {
@@ -65,7 +65,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

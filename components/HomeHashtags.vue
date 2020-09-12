@@ -9,13 +9,17 @@
         :key="current._key">
         <div
           ref="firstHashtag"
-          class="w-1/2 text-right">
-          #{{ current.hashtag1 }}
+          class="w-1/2 flex items-center justify-end">
+          <span
+            v-for="(letter, x) in `#${current.hashtag1}`"
+            :key="letter+x">{{ letter }}</span>
         </div>
         <div
           ref="secondHashtag"
-          class="w-1/2">
-          #{{ current.hashtag2 }}
+          class="w-1/2 flex items-center">
+          <span
+            v-for="(letter, x) in `#${current.hashtag2}`"
+            :key="letter+x">{{ letter }}</span>
         </div>
       </div>
     </transition>
@@ -24,7 +28,7 @@
 
 <script>
   import sample from 'lodash/sample'
-  import TweenMax from 'gsap'
+  import { gsap } from 'gsap'
 
   export default {
     props: {
@@ -48,31 +52,39 @@
       },
 
       enter (el, done) {
-        TweenMax.from(el.firstElementChild, 1, {
-          opacity: 0,
-          y: '50%',
+        gsap.from(el.firstElementChild.childNodes, {
+          autoAlpha: 0,
+          y: 10,
           transformStyle: 'preserve-3d',
-          rotationX: 90
+          rotationX: 90,
+          duration: 0.5,
+          stagger: 0.05
         })
-        TweenMax.from(el.lastElementChild, 1, {
-          opacity: 0,
-          y: '-50%',
+        gsap.from(el.lastElementChild.childNodes, {
+          autoAlpha: 0,
+          y: -10,
           rotationX: -90,
-          onComplete: done
+          onComplete: done,
+          duration: 0.5,
+          stagger: 0.05
         })
       },
 
       leave (el, done) {
-        TweenMax.to(el.firstElementChild, 1, {
+        gsap.to(el.firstElementChild.childNodes, {
           opacity: 0,
-          y: '-50%',
-          rotationX: -90
+          y: -10,
+          rotationX: -90,
+          duration: 0.5,
+          stagger: 0.05
         })
-        TweenMax.to(el.lastElementChild, 1, {
+        gsap.to(el.lastElementChild.childNodes, {
           opacity: 0,
-          y: '50%',
+          y: 10,
           rotationX: 90,
-          onComplete: done
+          onComplete: done,
+          duration: 0.5,
+          stagger: 0.05
         })
       }
     },
@@ -86,7 +98,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

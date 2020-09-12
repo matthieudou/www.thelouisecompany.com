@@ -74,13 +74,16 @@
           </nuxt-link>
         </div>
 
-        <home-hashtags
-          class="flex-1 font-serif"
-          :items="hero.hashtags" />
+        <client-only>
+          <home-hashtags
+            class="flex-1 font-serif"
+            :items="hero.hashtags" />
+        </client-only>
 
         <button
           class="p-2 focus:outline-none"
           @click="$scrollTo('#actuality')">
+          <span class="sr-only">Scroll down</span>
           <arrow-down class="h-6" />
         </button>
       </div>
@@ -111,9 +114,14 @@
   import PlayCircle from '~/assets/images/icons/playCircle.svg'
   import ArrowDown from '~/assets/images/icons/arrowDown.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
+    props: {
+      hero: {
+        type: Object,
+        required: true
+      }
+    },
+
     data () {
       return {
         videoOpen: false,
@@ -122,10 +130,6 @@
     },
 
     computed: {
-      ...mapState('home', {
-        hero: 'hero'
-      }),
-
       showVideo () {
         if (process.client) return !['sm', 'md'].includes(this.$mq)
         return false
@@ -146,15 +150,3 @@
     }
   }
 </script>
-
-<style scoped>
-.hashTransition-transition-enter-active, .hashTransition-transition-leave-active {
-  transition: 1s;
-}
-
-.hashTransition-transition-enter, .hashTransition-transition-leave-to {
-  opacity: 0;
-  transform: translateX(20px);
-  position: absolute;
-}
-</style>

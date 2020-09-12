@@ -11,12 +11,14 @@
         <button
           class="focus:outline-none select-none p-2"
           @click="previous">
+          <span class="sr-only">Scroll left</span>
           <chevron-left class="h-3" />
         </button>
 
         <button
           class="focus:outline-none select-none p-2"
           @click="next">
+          <span class="sr-only">Scroll right</span>
           <chevron-right class="h-3" />
         </button>
       </div>
@@ -33,7 +35,8 @@
           <v-lazy-image
             class="w-full h-full object-cover"
             :src="urlFor(item.thumbnail).url()"
-            :src-placeholder="urlFor(item.thumbnail).width(20).url()" />
+            :src-placeholder="urlFor(item.thumbnail).width(20).url()"
+            :alt="item.title" />
           <div class="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition" />
           <div
             v-if="item.logo && item.logo.asset"
@@ -41,7 +44,8 @@
             <v-lazy-image
               class="w-full h-full object-contain"
               :src="urlFor(item.logo).url()"
-              :src-placeholder="urlFor(item.logo).width(20).url()" />
+              :src-placeholder="urlFor(item.logo).width(20).url()"
+              :alt="`${item.title} (logo)`" />
           </div>
         </div>
         <div class="border-l border-black mx-8">
@@ -65,13 +69,12 @@
   import ChevronRight from '~/assets/images/icons/chevronRight.svg'
   import ChevronLeft from '~/assets/images/icons/chevronLeft.svg'
 
-  import { mapState } from 'vuex'
-
   export default {
-    computed: {
-      ...mapState('home', {
-        actuality: 'actuality'
-      })
+    props: {
+      actuality: {
+        type: Object,
+        required: true
+      }
     },
 
     methods: {

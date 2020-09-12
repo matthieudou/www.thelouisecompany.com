@@ -9,7 +9,8 @@
           v-touch:swipe.right="previous"
           :key="currentIndex"
           :src="urlFor(items[currentIndex]).url()"
-          :src-placeholder="urlFor(items[currentIndex]).width(20).url()" />
+          :src-placeholder="urlFor(items[currentIndex]).width(20).url()"
+          :alt="`image ${currentIndex + 1}`" />
       </transition>
 
       <!-- CONTROLS -->
@@ -18,6 +19,7 @@
           class="absolute inset-0 w-full h-full flex items-center justify-center focus:outline-none bg-transparent-black-light"
           v-show="(items[currentIndex] || {}).link"
           @click="videoOpen = true">
+          <span class="sr-only">Play video</span>
           <play-circle class="w-12 h-12" />
         </button>
       </transition>
@@ -42,12 +44,14 @@
       <button
         class="focus:outline-none select-none p-2"
         @click="previous">
+        <span class="sr-only">Previous card</span>
         <chevron-left class="h-3" />
       </button>
 
       <button
         class="focus:outline-none select-none p-2"
         @click="next">
+        <span class="sr-only">Next card</span>
         <chevron-right class="h-3" />
       </button>
     </div>
@@ -167,16 +171,10 @@
   transition: .3s;
 }
 
-.centered {
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>

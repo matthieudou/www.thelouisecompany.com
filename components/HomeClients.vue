@@ -13,7 +13,7 @@
       <div class="w-full md:w-3/5 mt-12 md:mt-0 flex flex-wrap items-center">
         <div
           class="w-1/2 sm:w-1/3 p-4 md:px-6 md:pb-6 lg:px-8 lg:pb-8 xl:px-16 xl:pb-16"
-          v-for="client in clients.clients"
+          v-for="client in filteredClients"
           :key="client._client"
           :title="client.name">
           <v-lazy-image
@@ -28,17 +28,18 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-
   export default {
+    props: {
+      clients: {
+        type: Object,
+        required: true
+      }
+    },
+
     computed: {
-      ...mapState('home', {
-        clients: 'clients'
-      })
+      filteredClients () {
+        return this.clients.clients.filter(c => c.thumbnail)
+      }
     }
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

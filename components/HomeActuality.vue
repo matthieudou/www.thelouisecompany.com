@@ -10,13 +10,15 @@
       <div class="w-12 h-12 flex items-center justify-between border border-black ml-auto mr-8 mt-6 rounded-full">
         <button
           class="focus:outline-none select-none p-2"
-          @click="previous">
+          @click="previous"
+          name="Scroll left">
           <chevron-left class="h-3" />
         </button>
 
         <button
           class="focus:outline-none select-none p-2"
-          @click="next">
+          @click="next"
+          name="Scroll right">
           <chevron-right class="h-3" />
         </button>
       </div>

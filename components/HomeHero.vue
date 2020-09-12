@@ -82,7 +82,8 @@
 
         <button
           class="p-2 focus:outline-none"
-          @click="$scrollTo('#actuality')">
+          @click="$scrollTo('#actuality')"
+          name="Scroll down">
           <arrow-down class="h-6" />
         </button>
       </div>

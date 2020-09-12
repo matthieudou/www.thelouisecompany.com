@@ -44,6 +44,5 @@ export const actions = {
     commit('setItems', { item: 'activePages', value: activePages })
     commit('setItems', { item: 'socials', value: socials })
     commit('setItems', { item: 'contact', value: contact })
-    console.log(state)
   }
 }

@@ -2,7 +2,7 @@
   <transition name="menu">
     <nav class="fixed inset-0 text-white bg-black transition long">
       <div class="container mx-auto mt-24 md:mt-32 flex justify-between pt-separation px-container">
-        <base-socials
+        <BaseSocials
           color="white"
           class="hidden sm:block navigation-appear-left transition" />
 
@@ -14,13 +14,13 @@
             </h3>
             <address class="not-italic">
               <div class="mt-1">
-                {{ localize(contact.streetName) }} {{ contact.streetNumber }}
+                {{ localize(informations.contact.streetName) }} {{ informations.contact.streetNumber }}
               </div>
               <div class="mt-1">
-                {{ contact.postalCode }} {{ localize(contact.city) }}
+                {{ informations.contact.postalCode }} {{ localize(informations.contact.city) }}
               </div>
               <div class="mt-1">
-                {{ localize(contact.country) }}
+                {{ localize(informations.contact.country) }}
               </div>
             </address>
           </div>
@@ -31,8 +31,8 @@
             </h3>
             <a
               class="block"
-              :href="`tel:${contact.phone}`">
-              {{ contact.phone }}
+              :href="`tel:${informations.contact.phone}`">
+              {{ informations.contact.phone }}
             </a>
 
             <h3 class="mt-6 mb-2 uppercase font-black tracking-widest">
@@ -40,92 +40,72 @@
             </h3>
             <a
               class="block"
-              :href="`mailto:${contact.email}`">
-              {{ contact.email }}
+              :href="`mailto:${informations.contact.email}`">
+              {{ informations.contact.email }}
             </a>
           </div>
         </div>
 
-        <div class="font-serif text-right tracking-widest text-2xl w-full sm:w-menu whitespace-no-wrap">
+        <div class="font-serif text-right tracking-widest text-2xl w-full sm:w-menu">
           <!-- HOME -->
-          <div class="border-b border-gray-300 pb-4 navigation-appear-up transition">
-            <nuxt-link
-              class="link"
+          <div class="border-b border-gray-300 pb-4 navigation-appear-up transition overflow-hidden">
+            <NuxtLink
+              class="link transition"
               :to="localePath('index')"
               exact
               @click.native="$emit('close')">
               {{ $t('navigation.home') }}
-            </nuxt-link>
+            </NuxtLink>
           </div>
 
           <!-- WORK -->
-          <div class="border-b border-gray-300 pb-8 navigation-appear transition long">
+          <div class="border-b border-gray-300 pb-8 navigation-appear transition">
             <div
-              class="uppercase text-xs font-sans mt-8 tracking-widest navigation-appear-up transition long"
+              class="uppercase text-xs font-sans mt-8 tracking-widest navigation-appear-up transition"
               :style="{'transition-delay': '.03s'}">
               Work
             </div>
-            <nuxt-link
-              class="link navigation-appear-up transition long"
-              :style="{'transition-delay': '.06s'}"
-              :to="localePath('production')"
-              v-if="activePages.production"
-              @click.native="$emit('close')">
-              {{ $t('navigation.production') }}
-            </nuxt-link>
-            <nuxt-link
-              class="link navigation-appear-up transition long"
-              :style="{'transition-delay': '.09s'}"
-              :to="localePath('events')"
-              v-if="activePages.events"
-              @click.native="$emit('close')">
-              {{ $t('navigation.events') }}
-            </nuxt-link>
-            <nuxt-link
-              class="link navigation-appear-up transition long"
-              :style="{'transition-delay': '.12s'}"
-              :to="localePath('management')"
-              v-if="activePages.management"
-              @click.native="$emit('close')">
-              {{ $t('navigation.management') }}
-            </nuxt-link>
-            <nuxt-link
-              class="link navigation-appear-up transition long"
-              :style="{'transition-delay': '.15s'}"
-              :to="localePath('charity')"
-              v-if="activePages.charity"
-              @click.native="$emit('close')">
-              {{ $t('navigation.charity') }}
-            </nuxt-link>
+
+            <div class="w-full overflow-hidden">
+              <NuxtLink
+                v-for="(link, linkIndex) in links"
+                class="link navigation-appear-up transition"
+                :key="linkIndex"
+                :to="link.to"
+                :style="link.style"
+                @click.native="$emit('close')">
+                {{ link.text }}
+              </NuxtLink>
+            </div>
           </div>
 
           <!-- CONTACT -->
-          <div class="pt-4">
-            <nuxt-link
-              class="link navigation-appear-up transition long"
-              :style="{'transition-delay': '.18s'}"
+          <div class="pt-4 overflow-hidden">
+            <NuxtLink
+              class="link navigation-appear-up transition"
+              :style="{transitionDelay: `${links.length * 0.03 + 0.06}s`}"
               :to="localePath('contact')"
               @click.native="$emit('close')">
               {{ $t('navigation.contact') }}
-            </nuxt-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
 
       <div class="py-4 md:py-8 px-8 text-xs font-hairline container mx-auto navigation-appear transition long">
-        <nuxt-link
+        <NuxtLink
           :to="switchLocalePath('fr')"
           class="opacity-50 transition long"
           :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'fr'}">
           Fr
-        </nuxt-link>
+        </NuxtLink>
         <span class="opacity-75">/</span>
-        <nuxt-link
+        <NuxtLink
           :to="switchLocalePath('en')"
           class="opacity-50 transition long"
           :class="{'font-bold opacity-100 uppercase': $i18n.locale === 'en'}">
           En
-        </nuxt-link>
+        </NuxtLink>
       </div>
     </nav>
   </transition>
@@ -139,9 +119,42 @@
   export default {
     computed: {
       ...mapState({
-        activePages: state => state.informations.activePages,
-        contact: state => state.informations.contact
-      })
+        info: 'informations'
+      }),
+
+      informations () {
+        return this.localize(this.info)
+      },
+
+      links () {
+        return [
+          {
+            to: this.localePath('production'),
+            text: this.informations.production.title,
+            active: this.informations.activePages.production
+          },
+          {
+            to: this.localePath('events'),
+            text: this.informations.event.title,
+            active: this.informations.activePages.events
+          },
+          {
+            to: this.localePath('management'),
+            text: this.informations.management.title,
+            active: this.informations.activePages.management
+          },
+          {
+            to: this.localePath('charity'),
+            text: this.informations.charity.title,
+            active: this.informations.activePages.charity
+          }
+        ]
+          .filter(link => link.active)
+          .map((link, idx) => ({
+            ...link,
+            style: { transitionDelay: `${idx * 0.03 + 0.06}s` }
+          }))
+      }
     },
 
     components: {
@@ -177,27 +190,25 @@
 }
 
 .link {
-  @apply flex justify-end items-center mt-2 opacity-50;
+  @apply flex justify-end items-center mt-2 opacity-50 transform translate-x-12 ;
 }
 
 .link:after {
   content: "";
-  transition: .2s ease-in-out;
-  @apply border-b border-white w-0;
+  transition: .1s ease-in-out;
+  @apply border-b border-white w-8 ml-4 flex-shrink-0;
 }
 
-.link:hover:after {
-  content: "";
-  @apply w-4 ml-4;
+.link:hover {
+  @apply translate-x-4;
 }
 
 .nuxt-link-active.link {
   @apply opacity-100;
 }
 
-.nuxt-link-active.link:after {
-  content: "";
-  @apply w-full ml-4;
+.nuxt-link-active.link {
+  @apply translate-x-0;
 }
 
 .link:first-child {

@@ -23,9 +23,6 @@
           :src="urlFor(service.thumbnail).url()"
           :src-placeholder="urlFor(service.thumbnail).width(20).url()" />
         <div>
-          <h4 class="mt-6 text-xs uppercase font-black tracking-widest">
-            Louise
-          </h4>
           <h3 class="mt-6 text-2xl font-hairline tracking-widest">
             {{ localize(service.title) }}
           </h3>

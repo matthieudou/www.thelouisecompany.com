@@ -13,8 +13,8 @@
 
       <section class="flex-1 pl-0 md:pl-16 flex">
         <div class="flex-1">
-          <div class="mt-12 flex justify-between flex-wrap">
-            <div class="mt-4">
+          <div class="mt-12 flex justify-between flex-wrap gap-4">
+            <div>
               <h2 class="uppercase text-xs font-bold mb-2">
                 {{ $t('navigation.address') }}
               </h2>
@@ -31,18 +31,26 @@
               </address>
             </div>
 
-            <div class="mt-4">
+            <div>
               <div>
                 <h2 class="uppercase text-xs font-bold mb-2">
                   {{ $t('navigation.phone') }}
                 </h2>
-                <a :href="'tel:' + contact.phone">{{ contact.phone }}</a>
+                <a
+                  :href="'tel:' + contact.phone"
+                  class="block mt-2 hover:text-gray-300 transition">
+                  {{ contact.phone }}
+                </a>
               </div>
               <div class="mt-4">
                 <h2 class="uppercase text-xs font-bold mb-2">
                   {{ $t('navigation.email') }}
                 </h2>
-                <a :href="'mailto:' + contact.email">{{ contact.email }}</a>
+                <a
+                  :href="'mailto:' + contact.email"
+                  class="block mt-2 hover:text-gray-300 transition">
+                  {{ contact.email }}
+                </a>
               </div>
             </div>
           </div>
@@ -54,7 +62,16 @@
               {{ $t('contact.title') }}
             </h2>
 
-            <form @submit.prevent="submit">
+            <p class="mt-4">
+              {{ $t('contact.subtitle') }}
+            </p>
+            <a
+              :href="'mailto:' + contact.email"
+              class="block mt-2 hover:text-gray-300 transition">
+              {{ contact.email }}
+            </a>
+
+            <!-- <form @submit.prevent="submit">
               <div class="relative mt-4">
                 <select
                   class="block appearance-none w-full rounded-none border border-black text-black py-3 px-4 pr-8 leading-tight focus:outline-none"
@@ -121,7 +138,7 @@
                 class="appearance-none w-full p-2 bg-black text-white rounded-none mt-8 focus:outline-none focus:shadow-outline cursor-pointer"
                 :class="{loading: loading}"
                 :value="$t('contact.placeholders.submit')">
-            </form>
+            </form> -->
           </div>
         </div>
         <base-socials class="hidden sm:block transition ml-12 self-center" />
@@ -176,7 +193,7 @@
       }),
 
       submit () {
-        if (!this.form.subject) return alert('Please fill in the subject')
+        // if (!this.form.subject) return alert('Please fill in the subject')
         const url = `${process.env.FUNCTIONS_URL}/send-mail`
         const params = {
           to: process.env.NODE_ENV === 'production' ? this.contact.email : 'matthieu.doultremont@gmail.com',

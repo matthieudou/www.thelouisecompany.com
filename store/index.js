@@ -6,7 +6,11 @@ const initialState = () => ({
     sharing: {},
     socials: {},
     activePages: {},
-    contact: {}
+    contact: {},
+    charity: {},
+    event: {},
+    management: {},
+    production: {}
   }
 })
 
@@ -36,13 +40,21 @@ export const actions = {
           "file": file.asset->url,
           text
         }
-      }
+      },
+      "charity": *[_id == 'charityPage'][0] { title },
+      "event": *[_id == 'eventPage'][0] { title },
+      "management": *[_id == 'managementPage'][0] { title },
+      "production": *[_id == 'productionPage'][0] { title },
     }`
 
-    const { sharing, activePages, socials, contact } = await this.app.$sanity.fetch(query)
+    const { sharing, activePages, socials, contact, charity, event, management, production } = await this.app.$sanity.fetch(query)
     commit('setItems', { item: 'sharing', value: sharing.sharing })
     commit('setItems', { item: 'activePages', value: activePages })
     commit('setItems', { item: 'socials', value: socials })
     commit('setItems', { item: 'contact', value: contact })
+    commit('setItems', { item: 'charity', value: charity })
+    commit('setItems', { item: 'event', value: event })
+    commit('setItems', { item: 'management', value: management })
+    commit('setItems', { item: 'production', value: production })
   }
 }

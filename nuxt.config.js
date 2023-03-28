@@ -45,7 +45,6 @@ export default {
   */
   plugins: [
     '~/plugins/sanity',
-    '~/plugins/intersection-observer.client.js',
     '~/plugins/touch-events.client.js',
     '~/plugins/svg-icon.js',
     '~/plugins/global-components.js',
@@ -148,15 +147,6 @@ export default {
     ** Run ESLint on save
     */
     extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-
       config.node = {
         fs: 'empty'
       }

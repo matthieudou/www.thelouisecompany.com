@@ -17,9 +17,6 @@
         <!-- CONTENT -->
         <div class="mt-12 lg:mt-0 lg:mr-24 md:ml-16 lg:ml-20">
           <h1 class="text-4xl font-serif tracking-widest">
-            <div class="-mb-3">
-              Louise
-            </div>
             <div>
               {{ title }}
             </div>

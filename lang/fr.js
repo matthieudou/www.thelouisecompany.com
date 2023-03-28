@@ -23,6 +23,7 @@ export default {
 
   contact: {
     title: 'Une question ?',
+    subtitle: 'N’hésitez pas à nous contacter par mail à l’adresse suivante:',
     placeholders: {
       contact: 'Vous nous contactez pour ?',
       firstName: 'Prénom',

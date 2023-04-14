@@ -12,7 +12,7 @@
         :poster="urlFor(hero.backgroundImage)">
         <source
           v-if="showVideo"
-          src="https://res.cloudinary.com/thelouisecompany/video/upload/q_auto:eco/v1612258283/teaser_louise_2021_02.mp4"
+          src="https://res.cloudinary.com/thelouisecompany/video/upload/q_auto:eco/v1612258283/teaser_louise_2023_04.mp4"
           type="video/mp4">
       </video>
     </div>
